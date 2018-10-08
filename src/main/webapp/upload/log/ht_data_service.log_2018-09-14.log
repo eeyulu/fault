@@ -1,0 +1,1843 @@
+
+2018-09-14 10:41:55
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-14 10:41:55
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-14 10:41:55
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-14 10:41:55
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-14 10:41:56
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
+
+2018-09-14 15:17:21
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-14 15:17:21
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-14 15:17:21
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-14 15:17:21
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-14 15:17:41
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-14 15:17:41
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-14 15:17:41
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-14 15:17:41
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+va:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 11:13:06
+[ERROR]-[Thread: qtp3885977-19]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=30
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 11:13:32
+[ERROR]-[Thread: qtp3885977-22]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=30
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 11:16:31
+[ERROR]-[Thread: qtp3885977-24]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=30
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 11:29:47
+[ERROR]-[Thread: qtp3885977-20]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=24
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 11:32:46
+[ERROR]-[Thread: qtp3885977-22]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=24
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 11:32:50
+[ERROR]-[Thread: qtp3885977-21]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=29
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 11:32:53
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=29
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:25:50
+[ERROR]-[Thread: qtp3885977-24]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=30
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:28:28
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=30
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:28:32
+[ERROR]-[Thread: qtp3885977-24]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=29
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 239
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:32:45
+[ERROR]-[Thread: qtp3885977-24]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=30
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 245
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 245
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:32:50
+[ERROR]-[Thread: qtp3885977-22]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=29
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 245
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 245
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:32:54
+[ERROR]-[Thread: qtp3885977-19]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=23
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 245
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 245
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:33:11
+[ERROR]-[Thread: qtp3885977-19]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=22
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 245
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 245
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:38:55
+[ERROR]-[Thread: qtp3885977-19]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=22
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 245
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 245
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:42:21
+[ERROR]-[Thread: qtp3885977-20]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=30
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 262
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 262
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:42:38
+[ERROR]-[Thread: qtp3885977-19]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=30
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 262
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 262
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:42:56
+[ERROR]-[Thread: qtp3885977-20]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=30
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 262
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 262
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:43:17
+[ERROR]-[Thread: qtp3885977-22]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=30
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:43:20
+[ERROR]-[Thread: qtp3885977-22]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=30
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:43:38
+[ERROR]-[Thread: qtp3885977-24]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:43:59
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:44:00
+[ERROR]-[Thread: qtp3885977-21]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:44:21
+[ERROR]-[Thread: qtp3885977-19]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:44:41
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:45:02
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:45:22
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:45:42
+[ERROR]-[Thread: qtp3885977-20]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:46:03
+[ERROR]-[Thread: qtp3885977-24]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:46:23
+[ERROR]-[Thread: qtp3885977-21]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:46:43
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:47:04
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:47:13
+[ERROR]-[Thread: qtp3885977-24]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:47:33
+[ERROR]-[Thread: qtp3885977-21]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:47:36
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:47:58
+[ERROR]-[Thread: qtp3885977-20]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=28
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 14:48:12
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=27
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 15:17:21
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.close()]: {dataSource-1} closed
+
+2018-09-14 15:17:21
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-14 15:17:41
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.close()]: {dataSource-1} closed
+
+2018-09-14 15:17:42
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-14 15:31:12
+[ERROR]-[Thread: qtp3885977-19]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=7
+com.jfinal.render.RenderException: com.jfinal.template.stat.ParseException: Expression error: can not match "yyyy-MM-dd HH:mm:ss"
+Template: "/manage/detail.html". Line: 63
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.stat.ParseException: Expression error: can not match "yyyy-MM-dd HH:mm:ss"
+Template: "/manage/detail.html". Line: 63
+	at com.jfinal.template.expr.ExprParser.parse(ExprParser.java:119)
+	at com.jfinal.template.expr.ExprParser.parseExprList(ExprParser.java:98)
+	at com.jfinal.template.stat.Parser.parseExprList(Parser.java:248)
+	at com.jfinal.template.stat.Parser.stat(Parser.java:130)
+	at com.jfinal.template.stat.Parser.statList(Parser.java:100)
+	at com.jfinal.template.stat.Parser.parse(Parser.java:90)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:157)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:142)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 15:32:17
+[ERROR]-[Thread: qtp3885977-24]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=7
+com.jfinal.render.RenderException: com.jfinal.template.stat.ParseException: Expression error: can not match "yyyy-MM-dd HH:mm:ss"
+Template: "/manage/detail.html". Line: 63
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.stat.ParseException: Expression error: can not match "yyyy-MM-dd HH:mm:ss"
+Template: "/manage/detail.html". Line: 63
+	at com.jfinal.template.expr.ExprParser.parse(ExprParser.java:119)
+	at com.jfinal.template.expr.ExprParser.parseExprList(ExprParser.java:98)
+	at com.jfinal.template.stat.Parser.parseExprList(Parser.java:248)
+	at com.jfinal.template.stat.Parser.stat(Parser.java:216)
+	at com.jfinal.template.stat.Parser.statList(Parser.java:100)
+	at com.jfinal.template.stat.Parser.parse(Parser.java:90)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:157)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:142)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 15:32:23
+[ERROR]-[Thread: qtp3885977-24]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=7
+com.jfinal.render.RenderException: com.jfinal.template.stat.ParseException: Expression error: can not match "yyyy-MM-dd HH:mm:ss"
+Template: "/manage/detail.html". Line: 63
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.stat.ParseException: Expression error: can not match "yyyy-MM-dd HH:mm:ss"
+Template: "/manage/detail.html". Line: 63
+	at com.jfinal.template.expr.ExprParser.parse(ExprParser.java:119)
+	at com.jfinal.template.expr.ExprParser.parseExprList(ExprParser.java:98)
+	at com.jfinal.template.stat.Parser.parseExprList(Parser.java:248)
+	at com.jfinal.template.stat.Parser.stat(Parser.java:216)
+	at com.jfinal.template.stat.Parser.statList(Parser.java:100)
+	at com.jfinal.template.stat.Parser.parse(Parser.java:90)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:157)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:142)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 15:44:01
+[ERROR]-[Thread: qtp3885977-20]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=21
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 17:31:45
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=27
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more
+
+2018-09-14 17:32:06
+[ERROR]-[Thread: qtp3885977-23]-[com.jfinal.core.ActionHandler.handle()]: /manage/detail?id=27
+com.jfinal.render.RenderException: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jfinal.template.TemplateException: Can not accessed by "level" field from null target
+Template: "/manage/detail.html". Line: 251
+	at com.jfinal.template.expr.ast.Field.eval(Field.java:64)
+	at com.jfinal.template.expr.ast.ExprList.eval(ExprList.java:67)
+	at com.jfinal.template.stat.ast.Output.exec(Output.java:48)
+	at com.jfinal.template.stat.ast.StatList.exec(StatList.java:48)
+	at com.jfinal.template.Template.render(Template.java:49)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:60)
+	... 26 more

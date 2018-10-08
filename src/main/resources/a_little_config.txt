@@ -1,0 +1,9 @@
+jdbcUrl=jdbc:mysql://192.168.20.88:3306/htimdata?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull	
+user = root
+password =root
+devMode = true
+
+ssoServer =http://sso.ht-healthcare.com
+logoutPath =logout
+redisAddress =192.168.20.99:6379
+redisPassword =123456

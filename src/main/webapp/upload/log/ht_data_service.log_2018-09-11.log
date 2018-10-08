@@ -1,0 +1,676 @@
+
+2018-09-11 18:05:24
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-11 18:05:24
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-11 18:05:25
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-11 18:05:25
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-11 18:05:25
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED jfinal: java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:103)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:47)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: java.lang.ClassNotFoundException: com.ht.nfs.common.HtNfsServiceConfig
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:195)
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:101)
+	... 16 more
+
+2018-09-11 18:05:25
+[WARN]-[Thread: main]-[org.eclipse.jetty.webapp.WebAppContext.doStart()]: Failed startup of context o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:103)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:47)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: java.lang.ClassNotFoundException: com.ht.nfs.common.HtNfsServiceConfig
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:195)
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:101)
+	... 16 more
+
+2018-09-11 18:05:25
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}: java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:103)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:47)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: java.lang.ClassNotFoundException: com.ht.nfs.common.HtNfsServiceConfig
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:195)
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:101)
+	... 16 more
+
+2018-09-11 18:05:25
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED org.eclipse.jetty.server.Server@4b0a034e: java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:103)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:47)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: java.lang.ClassNotFoundException: com.ht.nfs.common.HtNfsServiceConfig
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:195)
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:101)
+	... 16 more
+
+2018-09-11 18:05:25
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:103)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:47)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: java.lang.ClassNotFoundException: com.ht.nfs.common.HtNfsServiceConfig
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:195)
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:101)
+	... 16 more
+
+2018-09-11 18:06:38
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-11 18:06:38
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-11 18:06:39
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-11 18:06:39
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-11 18:06:39
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED jfinal: java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:103)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:47)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: java.lang.ClassNotFoundException: com.ht.nfs.common.HtNfsServiceConfig
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:195)
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:101)
+	... 16 more
+
+2018-09-11 18:06:39
+[WARN]-[Thread: main]-[org.eclipse.jetty.webapp.WebAppContext.doStart()]: Failed startup of context o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:103)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:47)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: java.lang.ClassNotFoundException: com.ht.nfs.common.HtNfsServiceConfig
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:195)
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:101)
+	... 16 more
+
+2018-09-11 18:06:39
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}: java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:103)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:47)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: java.lang.ClassNotFoundException: com.ht.nfs.common.HtNfsServiceConfig
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:195)
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:101)
+	... 16 more
+
+2018-09-11 18:06:39
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED org.eclipse.jetty.server.Server@65eab019: java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:103)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:47)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: java.lang.ClassNotFoundException: com.ht.nfs.common.HtNfsServiceConfig
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:195)
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:101)
+	... 16 more
+
+2018-09-11 18:06:39
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+java.lang.RuntimeException: Can not create instance of class: com.ht.nfs.common.HtNfsServiceConfig
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:103)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:47)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: java.lang.ClassNotFoundException: com.ht.nfs.common.HtNfsServiceConfig
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:195)
+	at com.jfinal.core.JFinalFilter.createJFinalConfig(JFinalFilter.java:101)
+	... 16 more
+
+2018-09-11 18:12:03
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-11 18:12:03
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-11 18:12:03
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-11 18:12:03
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-11 18:12:04
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-11 18:12:04
+[ERROR]-[Thread: main]-[com.jfinal.core.Config.startPlugins()]: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:226)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:157)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2627)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1556)
+	at com.alibaba.druid.pool.DruidPooledStatement.executeQuery(DruidPooledStatement.java:140)
+	at com.jfinal.plugin.activerecord.TableBuilder.doBuild(TableBuilder.java:71)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:47)
+	... 20 more
+
+2018-09-11 18:12:04
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED jfinal: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:157)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:226)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2627)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1556)
+	at com.alibaba.druid.pool.DruidPooledStatement.executeQuery(DruidPooledStatement.java:140)
+	at com.jfinal.plugin.activerecord.TableBuilder.doBuild(TableBuilder.java:71)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:47)
+	... 20 more
+
+2018-09-11 18:12:04
+[WARN]-[Thread: main]-[org.eclipse.jetty.webapp.WebAppContext.doStart()]: Failed startup of context o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:157)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:226)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2627)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1556)
+	at com.alibaba.druid.pool.DruidPooledStatement.executeQuery(DruidPooledStatement.java:140)
+	at com.jfinal.plugin.activerecord.TableBuilder.doBuild(TableBuilder.java:71)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:47)
+	... 20 more
+
+2018-09-11 18:12:04
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:157)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:226)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2627)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1556)
+	at com.alibaba.druid.pool.DruidPooledStatement.executeQuery(DruidPooledStatement.java:140)
+	at com.jfinal.plugin.activerecord.TableBuilder.doBuild(TableBuilder.java:71)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:47)
+	... 20 more
+
+2018-09-11 18:12:04
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED org.eclipse.jetty.server.Server@3482c596: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:157)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:226)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2627)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1556)
+	at com.alibaba.druid.pool.DruidPooledStatement.executeQuery(DruidPooledStatement.java:140)
+	at com.jfinal.plugin.activerecord.TableBuilder.doBuild(TableBuilder.java:71)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:47)
+	... 20 more
+
+2018-09-11 18:12:04
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:157)
+	at com.ht.nfs.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:39)
+Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:226)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'htimdata.appid' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2627)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1556)
+	at com.alibaba.druid.pool.DruidPooledStatement.executeQuery(DruidPooledStatement.java:140)
+	at com.jfinal.plugin.activerecord.TableBuilder.doBuild(TableBuilder.java:71)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:47)
+	... 20 more
+
+2018-09-11 18:15:42
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-11 18:15:42
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-11 18:15:42
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-11 18:15:42
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-11 18:15:43
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-11 18:15:43
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082

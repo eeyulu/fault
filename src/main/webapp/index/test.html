@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>授权测试</title>
+<script src="../js/jquery-1.4.4.min.js" charset="utf-8"></script>
+</head>
+<body>
+	<p id="userId" ></p>
+	<div id="info" align="center"></div>
+	<div id="code" align="center"></div>
+	<input id= "codeRe" type="text">
+	
+	
+	
+	<script>
+/* 		function getQueryString(name) { 
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+		var r = window.location.search.substr(1).match(reg); 
+		if (r != null) return unescape(r[2]); return null; 
+		}  
+		
+ 		function getCode(ht_token, clientId){
+			alert("===ht_token==="+ht_token);
+			alert("===clientId==="+clientId);
+			return 0;
+		} */
+
+		function oauth(ht_token, clientId) { 
+/* 			var ht_token = getQueryString("ht_token");
+			var clientId = getQueryString("clientId");
+			alert("===ht_token==="+ht_token);
+			alert("===clientId==="+clientId); */
+			var code;
+			$.ajax({
+				type : "GET",
+				url : "/oauth",
+				data : {
+					"clientId" : clientId,
+					"ht_token" : ht_token
+				},
+				async:false,
+				dataType : "json",
+				success : function(reply) {
+					if(reply.code == 200){
+						document.getElementById("userId").innerHTML = "userId:"+ reply.userId;
+					}else{
+						document.getElementById("userId").innerHTML = reply.msg;
+						document.getElementById("code").innerHTML = reply.code;
+						$("#codeRe").val(reply.code);
+						code = reply.code;
+						
+					}
+				}
+			});
+			return code;
+		}
+		
+/* 		$(function () { 
+			var ht_token = getQueryString("ht_token");
+			var clientId = getQueryString("clientId");
+			
+			$.ajax({
+				type : "GET",
+				url : "/oauth",
+				data : {
+					"clientId" : clientId,
+					"ht_token" : ht_token,
+				},
+				dataType : "json",
+				success : function(reply) {
+					if(reply.code == 200){
+						document.getElementById("userId").innerHTML = "userId:"+ reply.userId;
+					}else{
+						document.getElementById("userId").innerHTML = reply.msg;
+						document.getElementById("code").innerHTML = reply.code;
+					}
+					$("#codeRe").val(reply.code);
+				}
+			});
+		}); */
+
+
+	</script>
+</body>
+
+</html>
+
+
+
+
+
+
+

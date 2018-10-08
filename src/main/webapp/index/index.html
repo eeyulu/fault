@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>钉钉测试</title>
+<script	src="http://g.alicdn.com/dingding/dingtalk-jsapi/2.0.8/dingtalk.open.js"></script>
+<script src="../js/jquery-1.4.4.min.js" charset="utf-8"></script>
+</head>
+<body>
+	<p id="userId" style="display:none;">userId:未知</p>
+	<div align="center"> 
+		<button onclick="userInfo()"  style="width:100px;height:60px">用户详情</button>
+	</div>
+	<div id="info" align="center">
+	</div>
+	
+	<script>
+		
+		dd.ready(function() {
+			dd.runtime.permission.requestAuthCode({
+						corpId : "ding1ee87f569129376135c2f4657eb6378f",
+						onSuccess : function(result) {
+							document.getElementById("userId").innerHTML = "进入xxx"+ result.code;
+							$.ajax({
+								type : "GET",
+								url : "/getUserId",
+								data : {
+									"code" : result.code
+								},
+								dataType : "json",
+								success : function(dataUser) {
+									document.getElementById("userId").innerHTML = "userId:"+ dataUser.userid;
+								}
+							});
+						},
+						onFail : function(err) {
+						}
+
+					});
+		});
+
+		function userInfo() {
+			$.ajax({
+				type : "GET",
+				url : "/getUserInfo",
+				dataType : "json",
+				success : function(dataUser) {
+					var html = "<table>"+
+								  "<tr>"+
+								    "<th>姓名</th>"+
+								    "<th>"+dataUser.name+"</th>"+
+								  "</tr>"+
+								  "<tr>"+
+								    "<td>职位</td>"+
+								    "<td>"+dataUser.position+"</td>"+
+								  "</tr>"+
+  								  "<tr>"+
+								    "<td>userId</td>"+
+								    "<td>"+dataUser.userid+"</td>"+
+								  "</tr>"+
+								"</table>";
+					$("#info").html(html);
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>
+
+
+
+
+
+
+

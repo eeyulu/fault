@@ -1,0 +1,1103 @@
+
+2018-09-30 09:30:14
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-30 09:30:14
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-30 09:30:14
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-30 09:30:14
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-30 09:30:14
+[ERROR]-[Thread: main]-[com.jfinal.core.Config.startPlugins()]: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 67; columnNumber: 15; 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:30:14
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED jfinal: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 67; columnNumber: 15; 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:30:14
+[WARN]-[Thread: main]-[org.eclipse.jetty.webapp.WebAppContext.doStart()]: Failed startup of context o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 67; columnNumber: 15; 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:30:14
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 67; columnNumber: 15; 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:30:14
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED org.eclipse.jetty.server.Server@5f683daf: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 67; columnNumber: 15; 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:30:14
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 67; columnNumber: 15; 与元素类型 "cache" 相关联的属性 "name" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:19
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-30 09:31:20
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-30 09:31:20
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-30 09:31:20
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-30 09:31:20
+[ERROR]-[Thread: main]-[com.jfinal.core.Config.startPlugins()]: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 72; columnNumber: 22; 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:20
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED jfinal: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 72; columnNumber: 22; 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:20
+[WARN]-[Thread: main]-[org.eclipse.jetty.webapp.WebAppContext.doStart()]: Failed startup of context o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 72; columnNumber: 22; 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:20
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 72; columnNumber: 22; 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:20
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED org.eclipse.jetty.server.Server@609db43b: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 72; columnNumber: 22; 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:20
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 72; columnNumber: 22; 与元素类型 "cache" 相关联的属性 "overflowToDisk" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:36
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-30 09:31:36
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-30 09:31:36
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-30 09:31:36
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-30 09:31:36
+[ERROR]-[Thread: main]-[com.jfinal.core.Config.startPlugins()]: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXException: null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.BeanHandler.setAttribute(BeanHandler.java:279)
+	at net.sf.ehcache.config.BeanHandler.startElement(BeanHandler.java:113)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1339)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:36
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED jfinal: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXException: null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.BeanHandler.setAttribute(BeanHandler.java:279)
+	at net.sf.ehcache.config.BeanHandler.startElement(BeanHandler.java:113)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1339)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:36
+[WARN]-[Thread: main]-[org.eclipse.jetty.webapp.WebAppContext.doStart()]: Failed startup of context o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXException: null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.BeanHandler.setAttribute(BeanHandler.java:279)
+	at net.sf.ehcache.config.BeanHandler.startElement(BeanHandler.java:113)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1339)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:36
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXException: null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.BeanHandler.setAttribute(BeanHandler.java:279)
+	at net.sf.ehcache.config.BeanHandler.startElement(BeanHandler.java:113)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1339)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:36
+[WARN]-[Thread: main]-[org.eclipse.jetty.util.component.AbstractLifeCycle.setFailed()]: FAILED org.eclipse.jetty.server.Server@dd0c991: java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXException: null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.BeanHandler.setAttribute(BeanHandler.java:279)
+	at net.sf.ehcache.config.BeanHandler.startElement(BeanHandler.java:113)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1339)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:36
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.ehcache.EhCachePlugin. 
+Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:169)
+	at com.ht.fault.common.HtFaultServiceConfig.main(HtFaultServiceConfig.java:41)
+Caused by: net.sf.ehcache.CacheException: Error configuring from file:/F:/%e9%a1%b9%e7%9b%ae/ht_fault_service/target/classes/ehcache.xml. Initial cause was Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:105)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:140)
+	at net.sf.ehcache.CacheManager.newInstance(CacheManager.java:818)
+	at net.sf.ehcache.CacheManager.create(CacheManager.java:799)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.createCacheManager(EhCachePlugin.java:90)
+	at com.jfinal.plugin.ehcache.EhCachePlugin.start(EhCachePlugin.java:61)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: net.sf.ehcache.CacheException: Error configuring from input stream. Initial cause was null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:159)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:103)
+	... 24 more
+Caused by: org.xml.sax.SAXException: null:75: Could not set attribute "diskPersistent" - Invalid value specified for attribute 'diskPersistent', please use 'true' or 'false' instead of 'flase'
+	at net.sf.ehcache.config.BeanHandler.setAttribute(BeanHandler.java:279)
+	at net.sf.ehcache.config.BeanHandler.startElement(BeanHandler.java:113)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1339)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+	at net.sf.ehcache.config.ConfigurationFactory.parseConfiguration(ConfigurationFactory.java:157)
+	... 25 more
+
+2018-09-30 09:31:58
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-30 09:31:58
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-30 09:31:58
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-30 09:31:58
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-30 09:31:58
+[WARN]-[Thread: main]-[net.sf.ehcache.DiskStorePathManager.resolveAndLockIfNeeded()]: diskStorePath 'C:\Users\ADMINI~1\AppData\Local\Temp' is already used by an existing CacheManager either in the same VM or in a different process.
+The diskStore path for this CacheManager will be set to C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created7373185127024893478diskstore.
+To avoid this warning consider using the CacheManager factory methods to create a singleton CacheManager or specifying a separate ehcache configuration (ehcache.xml) for each CacheManager instance.
+
+2018-09-30 09:31:58
+[WARN]-[Thread: main]-[net.sf.ehcache.store.disk.DiskStorageFactory.<init>()]: Data in persistent disk stores is ignored for stores from automatically created directories.
+Remove diskPersistent or resolve the conflicting disk paths in cache configuration.
+Deleting data file C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created7373185127024893478diskstore\token_time.data
+
+2018-09-30 09:31:58
+[WARN]-[Thread: main]-[net.sf.ehcache.store.disk.DiskStorageFactory.<init>()]: Data in persistent disk stores is ignored for stores from automatically created directories.
+Remove diskPersistent or resolve the conflicting disk paths in cache configuration.
+Deleting data file C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created7373185127024893478diskstore\user%0049d_token.data
+
+2018-09-30 09:31:58
+[WARN]-[Thread: main]-[net.sf.ehcache.store.disk.DiskStorageFactory.<init>()]: Data in persistent disk stores is ignored for stores from automatically created directories.
+Remove diskPersistent or resolve the conflicting disk paths in cache configuration.
+Deleting data file C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created7373185127024893478diskstore\token_user%0049d.data
+
+2018-09-30 09:32:15
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-30 09:32:15
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082

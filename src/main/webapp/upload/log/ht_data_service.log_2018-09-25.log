@@ -1,0 +1,255 @@
+
+2018-09-25 10:34:56
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-25 10:34:56
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 10:34:56
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 10:34:56
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 10:34:57
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
+
+2018-09-25 11:22:34
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:22:35
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 11:22:35
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:22:35
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:24:51
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:24:51
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 11:24:51
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:24:51
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:28:03
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:28:03
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 11:28:03
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:28:03
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:28:28
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:28:28
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 11:28:28
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:28:28
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:30:14
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:30:14
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 11:30:14
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:30:14
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:34:37
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:34:37
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 11:34:37
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:34:37
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:39:04
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:39:04
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 11:39:04
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:39:04
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:39:19
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:39:20
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 11:39:20
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:39:20
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:49:00
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:49:00
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 11:49:00
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:49:00
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 11:49:01
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-25 12:51:23
+[WARN]-[Thread: qtp887106029-21]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /english/
+
+2018-09-25 14:16:31
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-25 14:16:31
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 14:16:31
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 14:16:31
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 14:16:32
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-25 14:16:32
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
+
+2018-09-25 14:55:15
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.close()]: {dataSource-1} closed
+
+2018-09-25 14:55:15
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 14:55:15
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 14:55:15
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 14:55:15
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 14:55:15
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-25 14:55:54
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-25 14:55:54
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 14:55:54
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 14:55:54
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 14:55:54
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-25 14:55:54
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
+
+2018-09-25 15:01:22
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.close()]: {dataSource-1} closed
+
+2018-09-25 15:01:22
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 15:01:22
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 15:01:22
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 15:01:22
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 15:01:22
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-25 15:01:28
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-09-25 15:01:28
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 15:01:28
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 15:01:28
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 15:01:28
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-25 15:01:28
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
+
+2018-09-25 15:07:26
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.close()]: {dataSource-1} closed
+
+2018-09-25 15:07:26
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 15:07:26
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 15:07:26
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 15:07:26
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 15:07:27
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-09-25 15:10:08
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.close()]: {dataSource-1} closed
+
+2018-09-25 15:10:08
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.doStop()]: stopped o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 15:10:08
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-09-25 15:10:08
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 15:10:08
+[INFO]-[Thread: JFinal-Scanner]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_fault_service/src/main/webapp/}
+
+2018-09-25 15:10:08
+[INFO]-[Thread: JFinal-Scanner]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited

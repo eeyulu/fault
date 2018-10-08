@@ -1,0 +1,99 @@
+
+2018-08-20 11:19:30
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-08-20 11:19:30
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-08-20 11:19:30
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_nfs_service/src/main/webapp/}
+
+2018-08-20 11:19:30
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_nfs_service/src/main/webapp/}
+
+2018-08-20 11:19:49
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-08-20 11:19:50
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8100
+
+2018-08-20 11:20:14
+[ERROR]-[Thread: qtp326298949-19]-[com.jfinal.core.ActionHandler.handle()]: /manage/list
+java.lang.NullPointerException
+	at com.ht.nfs.manage.ManageController.list(ManageController.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.ht.nfs.common.HtNfsServiceHandler.handle(HtNfsServiceHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018-08-20 11:21:39
+[INFO]-[Thread: qtp326298949-22]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/app -- 返回数据:{"msg":"请求成功","code":200,"data":{}}
+
+2018-08-20 11:29:52
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-08-20 11:29:52
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-08-20 11:29:52
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_nfs_service/src/main/webapp/}
+
+2018-08-20 11:29:52
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/F:/项目/ht_nfs_service/src/main/webapp/}
+
+2018-08-20 11:29:52
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-08-20 11:29:52
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8100
+
+2018-08-20 11:30:22
+[INFO]-[Thread: qtp326298949-19]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/appDel -- 返回数据:{"msg":"请求成功","code":200,"data":{}}
+
+2018-08-20 11:30:38
+[INFO]-[Thread: qtp326298949-23]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/appDel -- 返回数据:{"msg":"请求成功","code":200,"data":{}}
+
+2018-08-20 11:30:43
+[INFO]-[Thread: qtp326298949-19]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/appDel -- 返回数据:{"msg":"请求成功","code":200,"data":{}}
+
+2018-08-20 11:30:47
+[INFO]-[Thread: qtp326298949-22]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/appDel -- 返回数据:{"msg":"请求成功","code":200,"data":{}}
+
+2018-08-20 11:30:49
+[INFO]-[Thread: qtp326298949-21]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/appDel -- 返回数据:{"msg":"请求成功","code":200,"data":{}}
+
+2018-08-20 11:30:51
+[INFO]-[Thread: qtp326298949-20]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/appDel -- 返回数据:{"msg":"请求成功","code":200,"data":{}}
+
+2018-08-20 11:31:06
+[INFO]-[Thread: qtp326298949-20]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/app -- 返回数据:{"msg":"请求成功","code":200,"data":{}}
+
+2018-08-20 11:33:27
+[INFO]-[Thread: qtp326298949-20]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/app -- 返回数据:{"msg":"请求成功","code":200,"data":{}}

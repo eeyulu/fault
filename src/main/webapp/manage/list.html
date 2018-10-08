@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>故障工单管理</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+  <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body style="background-color: #f2f2f2"> 
+
+<!-- <div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
+    <a lay-href="">主页</a><span lay-separator="">/</span>
+    <a><cite>用户</cite></a><span lay-separator="">/</span>
+    <a><cite>网站用户</cite></a>
+  </div>
+</div> -->
+
+
+ <div class="layui-fluid" style="margin-top: 20px;">
+<div class="layui-card">
+<div class="layui-form layui-card-header layuiadmin-card-header-auto" style="height: auto;">
+  <div class="layui-form-item" style="margin-top: 15px;border-top-width: 15px;padding-top: 20px;">
+   	<div class="layui-inline">
+	  	<label class="layui-form-label">工单号</label> 
+	    <div class="layui-input-inline">
+	    	<input class="layui-input"  id="orderNo" autocomplete="off">
+	  	</div>
+  	</div>
+    <div class="layui-inline">
+	   	<label class="layui-form-label">录入人</label> 
+	    <div class="layui-input-inline">
+	    	<input class="layui-input"  id="demoReload" autocomplete="off">
+	  	</div>
+  	</div>
+    <div class="layui-inline">
+	   	<label class="layui-form-label">报修人</label> 
+	    <div class="layui-input-inline">
+	    	<input class="layui-input"  id="reportName" autocomplete="off">
+	  	</div>
+  	</div>
+    <div class="layui-inline">
+	  	<label class="layui-form-label">负责科室</label> 
+	    <div class="layui-input-inline">
+	    	<input class="layui-input"  id="responsible" autocomplete="off">
+	  	</div>
+  	</div>
+  	<div class="layui-inline">
+      <label class="layui-form-label">故障状态</label>
+      <div class="layui-input-inline">
+        <select id="faultStatus">
+          <option value="">请选择</option>
+          <option value="1">未受理</option>
+          <option value="2">已受理</option>
+          <option value="3">已搁置</option>
+          <option value="4">已完成</option>
+          <option value="5">已评价</option>
+          <option value="6">已撤销</option>
+        </select>        
+      </div>
+    </div>
+  	<div class="layui-inline">
+      <label class="layui-form-label">故障类型</label>
+      <div class="layui-input-inline">
+        <select id="faultType">
+          <option value="">请选择</option>
+          <option value="电脑软件">电脑软件</option>
+          <option value="水电设备">水电设备</option>
+          <option value="电梯设备">胸透设备</option>
+          <option value="电脑软件">B超设备</option>
+          <option value="水电设备">放射设备</option>
+          <option value="电梯设备">CT设备</option>
+          <option value="电脑软件">化疗设备</option>
+          <option value="水电设备">医疗设备</option>
+          <option value="电梯设备">电梯设备</option>
+          <option value="电梯设备">办公故障</option>
+        </select>        
+      </div>
+    </div>
+  	<div class="layui-inline">
+      <label class="layui-form-label">紧急程度</label>
+      <div class="layui-input-inline">
+        <select id="faultLevel">
+          <option value="">请选择</option>
+          <option value="紧急">紧急</option>
+          <option value="一般">一般</option>
+        </select>        
+      </div>
+    </div>
+  	<div class="layui-inline">
+	  <button class="layui-btn layuiadmin-btn-list"  data-method="reload" data-type="reload">
+	  	<i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+	  </button>
+	</div>
+	
+ </div>        
+</div>
+ 
+ <div class="layui-card-body">
+ <!--  <button class="layui-btn layuiadmin-btn-list" data-method="add" data-type="add">添加应用</button>
+  <button class="layui-btn layuiadmin-btn-list" data-method="addBucket"  >添加空间</button> -->
+<table class="layui-hide" id="LAY_table_user" lay-filter="user"></table> 
+<script type="text/html" id="barDemo">
+	<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">详情</a>
+  <!-- <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">刷新秘钥</a>
+ 
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除应用</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delBucket">删除空间</a>-->
+</script>              
+ </div>
+ </div>
+ </div>
+          
+<script src="../layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  
+  //方法级渲染
+  table.render({
+    elem: '#LAY_table_user'
+    ,url: '/manage/list'
+    ,cols: [[
+     // {checkbox: true, fixed: false}
+      {field:'order_no', title: '工单号', width:120, fixed: true, align:'center'}
+      ,{field:'location', title: '故障位置', width:180, align:'center'}
+      ,{field:'type', title: '故障类型', width:100, align:'center'}
+      ,{field:'level', title: '紧急程度', width:120, align:'center'}
+      ,{field:'responsible_dep', title: '负责科室', width:120, align:'center'}
+      ,{field:'repair_name', title: '录入人', width:120, align:'center'}
+      ,{field:'repair_tel', title: '录入人电话', width:120, align:'center'}
+      ,{field:'repair_dep', title: '录入人科室', width:120, align:'center'}
+      ,{field:'report_name', title: '报修人', width:120, align:'center'}
+      ,{field:'status', title: '故障状态', width:100, align:'center'}
+      ,{field:'repair_time', title: '报障时间', width:180, align:'center'}
+      ,{fixed: 'right', align:'center', toolbar: '#barDemo'}
+    ]]
+    ,id: 'testReload'
+    ,page: true
+    ,height: 500
+    ,response: {
+    		  statusCode: 200 //成功的状态码，默认：0
+    		  ,countName: 'totalRow' //数据总数的字段名称，默认：count
+    		  ,dataName: 'list' //数据列表的字段名称，默认：data
+    		}
+   ,done:function(res, curr, count){    //res 接口返回的信息
+    $("[data-field = 'status']").children().each(function(){
+        if($(this).text() == '1'){
+            $(this).html('<button class="layui-btn layui-btn-danger layui-btn-xs">未受理</button>');
+        }else if($(this).text() == '2'){
+             $(this).html('<button class="layui-btn layui-btn-warm layui-btn-xs">已受理</button>');
+        }else if($(this).text() == '3'){
+            $(this).html('<button class="layui-btn layui-btn-primary layui-btn-xs">已搁置</button>');
+        }else if($(this).text() == '4'){
+             $(this).html('<button class="layui-btn layui-btn-normal layui-btn-xs">已完成</button>');
+        }else if($(this).text() == '5'){
+             $(this).html('<button class="layui-btn layui-btn-xs">已评价</button>');
+        }else if($(this).text() == '6'){
+             $(this).html('<button class="layui-btn layui-btn-primary layui-btn-xs">已撤销</button>');
+        }
+    });
+    $("[data-field = 'level']").children().each(function(){
+    	if($(this).text() == '紧急'){
+    		$(this).html('<button class="layui-btn layui-btn-danger layui-btn-xs">紧急</button>');
+    	}else if($(this).text() == '一般'){
+    		$(this).html('<button class="layui-btn layui-btn-primary layui-btn-xs">一般</button>');
+    	}
+    });
+   }
+  });
+  
+  var $ = layui.$, active = {
+    reload: function(){
+      var demoReload = $('#demoReload');
+      var faultStatus = $('#faultStatus option:selected');
+      var responsible = $('#responsible');
+      var orderNo = $('#orderNo');
+      var faultType = $('#faultType');
+      var faultLevel = $('#faultLevel');
+      var reportName = $('#reportName');
+      
+      //执行重载
+      table.reload('testReload', {
+        page: {
+          curr: 1 //重新从第 1 页开始
+        }
+        ,where: {
+          //key: {
+            repairName: demoReload.val(),
+            faultStatus: faultStatus.val(),
+            responsible: responsible.val(),
+            orderNo: orderNo.val(),
+            faultType: faultType.val(),
+            faultLevel: faultLevel.val(),
+            reportName: reportName.val()
+          //}
+        }
+      });
+    },
+    
+    
+     add: function(){
+       layer.open({
+         type: 2
+         ,title: '添加应用'
+         ,content: '/manage/add'
+         ,maxmin: true
+         ,area: ['550px', '450px']
+         ,btn: ['确定', '取消']
+         ,yes: function(index, layero){
+           //点击确认触发 iframe 内容中的按钮提交
+           var submit = layero.find('iframe').contents().find("#layuiadmin-app-form-submit");
+           submit.click();
+         }
+       }); 
+     },
+    
+    
+    
+     addBucket: function(){
+       layer.open({
+         type: 2
+         ,title: '添加空间'
+         ,content: '/manage/addBucket'
+         ,maxmin: true
+         ,area: ['550px', '450px']
+         ,btn: ['确定', '取消']
+         ,yes: function(index, layero){
+           //点击确认触发 iframe 内容中的按钮提交
+           var submit = layero.find('iframe').contents().find("#layuiadmin-app-form-submit");
+           submit.click();
+         }
+       }); 
+     }
+  };
+
+  
+/*   $('.demoTable .layui-btn').on('click', function(){
+    var type = $(this).data('type');
+    console.log(type);
+    console.log(active[type]);
+    active[type] ? active[type].call(this) : '';
+  }); */
+    
+  $('.layui-btn ').on('click', function(){
+	    var othis = $(this), method = othis.data('method');
+	    active[method] ? active[method].call(this, othis) : '';
+	  });
+});
+</script>
+
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  //监听表格复选框选择
+  table.on('checkbox(user)', function(obj){
+    console.log(obj)
+  });
+  //监听工具条
+  table.on('tool(user)', function(obj){
+    var data = obj.data;
+    if(obj.event === 'detail'){
+   //   layer.msg('ID：'+ data.id + ' 的查看操作');
+      
+/* 		$.ajax({
+            type: "GET",
+            url: "refresh",
+            data: {"id":data.id,"appId":data.appId},
+            dataType: "json",
+            success: function(data){
+                     }
+        });
+ 		table.reload('testReload'); //重载表格 */
+ 		
+ 		window.location.href="detail?id="+ data.id; 
+      
+    } else if(obj.event === 'del'){
+      layer.confirm('真的删除该应用', function(index){
+        //obj.del();
+        
+  		$.ajax({
+            type: "GET",
+            url: "appDel",
+            data: {"id":data.id},
+            dataType: "json",
+            success: function(data){
+           	 
+           	 console.log("data");
+           	 console.log(data);
+                     }
+        });
+ 		table.reload('testReload'); //重载表格
+        layer.close(index);
+      });
+    } else if(obj.event === 'delBucket'){
+      //layer.alert('编辑行：<br>'+ JSON.stringify(data))
+        layer.confirm('真的删除该空间', function(index){
+            //obj.del();
+            
+      		$.ajax({
+                type: "GET",
+                url: "appBucketDel",
+                data: {"id":data.bid,},
+                dataType: "json",
+                success: function(data){
+               	 
+               	 console.log("data");
+               	 console.log(data);
+                         }
+            });
+     		table.reload('testReload'); //重载表格
+            layer.close(index);
+          });
+    }
+  });
+  
+  var $ = layui.$, active = {
+    getCheckData: function(){ //获取选中数据
+      var checkStatus = table.checkStatus('idTest')
+      ,data = checkStatus.data;
+      layer.alert(JSON.stringify(data));
+    }
+    ,getCheckLength: function(){ //获取选中数目
+      var checkStatus = table.checkStatus('idTest')
+      ,data = checkStatus.data;
+      layer.msg('选中了：'+ data.length + ' 个');
+    }
+    ,isAll: function(){ //验证是否全选
+      var checkStatus = table.checkStatus('idTest');
+      layer.msg(checkStatus.isAll ? '全选': '未全选')
+    }
+  };
+  
+/*   $('.layui-btn .layuiadmin-btn-list').on('click', function(){
+    var type = $(this).data('type');
+    active[type] ? active[type].call(this) : '';
+  }); */
+});
+</script>
+
+</body>
+</html>
