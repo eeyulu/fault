@@ -14,6 +14,9 @@ import com.jfinal.core.JFinal;
 import com.jfinal.kit.Prop;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+import com.jfinal.plugin.activerecord.CaseInsensitiveContainerFactory;
+import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
+import com.jfinal.plugin.activerecord.dialect.OracleDialect;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.jfinal.template.Engine;
@@ -91,22 +94,38 @@ public  class HtFaultServiceConfig extends JFinalConfig {
 			Prop p = PropKit.use("a_little_config.txt");
 			// 配置 druid 数据库连接池插件
 			DruidPlugin druidPlugin = new DruidPlugin(p.get("jdbcUrl"), p.get("user"), p.get("password").trim());
+			//配置mysql驱动
+			druidPlugin.setDriverClass("com.mysql.jdbc.Driver");
 			me.add(druidPlugin);
 			
 			// 配置ActiveRecord插件
 			ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
-			// 所有映射在 MappingKit 中自动化搞定
+			// 配置数据库方言
+			arp.setDialect(new MysqlDialect());
 			arp.setShowSql(true);//这句话就是ShowSql
+			// 配置属性名(字段名)大小写不敏感容器工厂
+			arp.setContainerFactory(new CaseInsensitiveContainerFactory());
 			
 			Engine engine = arp.getEngine();
 			engine.setSourceFactory(new ClassPathSourceFactory());
 			//设置sql文件的路径
 //	        arp.setBaseSqlTemplatePath("src/main/resources");
-	        //添加sql模板
-	        arp.addSqlTemplate("/template.sql");
-	        
-	        _MappingKit.mapping(arp);
-	        me.add(arp);
+			//添加sql模板
+			arp.addSqlTemplate("/template.sql");
+			
+			_MappingKit.mapping(arp);
+			me.add(arp);
+			
+			//数据库（oracle）
+			DruidPlugin dp2 = new DruidPlugin(p.get("oracleUrl"), p.get("oracleUser"), p.get("oraclePassword").trim());
+			dp2.setDriverClass("oracle.jdbc.driver.OracleDriver");
+			me.add(dp2); 
+			ActiveRecordPlugin arp2 = new ActiveRecordPlugin("oracle",dp2);
+			me.add(arp2);
+			arp2.setDialect(new OracleDialect());
+			arp2.setShowSql(true);
+			arp2.setContainerFactory(new CaseInsensitiveContainerFactory());
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

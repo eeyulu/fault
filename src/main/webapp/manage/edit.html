@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>故障工单</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+  <script src="../js/jquery-1.4.4.min.js" charset="utf-8"></script>
+  
+  <style type="text/css">
+			div img:hover{
+				transform: scale(3.0);
+			}
+		</style>
+  
+</head>
+<body style="background-color: #f2f2f2"> 
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">   
+     
+    <div class="layui-col-sm12"  style="margin-top: 20px;">
+        <div class="layui-card">
+        <div class="layui-card-header">
+        	基本信息
+        	<div class="layui-btn-group layuiadmin-btn-group" style="position: absolute;right: 15px;">
+        	<a href="listHtml"">
+            <button class="layui-btn layui-btn-primary layui-btn-xs"  >返回</button>
+            </a>
+          	</div>
+        </div>
+        <div class="layui-card-body layui-text">
+         <form  class="layui-form " action="" lay-filter="example">
+         <input type="hidden" name="id"   value = "#(x.fault.id??)"  class="layui-input" >
+          <table class="layui-table">
+            <colgroup>
+              <col width="100">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <td width="10%">工单号</td>
+                <td width="40%">#(x.fault.order_no)</td>
+                <td width="10%">故障单状态</td>
+                <td width="40%" id="orderStatus">#(x.fault.status)
+                </td>
+              </tr>
+              <tr>
+                <td>故障类型</td>
+                <td> 
+                <div class="layui-input-inline">
+                <select name="type" lay-verify="required" lay-search>          		
+                #for(m:typeArr)
+		        	<option value="#(m)" #if(x.fault.type == m) selected='selected' #end>#(m)</option>
+		   		#end 
+		   		</select>
+		   		</div>
+		   		</td>
+                <td>紧急程度</td>
+                <td>
+                 <div class="layui-input-inline">
+                <select name="level" lay-verify="required" lay-search> 
+                #for(m:levelArr)
+		        	<option value="#(m)" #if(x.fault.level == m) selected='selected' #end>#(m)</option>
+		   		#end 
+		   		</select>
+		   		</div>
+                </td>
+              </tr>
+              <tr>
+                <td>负责科室</td>
+                <td>#(x.fault.responsible_dep)</td>
+                <td>报障时间</td>
+                <td>#date(x.fault.repair_time,'yyyy-MM-dd HH:mm:ss')</td>
+              </tr>
+              <tr>
+                <td>故障位置</td>
+                <td colspan="3"><textarea name="location" placeholder="请输入内容" class="layui-textarea" required lay-verify="location|required">#(x.fault.location)</textarea></td>
+              </tr>
+              <tr>
+                <td>故障描述</td>
+                <td colspan="3"><textarea name="describe" placeholder="请输入内容" class="layui-textarea" lay-verify="area">#(x.fault.describe)</textarea></td>
+              </tr>
+              <tr>
+                <td>描述图片</td>
+                <td colspan="3"  id="desPic">#(x.fault.des_picture)</td>
+              </tr>
+              <tr>
+                <td>备注</td>
+                <td colspan="3"><textarea name="remark" placeholder="请输入内容" class="layui-textarea" lay-verify="area">#(x.fault.remark)</textarea></td>
+              </tr>
+              
+              <tr>
+                <td>录入人</td>
+                <td>#(x.fault.repair_name)</td>
+                <td>录入人员工号</td>
+                <td>#(x.fault.repair_staffno)</td>
+              </tr>
+              <tr>
+                <td>录入人电话</td>
+                <td>#(x.fault.repair_tel)</td>
+                <td>录入人科室</td>
+                <td>#(x.fault.repair_dep)</td>
+              </tr>
+              <tr>
+                <td>报修人姓名</td>
+                <td><input type="text" name="report_name"   value = "#(x.fault.report_name??)" lay-verify="reportName|required" placeholder="报修人姓名" autocomplete="off" class="layui-input" ></td>
+                <td>报修人工号</td>
+                <td><input type="text" name="report_staffno"   value = "#(x.fault.report_staffno??)" required lay-verify="staffno" placeholder="报修人工号" autocomplete="off" class="layui-input" ></td>
+              </tr>
+              <tr>
+                <td>报修人电话</td>
+                <td><input type="text" name="report_tel"   value = "#(x.fault.report_tel??)" required lay-verify="phone" placeholder="报修人电话" autocomplete="off" class="layui-input" ></td>
+                <td>报修人科室</td>
+                <td><input type="text" name="report_dep"   value = "#(x.fault.report_dep??)" required lay-verify="reportDep|required" placeholder="报修人科室" autocomplete="off" class="layui-input" ></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="layui-form-item" >
+		    <div class="layui-input-block" style="text-align:center;">
+		      
+		      <button class="layui-btn" lay-submit="" lay-filter="demo1" >修改</button>
+		      <button type="reset" class="layui-btn layui-btn-primary">恢复</button>
+		    </div>
+		  </div>
+
+      </form> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+<script src="../layui/layui.js" charset="utf-8"></script>
+<script>
+
+	$(function() {  
+		if($("#orderStatus").html() == 1){
+            $("#orderStatus").html('<button class="layui-btn layui-btn-danger layui-btn-xs">未受理</button>');
+        }else if($("#orderStatus").html() == 2){
+             $("#orderStatus").html('<button class="layui-btn layui-btn-warm layui-btn-xs">已受理</button>');
+        }else if($("#orderStatus").html() == 3){
+             $("#orderStatus").html('<button class="layui-btn layui-btn-primary layui-btn-xs">已搁置</button>');
+        }else if($("#orderStatus").html() == 4){
+             $("#orderStatus").html('<button class="layui-btn layui-btn-normal layui-btn-xs">已完成</button>');
+        }else if($("#orderStatus").html() == 5){
+             $("#orderStatus").html('<button class="layui-btn layui-btn-xs">已评价</button>');
+        }else if($("#orderStatus").html() == 6){
+             $("#orderStatus").html('<button class="layui-btn layui-btn-primary layui-btn-xs">已撤销</button>');
+        }
+	
+	      
+        var data = $("#desPic").html();
+       // console.log(JSON.parse(data));
+        if(data == "null" || data == ""){
+        	$("#desPic").html("");
+        	return;
+        }
+        var obj = eval(data);
+        var src='';
+        for (var i = 0; i < obj.length; i++) {
+			 src  += '<img style="margin-right: 50px;" src="'+obj[i]+'">';
+		}
+		
+		 $("#desPic").html(src);
+	});
+	
+	
+layui.use('form', function(){
+  var form = layui.form;
+  
+  form.verify({
+      reportName: function(value){
+	      if(value.length > 10){
+	        return '姓名不能超过10个字符';
+	      }
+   	  },
+   	  reportDep: function(value){
+	      if(value.length > 20){
+	        return '部门不能超过20个字符';
+	      }
+   	  },
+   	  location: function(value){
+	      if(value.length > 50){
+	        return '故障位置不能超过50个字符';
+	      }
+   	  },
+   	  area: function(value){
+	      if(value.length > 300){
+	        return '内容不能超过300个字符';
+	      }
+   	  },
+	  //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
+	  staffno: [
+	    /^[\S]{6,6}$/
+	    ,'报修人工号必须6数字'
+	  ] 
+  });
+
+  //监听提交
+  form.on('submit(demo1)', function(data){
+/*     layer.msg(JSON.stringify(data.field));
+    console.log(data.field);  */
+ 	$.ajax({
+     type: "GET",
+     url: "update",
+     data: data.field,
+     dataType: "json",
+     success: function(data){
+    			 console.log(data);
+    			 if(data.code ==200){
+    			 	layer.msg('修改成功！', {time: 2000 },function(){
+								location.href="listHtml";
+								});
+    			 }else if(data.code ==30005){
+    			 	layer.msg(data.msg, {time: 3000 },function(){
+								location.href="listHtml";
+								});
+    			 }else{
+    			 	layer.msg('修改失败！')
+    			 }
+              }
+    }); 
+    return false;
+  });
+});
+</script>	
+
+</body>
+</html>

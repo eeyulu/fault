@@ -51,32 +51,22 @@
   	<div class="layui-inline">
       <label class="layui-form-label">故障状态</label>
       <div class="layui-input-inline">
-        <select id="faultStatus">
-          <option value="">请选择</option>
-          <option value="1">未受理</option>
-          <option value="2">已受理</option>
-          <option value="3">已搁置</option>
-          <option value="4">已完成</option>
-          <option value="5">已评价</option>
-          <option value="6">已撤销</option>
-        </select>        
+        <select id="faultStatus">   
+      		<option value="">全部</option>       		
+            #for(m:statuArr)
+        	<option value="#(m.status)" >#(m.name)</option>
+   			#end 
+   		</select> 
       </div>
     </div>
   	<div class="layui-inline">
       <label class="layui-form-label">故障类型</label>
       <div class="layui-input-inline">
         <select id="faultType">
-          <option value="">请选择</option>
-          <option value="电脑软件">电脑软件</option>
-          <option value="水电设备">水电设备</option>
-          <option value="电梯设备">胸透设备</option>
-          <option value="电脑软件">B超设备</option>
-          <option value="水电设备">放射设备</option>
-          <option value="电梯设备">CT设备</option>
-          <option value="电脑软件">化疗设备</option>
-          <option value="水电设备">医疗设备</option>
-          <option value="电梯设备">电梯设备</option>
-          <option value="电梯设备">办公故障</option>
+          <option value="">全部</option>
+          #for(m:typeArr)
+       	  <option value="#(m)" >#(m)</option>
+  		  #end 
         </select>        
       </div>
     </div>
@@ -84,9 +74,10 @@
       <label class="layui-form-label">紧急程度</label>
       <div class="layui-input-inline">
         <select id="faultLevel">
-          <option value="">请选择</option>
-          <option value="紧急">紧急</option>
-          <option value="一般">一般</option>
+          <option value="">全部</option>
+          #for(m:levelArr)
+        	<option value="#(m)" >#(m)</option>
+   		 #end 
         </select>        
       </div>
     </div>
@@ -100,15 +91,21 @@
 </div>
  
  <div class="layui-card-body">
- <!--  <button class="layui-btn layuiadmin-btn-list" data-method="add" data-type="add">添加应用</button>
-  <button class="layui-btn layuiadmin-btn-list" data-method="addBucket"  >添加空间</button> -->
+ <button class="layui-btn layuiadmin-btn-list" data-method="add" data-type="add">新增工单</button>
 <table class="layui-hide" id="LAY_table_user" lay-filter="user"></table> 
 <script type="text/html" id="barDemo">
+#[[
+  {{# if(d.status == 5){ }}
 	<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">详情</a>
-  <!-- <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">刷新秘钥</a>
- 
-  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除应用</a>
-  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delBucket">删除空间</a>-->
+  {{# }else if(d.status == 1){ }}
+   	<a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="edit">编辑</a>
+   	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="repeal">撤销</a>
+	<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">详情</a>
+  {{# }else { }}
+   	<a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="edit">编辑</a>
+	<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">详情</a>
+  {{# }}}
+]]#
 </script>              
  </div>
  </div>
@@ -204,7 +201,7 @@ layui.use('table', function(){
     
     
      add: function(){
-       layer.open({
+/*        layer.open({
          type: 2
          ,title: '添加应用'
          ,content: '/manage/add'
@@ -216,7 +213,8 @@ layui.use('table', function(){
            var submit = layero.find('iframe').contents().find("#layuiadmin-app-form-submit");
            submit.click();
          }
-       }); 
+       });  */
+        window.location.href="goAdd";
      },
     
     
@@ -278,8 +276,8 @@ layui.use('table', function(){
  		
  		window.location.href="detail?id="+ data.id; 
       
-    } else if(obj.event === 'del'){
-      layer.confirm('真的删除该应用', function(index){
+    } else if(obj.event === 'edit'){
+/*       layer.confirm('真的删除该应用', function(index){
         //obj.del();
         
   		$.ajax({
@@ -294,26 +292,40 @@ layui.use('table', function(){
                      }
         });
  		table.reload('testReload'); //重载表格
-        layer.close(index);
-      });
-    } else if(obj.event === 'delBucket'){
+        layer.close(index); 
+        
+      });*/
+        window.location.href="goEdit?id="+ data.id; 
+    } else if(obj.event === 'repeal'){
       //layer.alert('编辑行：<br>'+ JSON.stringify(data))
-        layer.confirm('真的删除该空间', function(index){
+        layer.confirm('确认撤销该工单吗？', function(index){
             //obj.del();
             
       		$.ajax({
                 type: "GET",
-                url: "appBucketDel",
-                data: {"id":data.bid,},
+                url: "repeal",
+                data: {"id":data.id,},
                 dataType: "json",
                 success: function(data){
-               	 
-               	 console.log("data");
-               	 console.log(data);
+			               	 if(data.code==200){
+			               	 	layer.msg('撤销成功！', {time: 2000 },function(){
+				               	 	table.reload('testReload'); //重载表格
+	            					layer.close(index);
+								});
+			               	 }else if(data.code ==30005){
+			    			 	layer.msg(data.msg, {time: 3000 },function(){
+											table.reload('testReload'); //重载表格
+	            							layer.close(index);
+											});
+			    			 }else{
+			               	 	layer.msg('撤销失败！', {time: 2000 },function(){
+				               	 	table.reload('testReload'); //重载表格
+	            					layer.close(index);
+								});
+			               	 }
                          }
             });
-     		table.reload('testReload'); //重载表格
-            layer.close(index);
+     		
           });
     }
   });

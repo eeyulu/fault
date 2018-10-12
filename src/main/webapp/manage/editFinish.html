@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!--   <meta charset="utf-8"> -->
-  <meta charset="utf-8" http-equiv="refresh" content="20;url=#">
+  <meta charset="utf-8">
   <title>故障工单详情</title>
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -171,75 +170,67 @@
         </div>
        #end
         
-        #if(x.solver!=null && x.solver!=[])
         <div class="layui-col-sm12">
           <div class="layui-card">
             <div class="layui-card-header">解决人信息</div>
             <div class="layui-card-body">
-                  <table class="layui-table layuiadmin-page-table" lay-skin="line">
+            <form  class="layui-form " action="" lay-filter="example">
+            	<input type="hidden" id="faultId"   value = "#(x.fault.id??)"  class="layui-input" >
+                  <table id="solverList" class="layui-table layuiadmin-page-table" lay-skin="line">
                       <thead>
                         <tr>
                           <th>解决人</th>
                           <th>科室</th>
                           <th>电话</th>
                           <th>解决问题</th>
-                          <th>解决时间</th>
+                          <th style="text-align:right;"><button onclick="addTr()" class="layui-btn layui-btn-normal layui-btn-xs">增加解决人</button></th>
                         </tr> 
                       </thead>
                       <tbody>
                       #for(m:x.solver)
                         <tr>
-                          <td>#(m.solver)</td>
-                          <td>#(m.solver_dep)</td>
-                          <td>#(m.solver_tel)</td>
-                          <td>#(m.solve_problem)</td>
-                          <td>#date(m.solve_time,"yyyy-MM-dd HH:mm:ss")</td>
+                          <td><input type="text" name="solver"   value = "#(m.solver??)" lay-verify="reportName|required" placeholder="解决人姓名" autocomplete="off" class="layui-input" ></td>
+                          <td><input type="text" name="solverDep"   value = "#(m.solver_dep??)" required lay-verify="reportDep|required" placeholder="解决人科室" autocomplete="off" class="layui-input" ></td>
+                          <td><input type="text" name="solverTel"   value = "#(m.solver_tel??)" required lay-verify="phone" placeholder="解决人电话" autocomplete="off" class="layui-input" ></td>
+                          <td><input type="text" name="solveProblem"   value = "#(m.solve_problem??)" required lay-verify="area" placeholder="解决问题" autocomplete="off" class="layui-input" ></td>
+                          <td><button onclick="delTr(this)" class="layui-btn layui-btn-primary layui-btn-xs">删除</button></td>
                         </tr>
   					  #end 
                       </tbody>
                     </table>
+          <div class="layui-form-item" >
+		    <div class="layui-input-block" style="text-align:center;">
+		      
+		      <button class="layui-btn" lay-submit="" lay-filter="demo1" >修改</button>
+		      <button type="reset" class="layui-btn layui-btn-primary">恢复</button>
+		    </div>
+		  </div>
+
+      </form> 
             </div>
           </div>
         </div>
-       #end
-        
-
-	 #if(x.comment!=null)
-
-   <div class="layui-col-sm12">
-      <div class="layui-card">
-        <div class="layui-card-header">用户评价</div>
-        <div class="layui-card-body">
-          <ul class="layuiadmin-card-status layuiadmin-home2-usernote">
-            <li>
-              <h3>评分</h3>
-              <!-- <ul class="layui-rate" readonly="">
-              <li class="layui-inline"><i class="layui-icon layui-icon-rate-solid"></i></li>
-              <li class="layui-inline"><i class="layui-icon layui-icon-rate-solid"></i></li>
-              <li class="layui-inline"><i class="layui-icon layui-icon-rate-solid"></i></li>
-              <li class="layui-inline"><i class="layui-icon layui-icon-rate-solid"></i></li>
-              <li class="layui-inline"><i class="layui-icon layui-icon-rate"></i></li>
-              </ul> -->
-              <div id="test9"></div>
-            </li>
-            <li>
-              <h3>评价</h3>
-              <p>#(x.comment.content)</p>
-              <span>#date(x.comment.time,"yyyy-MM-dd HH:mm:ss")</span>
-            </li>
-           
-          </ul>
-        </div>
-      </div>
-    </div>
-    <input type="hidden" id="commentLevel" value="#(x.comment.level)">
-  #end
         
   </div>
 </div>
           
 <script src="../layui/layui.js" charset="utf-8"></script>
 <script>
+	function delTr(e){
+		console.log($(e));
+		$(e).parent().parent().remove();
+	}
+	
+	function addTr(){
+		var tr = '<tr>'
+                   +'<td><input type="text" name="solver"   value = "" lay-verify="reportName|required" placeholder="解决人姓名" autocomplete="off" class="layui-input" ></td>'
+                   +'<td><input type="text" name="solverDep"   value = "" required lay-verify="reportDep|required" placeholder="解决人科室" autocomplete="off" class="layui-input" ></td>'
+                   +'<td><input type="text" name="solverTel"   value = "" required lay-verify="phone" placeholder="解决人电话" autocomplete="off" class="layui-input" ></td>'
+                   +'<td><input type="text" name="solveProblem"   value = "" required lay-verify="area" placeholder="解决问题" autocomplete="off" class="layui-input" ></td>'
+                   +'<td><button onclick="delTr(this)" class="layui-btn layui-btn-primary layui-btn-xs">删除</button></td>'
+                 +'</tr>';
+		 $("#solverList tbody").append(tr);
+	}
 
 	$(function() {
 	
@@ -271,21 +262,85 @@
 		 $("#desPic").html(src);
 		
 	});
+	
+	
+	
+layui.use('form', function(){
+  var form = layui.form;
+  
+  form.verify({
+      reportName: function(value){
+	      if(value.length > 10){
+	        return '姓名不能超过10个字符';
+	      }
+   	  },
+   	  reportDep: function(value){
+	      if(value.length > 20){
+	        return '部门不能超过20个字符';
+	      }
+   	  },
+   	  area: function(value){
+	      if(value.length > 300){
+	        return '内容不能超过300个字符';
+	      }
+   	  }
+  });
+
+  //监听提交
+  form.on('submit(demo1)', function(data){
+/*     layer.msg(JSON.stringify(data.field));
+    console.log(data.field); */
+    var arr = new Array();
+    $("#solverList tbody tr").each(function (i, e) {
+   		var row={};
+    	$(e).find("input").each(function (ii, ee) {
+    		//console.log(ee);
+    		var inputs = $(ee);
+    		//console.log(inputs);
+    		// inpputs.val 每一行的数据
+			obj = inputs.val();
+			// 取每一行的属性name名字
+			var name = inputs.attr("name")
+    		//console.log(name +":"+obj);
+    		
+    		row[name] = obj;
+    	});
+    	arr.push(row);
+    });
+/*     if(arr.length == 0){
+    	layer.msg('报修人不能为空！')
+    	return false;
+    } */
+    var json={};
+    json.faultId = $("#faultId").val();
+    json.solver = arr;
+    console.log(json);
+  	$.ajax({
+     type: "GET",
+     url: "updateSolver",
+     data: {param:JSON.stringify(json)},
+     dataType: "json",
+     success: function(data){
+    			 console.log(data);
+    			 if(data.code ==200){
+    			 	layer.msg('修改成功！', {time: 2000 },function(){
+								location.href="listHtml";
+								});
+    			 }else if(data.code ==30005){
+    			 	layer.msg(data.msg, {time: 3000 },function(){
+								location.href="listHtml";
+								});
+    			 }else{
+    			 	layer.msg('修改失败！')
+    			 }
+              }
+    });
+    return false;
+  });
+});
 </script>	
 
-<script>
-	var level = $("#commentLevel").val();
-	layui.use(['rate'], function(){
-	  var rate = layui.rate;
-	  //只读
-	  rate.render({
-	    elem: '#test9'
-	    ,value:level
-	    ,readonly: true
-	  });
-	});
-	
-</script>
+
 
 </body>
 </html>

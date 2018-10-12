@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>故障工单详情</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+  <script src="../js/jquery-1.4.4.min.js" charset="utf-8"></script>
+  <script src="../js/jquery.json-2.4.min.js" charset="utf-8"></script>
+  
+  <style type="text/css">
+			div img:hover{
+				transform: scale(3.0);
+			}
+		</style>
+  
+</head>
+<body style="background-color: #f2f2f2"> 
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">   
+     
+    <div class="layui-col-sm12"  style="margin-top: 20px;">
+        <div class="layui-card">
+        <div class="layui-card-header">
+        	基本信息
+        	<div class="layui-btn-group layuiadmin-btn-group" style="position: absolute;right: 15px;">
+        	<a href="listHtml"">
+            <button class="layui-btn layui-btn-primary layui-btn-xs"  >返回</button>
+            </a>
+          	</div>
+        </div>
+        <div class="layui-card-body layui-text">
+	 <form  class="layui-form " action="" lay-filter="example">
+          <table class="layui-table">
+            <colgroup>
+              <col width="100">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <td width="10%">报修人姓名</td>
+                <td width="40%"><input type="text" name="report_name"   value = "" required lay-verify="reportName|required" placeholder="报修人姓名" autocomplete="off" class="layui-input" ></td>
+                <td width="10%">报修人工号</td>
+                <td width="40%"><input type="text" name="report_staffno"   value = "" required lay-verify="staffno" placeholder="报修人工号" autocomplete="off" class="layui-input" ></td>
+              </tr>
+              <tr>
+                <td>报修人电话</td>
+                <td><input type="text" name="report_tel"   value = "" required lay-verify="phone" placeholder="报修人电话" autocomplete="off" class="layui-input" ></td>
+                <td>报修人科室</td>
+                <td><input type="text" name="report_dep"   value = "" required lay-verify="reportDep|required" placeholder="报修人科室" autocomplete="off" class="layui-input" ></td>
+              </tr>
+              <tr>
+                <td>故障类型</td>
+                <td> 
+                <div class="layui-input-inline">
+                <select name="type" lay-verify="required" lay-search>          		
+                #for(m:typeArr)
+		        	<option value="#(m)" >#(m)</option>
+		   		#end 
+		   		</select>
+		   		</div>
+		   		</td>
+                <td>紧急程度</td>
+                <td>
+                 <div class="layui-input-inline">
+                <select name="level" lay-verify="required" lay-search> 
+                #for(m:levelArr)
+		        	<option value="#(m)">#(m)</option>
+		   		#end 
+		   		</select>
+		   		</div>
+                </td>
+              </tr>
+              <tr>
+                <td>负责科室</td>
+                <td colspan="3"><input type="text" name="responsible_dep"  disabled="disabled" value = "#(resp.responsible_dep)" required lay-verify="required"  autocomplete="off" class="layui-input" ></td>
+                <input type="hidden" name="responsible_depid"  disabled="disabled" value = "#(resp.responsible_depid)" autocomplete="off" class="layui-input" >
+<!--                 <td>报障时间</td>
+                <td></td> -->
+              </tr>
+              <tr>
+                <td>故障位置</td>
+                <td colspan="3"><textarea name="location" placeholder="请输入内容" class="layui-textarea" required lay-verify="location|required"></textarea></td>
+              </tr>
+              <tr>
+                <td>故障描述</td>
+                <td colspan="3"><textarea name="describe" placeholder="请输入内容" class="layui-textarea" lay-verify="area"></textarea></td>
+              </tr>
+              <tr>
+                <td>描述图片</td>
+                <td colspan="3"  id="desPic">
+				 
+				<div class="layui-upload">
+				  <button type="button" class="layui-btn" id="test2">图片上传</button> 
+				  <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
+				    预览图：
+				    <div class="layui-upload-list" id="demo2"></div>
+				 </blockquote>
+				</div>
+                
+                </td>
+                <input type="hidden" name="desPicture"  id="desPicture" disabled="disabled" value = ""  class="layui-input" >
+              </tr>
+              <tr>
+                <td>备注</td>
+                <td colspan="3"><textarea name="remark" placeholder="请输入内容" class="layui-textarea" lay-verify="area"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+		  <div class="layui-form-item" >
+		    <div class="layui-input-block" style="text-align:center;">
+		      
+		      <button class="layui-btn" lay-submit="" lay-filter="demo1" >立即提交</button>
+		      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+		    </div>
+		  </div>
+
+      </form>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+<script src="../layui/layui.js" charset="utf-8"></script>
+
+<script>
+var accessToken;
+var bucket = "ssp";
+var arr = [];
+$(document).ready(function(){
+	$.ajax({
+     type: "GET",
+     url: "getToken",
+     dataType: "json",
+     success: function(res){
+    			 accessToken = res.data.accessToken;
+    			 console.log(accessToken);
+    			 
+    			 layui.use('upload', function(){
+				  var $ = layui.jquery
+				  ,upload = layui.upload;
+				  
+				  //多图片上传
+				  upload.render({
+				    elem: '#test2'
+				    ,url: 'http://upload.ht-healthcare.com/upload?accessToken='+accessToken+'&bucket='+bucket
+				    ,accept: 'images' //普通文件
+				    ,size: 10240 //限制文件大小，单位 KB
+				    ,number:3
+				    ,multiple: true
+				    ,before: function(obj){
+				      //预读本地文件示例，不支持ie8
+				      obj.preview(function(index, file, result){
+				        $('#demo2').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img">')
+				      });
+				    }
+				    ,done: function(res){
+				      //上传完毕
+				    	console.log(res);
+				    	if(res.code==200){
+				    		arr.push(res.url);
+				    		console.log(JSON.stringify(arr));
+				    		$("#desPicture").val(JSON.stringify(arr));
+				    	}
+				    }
+				  });
+				})
+              }
+    }); 
+    
+
+});
+
+
+
+layui.use('form', function(){
+  var form = layui.form;
+  
+  form.verify({
+      reportName: function(value){
+	      if(value.length > 10){
+	        return '姓名不能超过10个字符';
+	      }
+   	  },
+   	  reportDep: function(value){
+	      if(value.length > 20){
+	        return '部门不能超过20个字符';
+	      }
+   	  },
+   	  location: function(value){
+	      if(value.length > 50){
+	        return '故障位置不能超过50个字符';
+	      }
+   	  },
+   	  area: function(value){
+	      if(value.length > 300){
+	        return '内容不能超过300个字符';
+	      }
+   	  },
+	  //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
+	  staffno: [
+	    /^[\S]{6,6}$/
+	    ,'报修人工号必须6数字'
+	  ] 
+  });
+
+  //监听提交
+  form.on('submit(demo1)', function(data){
+/*     layer.msg(JSON.stringify(data.field));
+    console.log(data.field); */
+	$.ajax({
+     type: "GET",
+     url: "save",
+     data: data.field,
+     dataType: "json",
+     success: function(data){
+    			 console.log(data);
+    			 if(data.code ==200){
+    			 	layer.msg('发布成功！', {time: 2000 },function(){
+								location.href="listHtml";
+								});
+    			 }else{
+    			 	layer.msg('发布失败！')
+    			 }
+              }
+    }); 
+    return false;
+  });
+});
+
+
+	
+</script>
+
+</body>
+</html>
