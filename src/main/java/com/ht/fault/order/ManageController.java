@@ -13,6 +13,7 @@ import com.ht.fault.base.BaseController;
 import com.ht.fault.common.interceptor.AuthInterceptor;
 import com.ht.fault.common.kit.ResponseCode;
 import com.ht.fault.order.code.OrderStatus;
+import com.ht.fault.order.model.FaultMessage;
 import com.jfinal.aop.Clear;
 import com.jfinal.kit.HttpKit;
 import com.jfinal.kit.Kv;
@@ -197,7 +198,21 @@ public class ManageController extends BaseController {
 			  .set("report_tel", reportTel)
 			  .set("report_dep", reportDep)
 			  .set("remark", remark);
-			JSONObject jsonObject = service.releaseOrder(record,xxlUser.getUserid());
+			
+			FaultMessage message = new FaultMessage();
+			message.setLocation(location);
+			message.setFaultType(type);
+			message.setLevel(level);
+			message.setResponsibleDep(responsibleDep);
+			message.setDescribe(describe);
+			message.setDesPicture(desPicture);
+			message.setReportName(reportName);
+			message.setReportStaffNo(reportStaffNo);
+			message.setReportTel(reportTel);
+			message.setReportDep(reportDep);
+			message.setRemark(remark);
+			message.setRepairUserId(xxlUser.getUserid());
+			JSONObject jsonObject = service.releaseOrder(record,xxlUser.getUserid(),message);
 			if(jsonObject.getInteger("code") == ResponseCode.HT_IM_SUCCESS){
 				renderJson(jsonObject.get("result"), jsonObject.getInteger("code"), "发布成功！");
 			}else{

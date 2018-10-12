@@ -1,12 +1,19 @@
 package com.ht.fault.order;
 
+import io.rong.models.CodeSuccessResult;
+
 import java.util.Date;
 import java.util.List;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.ht.fault.common.kit.HtImDataResultKit;
 import com.ht.fault.common.kit.ResponseCode;
+import com.ht.fault.common.kit.RongCloudKit;
 import com.ht.fault.common.kit.StringKit;
+import com.ht.fault.common.kit.TimeKit;
 import com.ht.fault.order.code.OrderStatus;
+import com.ht.fault.order.model.FaultMessage;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
@@ -82,7 +89,7 @@ public class ManageService {
 				"select * from t_s_base_user where id = ?", userid);
 	}
 
-	public JSONObject releaseOrder(Record record, String userId) {
+	public JSONObject releaseOrder(Record record, String userId, FaultMessage message) {
 		JSONObject json = new JSONObject();
 
 		Record user = findBaseUser(userId);
@@ -99,6 +106,25 @@ public class ManageService {
 				.set("repair_time", date).set("update_time", date);
 
 		boolean b = Db.save("ht_im_fault_form", record);
+		
+		//推送工单-->负责部门员工
+		String depId = record.getStr("responsible_depid");
+		JSONObject userJson = HtImDataResultKit.findUserId("departmentId=" + depId);
+		JSONArray userArr = userJson.getJSONArray("userIdList");
+		String[] toUserId = new String[userArr.size()];
+		userArr.toArray(toUserId);
+		
+//				String[] toUserId={"da461588dd1e4d53bb96bc6249969436","ac40dba6fd0b469e85710c65c87794d6"};
+		String fromUserId = "4028814265a2a28a0165a2a3ef320000";	//故障工单推送-- alertFault
+		message.setOrderNo(orderNo);
+		message.setId(record.getInt("id"));
+		message.setTime(TimeKit.dateToStrLong(date));
+		message.setRepairName(user.getStr("REALNAME"));
+		message.setRepairTel(user.getStr("USERNAME"));
+		message.setRepairDep(user.getStr("STAFF_DEPTNAME"));
+		
+		CodeSuccessResult result = RongCloudKit.pushGroupMessage(fromUserId, toUserId, message,"故障工单");
+				
 		if (b) {
 			json.put("code", ResponseCode.HT_IM_SUCCESS);
 		} else {

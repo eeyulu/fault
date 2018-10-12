@@ -3,8 +3,8 @@ user = root
 password =123456
 devMode = true
 
-#oracleUrl=jdbc:oracle:thin:@192.168.1.22:1521:rep
-oracleUrl=jdbc:oracle:thin:@192.168.20.16:1521:rep
+oracleUrl=jdbc:oracle:thin:@192.168.1.22:1521:rep
+#oracleUrl=jdbc:oracle:thin:@192.168.20.16:1521:rep
 oracleUser = jeecg
 oraclePassword =jeecg
 
@@ -22,9 +22,16 @@ redisPassword =123456
 fault_status = [{"name":"未受理","status":1},{"name":"已受理","status":2},{"name":"已搁置","status":3},{"name":"已完成","status":4},{"name":"已评价","status":5},{"name":"已撤销","status":6}]
 fault_type = 电脑硬件,电脑软件,水电设备,胸透设备,B超设备,放射设备,CT设备,化疗设备,医疗设备,电梯设备,办公故障
 fault_level = 紧急,一般
-
+#负责部门
 fault_responsible_dep = {"responsible_dep":"信息科","responsible_depid":23}
 
+#图片上传
 tokenUrl=http://upload.ht-healthcare.com/token/get
 appId=ht25083298211
 appSecret=5c2771bb17c95d24af6b05859cdc255c
+
+#获取推送人
+im_data_url = http://192.168.1.194:9090/ht_data_service
+#融云
+appKey = k51hidwqkn16b
+appSecret = 0cJTQOOFW6cTec
