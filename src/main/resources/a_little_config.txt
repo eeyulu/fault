@@ -32,6 +32,6 @@ appSecret=5c2771bb17c95d24af6b05859cdc255c
 
 #获取推送人
 im_data_url = http://192.168.1.194:9090/ht_data_service
-#融云
+#融云(测试)
 appKey = k51hidwqkn16b
 appSecret = 0cJTQOOFW6cTec
