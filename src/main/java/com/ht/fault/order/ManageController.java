@@ -27,8 +27,8 @@ import com.xxl.sso.core.user.XxlUser;
 /**
  * 
  */
-// @Clear
-@Clear(AuthInterceptor.class)
+ @Clear
+//@Clear(AuthInterceptor.class)
 public class ManageController extends BaseController {
 
 	private ManageService service = enhance(ManageService.class);

@@ -1,0 +1,72 @@
+
+2018-10-16 09:58:41
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-10-16 09:58:41
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-10-16 09:58:41
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
+
+2018-10-16 09:58:41
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
+
+2018-10-16 09:58:41
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-10-16 09:58:42
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-2} inited
+
+2018-10-16 09:58:42
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
+
+2018-10-16 10:33:14
+[WARN]-[Thread: qtp1984541037-27]-[org.eclipse.jetty.http.HttpGenerator.addContent()]: Ignoring extra content {}
+
+2018-10-16 10:33:14
+[INFO]-[Thread: qtp1984541037-30]-[com.xxl.sso.core.util.JedisUtil.getInstance()]: >>>>>>>>>>> xxl-sso, JedisUtil.ShardedJedisPool init success.
+
+2018-10-16 10:39:11
+[INFO]-[Thread: qtp1984541037-30]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/update -- 返回数据:{"data":{},"code":200,"msg":"发布成功！"}
+
+2018-10-16 14:18:14
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-10-16 14:18:14
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-10-16 14:18:14
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
+
+2018-10-16 14:18:14
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
+
+2018-10-16 14:18:26
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-10-16 14:18:33
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-2} inited
+
+2018-10-16 14:18:34
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
+
+2018-10-16 15:46:56
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
+
+2018-10-16 15:46:56
+[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+
+2018-10-16 15:46:56
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
+
+2018-10-16 15:46:56
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
+
+2018-10-16 15:47:08
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2018-10-16 15:47:16
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-2} inited
+
+2018-10-16 15:47:16
+[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082

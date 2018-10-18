@@ -1,10 +1,11 @@
+jdbcUrl=jdbc:mysql://192.168.20.88:3306/test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull	
 jdbcUrl=jdbc:mysql://localhost:3306/htimdata?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull	
 user = root
 password =123456
 devMode = true
 
-oracleUrl=jdbc:oracle:thin:@192.168.1.22:1521:rep
-#oracleUrl=jdbc:oracle:thin:@192.168.20.16:1521:rep
+#oracleUrl=jdbc:oracle:thin:@192.168.1.22:1521:rep
+oracleUrl=jdbc:oracle:thin:@192.168.20.16:1521:rep
 oracleUser = jeecg
 oraclePassword =jeecg
 
@@ -31,6 +32,7 @@ appId=ht25083298211
 appSecret=5c2771bb17c95d24af6b05859cdc255c
 
 #获取推送人
+#im_data_url = http://192.168.20.91:9090/ht_data_service
 im_data_url = http://192.168.1.194:9090/ht_data_service
 #融云(测试)
 appKey = k51hidwqkn16b
