@@ -20,17 +20,19 @@
 <div class="layui-fluid">
   <div class="layui-row layui-col-space15">   
      
+   <form  class="layui-form " action="" lay-filter="example">
     <div class="layui-col-sm12"  style="margin-top: 20px;">
         <div class="layui-card">
         <div class="layui-card-header">
         	基本信息
         	<div class="layui-btn-group layuiadmin-btn-group" style="position: absolute;right: 15px;">
-        	<a href="listHtml"">
-            <button class="layui-btn layui-btn-primary layui-btn-xs"  >返回</button>
+        	<a href="listHtml">
+            <button class="layui-btn layui-btn-primary layui-btn-xs"  type="button">返回</button>
             </a>
           	</div>
         </div>
         <div class="layui-card-body layui-text">
+         <input type="hidden" name="faultId"   value = "#(x.fault.id??)"  class="layui-input" >
           <table class="layui-table">
             <colgroup>
               <col width="100">
@@ -38,36 +40,55 @@
             </colgroup>
             <tbody>
               <tr>
-                <td width="25%">工单号</td>
-                <td width="25%">#(x.fault.order_no)</td>
-                <td width="25%">故障单状态</td>
-                <td width="25%" id="orderStatus">#(x.fault.status)</td>
+                <td width="10%">工单号</td>
+                <td width="40%">#(x.fault.order_no)</td>
+                <td width="10%">故障单状态</td>
+                <td width="40%" id="orderStatus">#(x.fault.status)
+                </td>
               </tr>
               <tr>
                 <td>故障类型</td>
-                <td>#(x.fault.type)</td>
+                <td> 
+                <div class="layui-input-inline">
+                <select name="type" lay-verify="required" lay-search>          		
+                #for(m:typeArr)
+		        	<option value="#(m)" #if(x.fault.type == m) selected='selected' #end>#(m)</option>
+		   		#end 
+		   		</select>
+		   		</div>
+		   		</td>
                 <td>紧急程度</td>
                 <td>
-                #if(x.fault.level  =='紧急')
-                	<button class="layui-btn layui-btn-danger layui-btn-xs">紧急</button>
-                #elseif(x.fault.level =='一般')
-                 	<button class="layui-btn layui-btn-primary layui-btn-xs">一般</button>
-                #end
+                 <div class="layui-input-inline">
+                <select name="level" lay-verify="required" lay-search> 
+                #for(m:levelArr)
+		        	<option value="#(m)" #if(x.fault.level == m) selected='selected' #end>#(m)</option>
+		   		#end 
+		   		</select>
+		   		</div>
                 </td>
               </tr>
               <tr>
                 <td>负责科室</td>
-                <td>#(x.fault.responsible_dep)</td>
+                <td>
+                    <div class="layui-input-inline">
+		                <select name="responsible_depid" lay-verify="required" lay-search lay-filter="resp">          		
+		                #for(m:resp)
+				        	<option value="#(m.responsible_depid)" #if(x.fault.responsible_depid == m.responsible_depid) selected='selected' #end>#(m.responsible_dep)</option>
+				   		#end 
+				   		</select>
+			   		</div>
+                </td>
                 <td>报障时间</td>
-                <td>#date(x.fault.repair_time,"yyyy-MM-dd HH:mm:ss")</td>
+                <td>#date(x.fault.repair_time,'yyyy-MM-dd HH:mm:ss')</td>
               </tr>
               <tr>
                 <td>故障位置</td>
-                <td colspan="3">#(x.fault.location)</td>
+                <td colspan="3"><textarea name="location" placeholder="请输入内容" class="layui-textarea" required lay-verify="location|required">#(x.fault.location)</textarea></td>
               </tr>
               <tr>
                 <td>故障描述</td>
-                <td colspan="3">#(x.fault.describe)</td>
+                <td colspan="3"><textarea name="describe" placeholder="请输入内容" class="layui-textarea" lay-verify="area">#(x.fault.describe)</textarea></td>
               </tr>
               <tr>
                 <td>描述图片</td>
@@ -75,13 +96,13 @@
               </tr>
               <tr>
                 <td>备注</td>
-                <td colspan="3">#(x.fault.remark)</td>
+                <td colspan="3"><textarea name="remark" placeholder="请输入内容" class="layui-textarea" lay-verify="area">#(x.fault.remark)</textarea></td>
               </tr>
               
               <tr>
                 <td>录入人</td>
                 <td>#(x.fault.repair_name)</td>
-                <td>录入人员工号</td>
+                <td>录入人工号</td>
                 <td>#(x.fault.repair_staffno)</td>
               </tr>
               <tr>
@@ -92,15 +113,15 @@
               </tr>
               <tr>
                 <td>报修人姓名</td>
-                <td>#(x.fault.report_name)</td>
+                <td><input type="text" name="report_name"   value = "#(x.fault.report_name??)" lay-verify="reportName|required" placeholder="报修人姓名" autocomplete="off" class="layui-input" ></td>
                 <td>报修人工号</td>
-                <td>#(x.fault.report_staffno)</td>
+                <td><input type="text" name="report_staffno"   value = "#(x.fault.report_staffno??)" required lay-verify="staffno" placeholder="报修人工号" autocomplete="off" class="layui-input" ></td>
               </tr>
               <tr>
                 <td>报修人电话</td>
-                <td>#(x.fault.report_tel)</td>
+                <td><input type="text" name="report_tel"   value = "#(x.fault.report_tel??)" required lay-verify="phone" placeholder="报修人电话" autocomplete="off" class="layui-input" ></td>
                 <td>报修人科室</td>
-                <td>#(x.fault.report_dep)</td>
+                <td><input type="text" name="report_dep"   value = "#(x.fault.report_dep??)" required lay-verify="reportDep|required" placeholder="报修人科室" autocomplete="off" class="layui-input" ></td>
               </tr>
             </tbody>
           </table>
@@ -113,48 +134,45 @@
 	      <div class="layui-card">
 	        <div class="layui-card-header">接单人信息</div>
 	        <div class="layui-card-body layui-text">
-	                 <form  class="layui-form " action="" lay-filter="example">
-         <input type="hidden" name="id"   value = "#(x.take.id??)"  class="layui-input" >
-         <input type="hidden" name="faultId"   value = "#(x.take.fault_id??)"  class="layui-input" >
+         	<input type="hidden" name="id"   value = "#(x.take.id??)"  class="layui-input" >
+         	<input type="hidden" name="order_deptid"   value = "#(x.take.order_deptid??)"  class="layui-input" >
+         	<input type="hidden" name="order_userid"   value = "#(x.take.order_userid??)"  class="layui-input" >
 	          <table class="layui-table">
 	            <colgroup>
 	              <col width="100">
 	              <col>
 	            </colgroup>
-	            <tbody>
+	            <tbody id="takeTable">
 	              <tr>
 	                <td width="10%">接单人</td>
-	                <td width="40%">#(x.take.order_name)</td>
+	                <td width="40%"><input type="text" readonly="readonly" name="order_name"   value = "#(x.take.order_name??)" required lay-verify="reportName" placeholder="接单人姓名" autocomplete="off" class="layui-input" ></td>
 	                <td width="10%">工号</td>
-	                <td width="40%">#(x.take.order_staffno)</td>
+	                <td width="40%"><input type="text"  name="order_staffno"   value = "#(x.take.order_staffno??)" required lay-verify="staffno" placeholder="接单人工号" autocomplete="off" class="layui-input" ></td>
 	              </tr>
 	              <tr>
 	                <td>电话</td>
 	                <td><input type="text" name="order_tel"   value = "#(x.take.order_tel??)" required lay-verify="phone" placeholder="接单人电话" autocomplete="off" class="layui-input" ></td>
 	                <td>科室</td>
-	                <td>#(x.take.order_dept)</td>
+	                <td><input type="text" name="order_dept" readonly="readonly" value = "#(x.take.order_dept??)" required lay-verify="reportDep" placeholder="接单人科室" autocomplete="off" class="layui-input" ></td>
 	              </tr>
-	              <tr>
+<!-- 	              <tr>
 	                <td>接单时间</td>
 	                <td>#date(x.take.order_time,"yyyy-MM-dd HH:mm:ss")</td>
-	              </tr>
+	              </tr> -->
 	            </tbody>
 	          </table>
-		      <div class="layui-form-item" >
-			    <div class="layui-input-block" style="text-align:center;">
-			      
-			      <button class="layui-btn" lay-submit="" lay-filter="demo1" >修改</button>
-			      <button type="reset" class="layui-btn layui-btn-primary">恢复</button>
-			    </div>
-			  </div>
-	
-	      </form> 
+	      <div class="layui-form-item" >
+		    <div class="layui-input-block" style="text-align:center;">
+		      
+		      <button class="layui-btn" lay-submit="" lay-filter="demo1" >修改</button>
+		      <button type="reset" class="layui-btn layui-btn-primary">恢复</button>
+		    </div>
+		  </div>
 	        </div>
 	      </div>
         </div>
         #end
-        
-  
+      </form> 
   </div>
 </div>
           
@@ -164,17 +182,17 @@
 	$(function() {
 	
 	    if($("#orderStatus").html() == 1){
-            $("#orderStatus").html('<button class="layui-btn layui-btn-danger layui-btn-xs">未受理</button>');
+            $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-danger layui-btn-xs">未受理</button>');
         }else if($("#orderStatus").html() == 2){
-             $("#orderStatus").html('<button class="layui-btn layui-btn-warm layui-btn-xs">已受理</button>');
+             $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-warm layui-btn-xs">已受理</button>');
         }else if($("#orderStatus").html() == 3){
-             $("#orderStatus").html('<button class="layui-btn layui-btn-primary layui-btn-xs">已搁置</button>');
+             $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-primary layui-btn-xs">已搁置</button>');
         }else if($("#orderStatus").html() == 4){
-             $("#orderStatus").html('<button class="layui-btn layui-btn-normal layui-btn-xs">已完成</button>');
+             $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-normal layui-btn-xs">已完成</button>');
         }else if($("#orderStatus").html() == 5){
-             $("#orderStatus").html('<button class="layui-btn layui-btn-xs">已评价</button>');
+             $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-xs">已评价</button>');
         }else if($("#orderStatus").html() == 6){
-             $("#orderStatus").html('<button class="layui-btn layui-btn-primary layui-btn-xs">已撤销</button>');
+             $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-primary layui-btn-xs">已撤销</button>');
         }
         var data = $("#desPic").html();
        // console.log(JSON.parse(data));
@@ -196,12 +214,45 @@
 layui.use('form', function(){
   var form = layui.form;
 
+  form.verify({
+      reportName: function(value){
+	      if(value.length > 10){
+	        return '姓名不能超过10个字符';
+	      }
+   	  },
+   	  reportDep: function(value){
+	      if(value.length > 20){
+	        return '部门不能超过20个字符';
+	      }
+   	  },
+   	  location: function(value){
+	      if(value.length > 50){
+	        return '故障位置不能超过50个字符';
+	      }
+   	  },
+   	  area: function(value){
+	      if(value.length > 300){
+	        return '内容不能超过300个字符';
+	      }
+   	  },
+	  //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
+	  staffno: [
+	    /^[\S]{6,6}$/
+	    ,'报修人工号必须6数字'
+	  ] 
+  });
 
+  //监听select
+  form.on('select(resp)', function(data){
+    console.log(data.value);
+    $("#takeTable input").val("");
+  });
+  
   //监听提交
   form.on('submit(demo1)', function(data){
-/*     layer.msg(JSON.stringify(data.field));
-    console.log(data.field);  */
-	 $.ajax({
+    layer.msg(JSON.stringify(data.field));
+    console.log(data.field); 
+/* 	 $.ajax({
      type: "GET",
      url: "updateTake",
      data: data.field,
@@ -220,9 +271,48 @@ layui.use('form', function(){
     			 	layer.msg('修改失败！')
     			 }
               }
-    });
+    }); */
     return false;
   });
+});
+
+//监听接单人工号
+$(document).ready(function(){  
+　　$("input[name='order_staffno']").change(function(){  
+	var $staffNO = $(this);
+	var staffNO = $staffNO.val();
+	var reg = /^[\S]{6,6}$/;
+	if(!reg.test(staffNO)){
+		layer.msg('工号为6位数字', {icon: 5,time: 1000 },function(){
+			$staffNO.val("");
+			});
+		return;
+	}
+	var respDeptId= $("select[name='responsible_depid']  option:selected").val();
+	
+	$.ajax({
+        type: "GET",
+        url: "findTaker",
+        data: {"staffNO":staffNO,"respDeptId":respDeptId},
+        dataType: "json",
+        success: function(data){
+		        	console.log(data);
+		        	 if(data.code == 200){
+		        		var taker = data.data;
+		        		$("input[name='order_name']").val(taker.REALNAME);
+		        		$("input[name='order_tel']").val(taker.USERNAME);
+		        		$("input[name='order_dept']").val(taker.STAFF_DEPTNAME);
+		        		
+		        		$("input[name='order_deptid']").val(taker.STAFF_DEPT);
+		        		$("input[name='order_userid']").val(taker.ID);
+		        	}else{
+		        		layer.msg(data.msg,{icon: 5,time: 1000 },function(){
+		        			$staffNO.val("");
+		    			});
+		        	}
+                 }
+    });
+　　})  
 });
 </script>	
 

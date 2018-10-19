@@ -25,8 +25,8 @@
         <div class="layui-card-header">
         	基本信息
         	<div class="layui-btn-group layuiadmin-btn-group" style="position: absolute;right: 15px;">
-        	<a href="listHtml"">
-            <button class="layui-btn layui-btn-primary layui-btn-xs"  >返回</button>
+        	<a href="listHtml">
+            <button class="layui-btn layui-btn-primary layui-btn-xs"  type="button" >返回</button>
             </a>
           	</div>
         </div>
@@ -70,7 +70,15 @@
               </tr>
               <tr>
                 <td>负责科室</td>
-                <td>#(x.fault.responsible_dep)</td>
+                <td>
+                    <div class="layui-input-inline">
+		                <select name="responsible_depid" lay-verify="required" lay-search >          		
+		                #for(m:resp)
+				        	<option value="#(m.responsible_depid)" #if(x.fault.responsible_depid == m.responsible_depid) selected='selected' #end>#(m.responsible_dep)</option>
+				   		#end 
+				   		</select>
+			   		</div>
+                </td>
                 <td>报障时间</td>
                 <td>#date(x.fault.repair_time,'yyyy-MM-dd HH:mm:ss')</td>
               </tr>
@@ -94,7 +102,7 @@
               <tr>
                 <td>录入人</td>
                 <td>#(x.fault.repair_name)</td>
-                <td>录入人员工号</td>
+                <td>录入人工号</td>
                 <td>#(x.fault.repair_staffno)</td>
               </tr>
               <tr>
@@ -137,17 +145,17 @@
 
 	$(function() {  
 		if($("#orderStatus").html() == 1){
-            $("#orderStatus").html('<button class="layui-btn layui-btn-danger layui-btn-xs">未受理</button>');
+            $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-danger layui-btn-xs">未受理</button>');
         }else if($("#orderStatus").html() == 2){
-             $("#orderStatus").html('<button class="layui-btn layui-btn-warm layui-btn-xs">已受理</button>');
+             $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-warm layui-btn-xs">已受理</button>');
         }else if($("#orderStatus").html() == 3){
-             $("#orderStatus").html('<button class="layui-btn layui-btn-primary layui-btn-xs">已搁置</button>');
+             $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-primary layui-btn-xs">已搁置</button>');
         }else if($("#orderStatus").html() == 4){
-             $("#orderStatus").html('<button class="layui-btn layui-btn-normal layui-btn-xs">已完成</button>');
+             $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-normal layui-btn-xs">已完成</button>');
         }else if($("#orderStatus").html() == 5){
-             $("#orderStatus").html('<button class="layui-btn layui-btn-xs">已评价</button>');
+             $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-xs">已评价</button>');
         }else if($("#orderStatus").html() == 6){
-             $("#orderStatus").html('<button class="layui-btn layui-btn-primary layui-btn-xs">已撤销</button>');
+             $("#orderStatus").html('<button type="button" class="layui-btn layui-btn-primary layui-btn-xs">已撤销</button>');
         }
 	
 	      
@@ -202,10 +210,14 @@ layui.use('form', function(){
   form.on('submit(demo1)', function(data){
 /*     layer.msg(JSON.stringify(data.field));
     console.log(data.field);  */
+   	  var responsible_dep = $("select[name='responsible_depid']  option:selected").text();
+//  console.log(responsible_dep); 
+	  var param = data.field;
+	  param["responsible_dep"] = responsible_dep;
  	$.ajax({
      type: "GET",
      url: "update",
-     data: data.field,
+     data: param,
      dataType: "json",
      success: function(data){
     			 console.log(data);

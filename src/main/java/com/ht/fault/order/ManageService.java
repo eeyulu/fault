@@ -2,6 +2,7 @@ package com.ht.fault.order;
 
 import io.rong.models.CodeSuccessResult;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -170,6 +171,30 @@ public class ManageService {
 			Db.batchSave("ht_im_solver_info", solverList, solverList.size());	
 		}
 		json.put("code", ResponseCode.HT_IM_SUCCESS);
+		return json;
+	}
+
+	public JSONObject findTaker(String staffNO, String respDeptId) {
+		JSONObject json=new JSONObject();
+		Record taker = Db.use("oracle").findFirst(
+				"select * from t_s_base_user where staff_no = ?", staffNO);
+		if(null == taker) {
+			json.put("code", ResponseCode.HT_IM_ERROR);
+		}else {
+//			Integer takerDeptId = Integer.valueOf(taker.getStr("STAFF_DEPT"));
+			String takerDeptId = taker.getStr("STAFF_DEPT");
+			
+			//查询某部门所有父部门
+			List<String> deptList = Db.use("oracle").query(" SELECT DEPTPID FROM  t_s_base_dept START WITH DEPTID = ? CONNECT BY PRIOR DEPTPID = DEPTID", takerDeptId);
+			deptList.add(takerDeptId);
+			
+			if(deptList.contains(respDeptId)) {
+				json.put("code", ResponseCode.HT_IM_SUCCESS);
+				json.put("result", taker);
+			}else {
+				json.put("code", ResponseCode.FAULT_NOTIN_DEPT);
+			}
+		}
 		return json;
 	}
 

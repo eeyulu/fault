@@ -24,7 +24,7 @@ fault_status = [{"name":"未受理","status":1},{"name":"已受理","status":2},
 fault_type = 电脑硬件,电脑软件,水电设备,胸透设备,B超设备,放射设备,CT设备,化疗设备,医疗设备,电梯设备,办公故障
 fault_level = 紧急,一般
 #负责部门
-fault_responsible_dep = {"responsible_dep":"信息科","responsible_depid":23}
+fault_responsible_dep = [{"responsible_dep":"其他","responsible_depid":24},{"responsible_dep":"信息科","responsible_depid":23}]
 
 #图片上传
 tokenUrl=http://upload.ht-healthcare.com/token/get

@@ -107,11 +107,14 @@ public class ManageController extends BaseController {
 	 * 
 	 */
 	public void goEdit() {
-		String status = PropKit.get("fault_status");
-		JSONArray statuArr = JSON.parseArray(status);
+//		String status = PropKit.get("fault_status");
+//		JSONArray statuArr = JSON.parseArray(status);
+		String resp = PropKit.get("fault_responsible_dep");
+		JSONArray reJson = JSON.parseArray(resp);
 		String[] typeArr = PropKit.get("fault_type").split(",");
 		String[] levelArr = PropKit.get("fault_level").split(",");
-		setAttr("statuArr", statuArr);
+//		setAttr("statuArr", statuArr);
+		setAttr("resp", reJson);
 		setAttr("typeArr", typeArr);
 		setAttr("levelArr", levelArr);
 
@@ -136,7 +139,8 @@ public class ManageController extends BaseController {
 	 */
 	public void goAdd() {
 		String resp = PropKit.get("fault_responsible_dep");
-		JSONObject reJson = JSON.parseObject(resp);
+		JSONArray reJson = JSON.parseArray(resp);
+//		JSONObject reJson = JSON.parseObject(resp);
 		String[] typeArr = PropKit.get("fault_type").split(",");
 		String[] levelArr = PropKit.get("fault_level").split(",");
 		setAttr("typeArr", typeArr);
@@ -319,8 +323,8 @@ public class ManageController extends BaseController {
 			String remark = getPara("remark");			
 			String type = getPara("type");
 			
-//			String responsibleDep = getPara("responsible_dep");
-//			Integer responsibleDepId=getParaToInt("responsible_depid");	
+			String responsibleDep = getPara("responsible_dep");
+			Integer responsibleDepId=getParaToInt("responsible_depid");	
 //			String desPicture = getPara("desPicture");
 			//报修人信息
 			String reportName = getPara("report_name");
@@ -333,8 +337,8 @@ public class ManageController extends BaseController {
 			.set("location", location)
 			.set("type", type)
 			.set("level", level)
-//			.set("responsible_dep", responsibleDep)
-//			.set("responsible_depid", responsibleDepId)
+			.set("responsible_dep", responsibleDep)
+			.set("responsible_depid", responsibleDepId)
 			.set("describe", describe)
 //			.set("des_picture", desPicture)
 			.set("report_name", reportName)
@@ -374,6 +378,30 @@ public class ManageController extends BaseController {
 				renderJson(jsonObject.get("result"), jsonObject.getInteger("code"), "发布成功！");
 			}else{
 				renderJson(null, ResponseCode.HT_IM_ERROR, "发布失败！");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			renderJson(null, ResponseCode.HT_IM_SERVER_ERROR,ResponseCode.HT_IM_SERVER_ERROR_MSG);
+		}
+	}
+	
+	
+	/**
+	 * 添加接单人
+	 */
+	public void findTaker() {
+		try {
+			String staffNO = getPara("staffNO");
+			String respDeptId = getPara("respDeptId");
+
+			JSONObject jsonObject = service.findTaker(staffNO,respDeptId);
+			if(jsonObject.getInteger("code") == ResponseCode.HT_IM_SUCCESS){
+				renderJson(jsonObject.get("result"), jsonObject.getInteger("code"), "发布成功！");
+			}else if(jsonObject.getInteger("code") == ResponseCode.FAULT_NOTIN_DEPT){
+				renderJson(null, ResponseCode.FAULT_NOTIN_DEPT, ResponseCode.FAULT_NOTIN_DEPT_MSG);
+			}
+			else{
+				renderJson(null, ResponseCode.HT_IM_ERROR, "该工号不存在！");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

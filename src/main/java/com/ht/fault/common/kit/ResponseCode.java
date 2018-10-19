@@ -65,6 +65,9 @@ public class ResponseCode {
 	public static final int FAULT_STATUS_UPDATE  = 30005; 
 	public static final String FAULT_STATUS_UPDATE_MSG = "工单状态已更新,操作失败！";
 	
+	public static final int FAULT_NOTIN_DEPT  = 30006; 
+	public static final String FAULT_NOTIN_DEPT_MSG = "该员工不隶属负责部门！";
+	
 	public static final int HT_IM_SERVER_ERROR = -1;//服务器异常
 	public static final String HT_IM_SERVER_ERROR_MSG = "网络异常，请稍后重试";
 	

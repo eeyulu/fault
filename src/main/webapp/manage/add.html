@@ -75,10 +75,15 @@
               </tr>
               <tr>
                 <td>负责科室</td>
-                <td colspan="3"><input type="text" name="responsible_dep"  disabled="disabled" value = "#(resp.responsible_dep)" required lay-verify="required"  autocomplete="off" class="layui-input" ></td>
-                <input type="hidden" name="responsible_depid"  disabled="disabled" value = "#(resp.responsible_depid)" autocomplete="off" class="layui-input" >
-<!--                 <td>报障时间</td>
-                <td></td> -->
+                <td colspan="3" >
+                	<div class="layui-input-inline">
+		                <select name="responsible_depid" lay-verify="required" lay-search >          		
+		                #for(m:resp)
+				        	<option value="#(m.responsible_depid)" >#(m.responsible_dep)</option>
+				   		#end 
+				   		</select>
+			   		</div>
+                </td>
               </tr>
               <tr>
                 <td>故障位置</td>
@@ -210,11 +215,16 @@ layui.use('form', function(){
   //监听提交
   form.on('submit(demo1)', function(data){
 /*     layer.msg(JSON.stringify(data.field));
-    console.log(data.field); */
-	$.ajax({
+    console.log(data.field);  */
+    var responsible_dep = $("select[name='responsible_depid']  option:selected").text();
+//    console.log(responsible_dep); 
+    var param = data.field;
+    param["responsible_dep"] = responsible_dep;
+//    console.log(param); 
+ 	$.ajax({
      type: "GET",
      url: "save",
-     data: data.field,
+     data: param,
      dataType: "json",
      success: function(data){
     			 console.log(data);
@@ -226,13 +236,11 @@ layui.use('form', function(){
     			 	layer.msg('发布失败！')
     			 }
               }
-    }); 
+    });
     return false;
   });
 });
 
-
-	
 </script>
 
 </body>
