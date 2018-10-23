@@ -1,294 +1,56 @@
 
-2018-10-19 10:51:48
+2018-10-23 08:57:53
 [INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
 
-2018-10-19 10:51:48
+2018-10-23 08:57:53
 [INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
 
-2018-10-19 10:51:48
+2018-10-23 08:57:53
 [INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
 
-2018-10-19 10:51:48
+2018-10-23 08:57:53
 [INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
 
-2018-10-19 10:51:48
+2018-10-23 08:57:53
 [WARN]-[Thread: main]-[net.sf.ehcache.DiskStorePathManager.resolveAndLockIfNeeded()]: diskStorePath 'C:\Users\ADMINI~1\AppData\Local\Temp' is already used by an existing CacheManager either in the same VM or in a different process.
-The diskStore path for this CacheManager will be set to C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created2392173755826732963diskstore.
+The diskStore path for this CacheManager will be set to C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created4456619941576496865diskstore.
 To avoid this warning consider using the CacheManager factory methods to create a singleton CacheManager or specifying a separate ehcache configuration (ehcache.xml) for each CacheManager instance.
 
-2018-10-19 10:51:48
+2018-10-23 08:57:53
 [WARN]-[Thread: main]-[net.sf.ehcache.store.disk.DiskStorageFactory.<init>()]: Data in persistent disk stores is ignored for stores from automatically created directories.
 Remove diskPersistent or resolve the conflicting disk paths in cache configuration.
-Deleting data file C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created2392173755826732963diskstore\user%0049d_token.data
+Deleting data file C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created4456619941576496865diskstore\token_time.data
 
-2018-10-19 10:51:48
+2018-10-23 08:57:53
 [WARN]-[Thread: main]-[net.sf.ehcache.store.disk.DiskStorageFactory.<init>()]: Data in persistent disk stores is ignored for stores from automatically created directories.
 Remove diskPersistent or resolve the conflicting disk paths in cache configuration.
-Deleting data file C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created2392173755826732963diskstore\token_user%0049d.data
+Deleting data file C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created4456619941576496865diskstore\user%0049d_token.data
 
-2018-10-19 10:51:48
+2018-10-23 08:57:53
 [WARN]-[Thread: main]-[net.sf.ehcache.store.disk.DiskStorageFactory.<init>()]: Data in persistent disk stores is ignored for stores from automatically created directories.
 Remove diskPersistent or resolve the conflicting disk paths in cache configuration.
-Deleting data file C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created2392173755826732963diskstore\token_time.data
+Deleting data file C:\Users\ADMINI~1\AppData\Local\Temp\ehcache_auto_created4456619941576496865diskstore\token_user%0049d.data
 
-2018-10-19 10:51:48
+2018-10-23 08:57:53
 [INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
 
-2018-10-19 10:51:57
+2018-10-23 08:58:12
 [INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-2} inited
 
-2018-10-19 10:51:57
+2018-10-23 08:58:12
 [INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
 
-2018-10-19 11:55:48
-[ERROR]-[Thread: qtp1684792003-29]-[com.jfinal.core.ActionHandler.handle()]: /manage/goEdit?faultId=12&type=%E7%94%B5%E8%84%91%E7%A1%AC%E4%BB%B6&level=%E7%B4%A7%E6%80%A5&responsible_depid=23&location=%E5%9C%A8%E5%9C%A8%E7%A1%85&describe=&remark=&report_name=%E5%A5%8E%E6%A0%9E%E6%97%A0%E5%8F%AF%E5%A5%88%E4%BD%95%E9%9C%80%E8%A6%81&report_staffno=000000&report_tel=13227766212&report_dep=%E5%9F%8E
-java.lang.NullPointerException
-	at com.ht.fault.order.ManageController.goEdit(ManageController.java:121)
-	at sun.reflect.GeneratedMethodAccessor12.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
-	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
-	at org.eclipse.jetty.server.Server.handle(Server.java:365)
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
-	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
-	at java.lang.Thread.run(Thread.java:748)
-
-2018-10-19 18:11:40
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
-
-2018-10-19 18:11:40
-[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-
-2018-10-19 18:11:40
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
-
-2018-10-19 18:11:40
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
-
-2018-10-19 18:11:41
-[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
-
-2018-10-19 18:11:49
-[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-2} inited
-
-2018-10-19 18:11:49
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
-
-2018-10-19 18:17:34
-[INFO]-[Thread: qtp1684792003-30]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"网络异常，请稍后重试","code":-1,"data":{}}
-
-2018-10-19 18:19:45
-[INFO]-[Thread: qtp1684792003-28]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"网络异常，请稍后重试","code":-1,"data":{}}
-
-2018-10-19 18:19:55
-[INFO]-[Thread: qtp1684792003-31]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"网络异常，请稍后重试","code":-1,"data":{}}
-
-2018-10-19 18:20:26
-[INFO]-[Thread: qtp1684792003-30]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该工号不存在！","code":1000,"data":{}}
-
-2018-10-19 18:20:33
-[INFO]-[Thread: qtp1684792003-27]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该工号不存在！","code":1000,"data":{}}
-
-2018-10-19 18:21:16
-[INFO]-[Thread: qtp1684792003-30]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"发布成功！","code":200,"data":{"ADDRESS":"高新六路渭水苑4-1-401","BIRTHDAY":"1990-11-22","CREATETIME":"2018-10-16 17:52:32","DEPARTID":null,"DINGUSERID":null,"EMAIL":null,"EMP_STATUS":"1","ENTRY_DATE":"2013-07-15","ID":"8a8080da5ccf0e43015cf699c1ea22fc","ID_CARD":"610302199011224522","IS_MARRIED":"1","NATION":"汉","NATIVE_PLACE":"陕西","PASSWORD":"e10adc3949ba59abbe56e057f20f883e","PHONE":"15091269243","PHOTO":null,"POLITICS":"团员","REALNAME":"莫莉花","ROLE":"4","SEX":"2","SOURCE":"0","STAFF_DEPT":"14","STAFF_DEPTNAME":"客服中心","STAFF_ID":"15306730892390","STAFF_NO":"000294","STAFF_POST":"20","STAFF_POSTNAME":"健康助理","STATUS":1,"USERNAME":"15091269243","WORK_UNIT":"宝鸡市中心医院实习","WORKING_DATE":"2013-07-15"}}
-
-2018-10-19 18:23:01
-[INFO]-[Thread: qtp1684792003-31]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"发布成功！","code":200,"data":{"ADDRESS":"高新六路渭水苑4-1-401","BIRTHDAY":"1990-11-22","CREATETIME":"2018-10-16 17:52:32","DEPARTID":null,"DINGUSERID":null,"EMAIL":null,"EMP_STATUS":"1","ENTRY_DATE":"2013-07-15","ID":"8a8080da5ccf0e43015cf699c1ea22fc","ID_CARD":"610302199011224522","IS_MARRIED":"1","NATION":"汉","NATIVE_PLACE":"陕西","PASSWORD":"e10adc3949ba59abbe56e057f20f883e","PHONE":"15091269243","PHOTO":null,"POLITICS":"团员","REALNAME":"莫莉花","ROLE":"4","SEX":"2","SOURCE":"0","STAFF_DEPT":"14","STAFF_DEPTNAME":"客服中心","STAFF_ID":"15306730892390","STAFF_NO":"000294","STAFF_POST":"20","STAFF_POSTNAME":"健康助理","STATUS":1,"USERNAME":"15091269243","WORK_UNIT":"宝鸡市中心医院实习","WORKING_DATE":"2013-07-15"}}
-
-2018-10-19 18:23:51
-[INFO]-[Thread: qtp1684792003-28]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"发布成功！","code":200,"data":{"ADDRESS":"高新六路渭水苑4-1-401","BIRTHDAY":"1990-11-22","CREATETIME":"2018-10-16 17:52:32","DEPARTID":null,"DINGUSERID":null,"EMAIL":null,"EMP_STATUS":"1","ENTRY_DATE":"2013-07-15","ID":"8a8080da5ccf0e43015cf699c1ea22fc","ID_CARD":"610302199011224522","IS_MARRIED":"1","NATION":"汉","NATIVE_PLACE":"陕西","PASSWORD":"e10adc3949ba59abbe56e057f20f883e","PHONE":"15091269243","PHOTO":null,"POLITICS":"团员","REALNAME":"莫莉花","ROLE":"4","SEX":"2","SOURCE":"0","STAFF_DEPT":"14","STAFF_DEPTNAME":"客服中心","STAFF_ID":"15306730892390","STAFF_NO":"000294","STAFF_POST":"20","STAFF_POSTNAME":"健康助理","STATUS":1,"USERNAME":"15091269243","WORK_UNIT":"宝鸡市中心医院实习","WORKING_DATE":"2013-07-15"}}
-
-2018-10-19 18:45:20
-[ERROR]-[Thread: qtp1684792003-27]-[com.jfinal.core.ActionHandler.handle()]: /manage/findTaker?staffNO=000294&respDeptId=23
-java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
-	at com.jfinal.aop.Invocation.invoke(Invocation.java:87)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
-	at com.ht.fault.common.HtFaultServiceHandler.handle(HtFaultServiceHandler.java:23)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
-	at org.eclipse.jetty.server.Server.handle(Server.java:365)
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
-	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.reflect.InvocationTargetException
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
-	... 26 more
-Caused by: java.lang.NoSuchMethodError: com.ht.fault.order.ManageService.findTaker(Ljava/lang/String;Ljava/lang/Integer;)Lcom/alibaba/fastjson/JSONObject;
-	at com.ht.fault.order.ManageController.findTaker(ManageController.java:397)
-	... 31 more
-
-2018-10-19 18:45:44
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
-
-2018-10-19 18:45:44
-[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-
-2018-10-19 18:45:44
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
-
-2018-10-19 18:45:44
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
-
-2018-10-19 18:45:45
-[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
-
-2018-10-19 18:45:53
-[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-2} inited
-
-2018-10-19 18:45:53
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
-
-2018-10-19 18:46:28
-[INFO]-[Thread: qtp1684792003-32]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"网络异常，请稍后重试","code":-1,"data":{}}
-
-2018-10-19 18:48:19
-[INFO]-[Thread: qtp1684792003-27]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
-
-2018-10-19 18:48:45
-[INFO]-[Thread: qtp1684792003-29]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
-
-2018-10-19 18:48:55
+2018-10-23 09:25:13
 [INFO]-[Thread: qtp1684792003-30]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
 
-2018-10-19 18:49:12
+2018-10-23 10:01:22
+[INFO]-[Thread: qtp1684792003-31]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
+
+2018-10-23 10:01:32
+[INFO]-[Thread: qtp1684792003-29]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"发布成功！","code":200,"data":{"ADDRESS":"陕西省宝鸡市金台区金台大道7号院4号楼1单元10号","BIRTHDAY":"1992-08-07","CREATETIME":"2018-10-22 09:24:12","DEPARTID":null,"DINGUSERID":null,"EMAIL":null,"EMP_STATUS":"1","ENTRY_DATE":"2015-12-09","ID":"7e4c7d428b4d43219f363ef494fee905","ID_CARD":"610302199208070037","IS_MARRIED":"1","NATION":"汉","NATIVE_PLACE":"江西","PASSWORD":"e10adc3949ba59abbe56e057f20f883e","PHONE":"15353340087","PHOTO":null,"POLITICS":"团员","REALNAME":"赵辰","ROLE":"5","SEX":"1","SOURCE":"0","STAFF_DEPT":"101","STAFF_DEPTNAME":"软件组","STAFF_ID":"15306738644447","STAFF_NO":"000579","STAFF_POST":"58","STAFF_POSTNAME":"初级运维工程师","STATUS":1,"USERNAME":"15353340087","WORK_UNIT":null,"WORKING_DATE":"2015-12-09"}}
+
+2018-10-23 10:01:50
 [INFO]-[Thread: qtp1684792003-28]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
 
-2018-10-19 18:51:00
-[INFO]-[Thread: qtp1684792003-32]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
-
-2018-10-19 19:02:49
-[INFO]-[Thread: qtp1684792003-29]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
-
-2018-10-19 19:15:02
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
-
-2018-10-19 19:15:02
-[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-
-2018-10-19 19:15:02
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
-
-2018-10-19 19:15:02
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
-
-2018-10-19 19:15:03
-[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
-
-2018-10-19 19:15:11
-[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-2} inited
-
-2018-10-19 19:15:11
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
-
-2018-10-19 19:18:02
-[INFO]-[Thread: qtp1684792003-29]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
-
-2018-10-19 19:22:23
-[INFO]-[Thread: qtp1684792003-32]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该工号不存在！","code":1000,"data":{}}
-
-2018-10-19 19:22:38
-[INFO]-[Thread: qtp1684792003-32]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
-
-2018-10-19 19:22:45
-[INFO]-[Thread: qtp1684792003-27]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
-
-2018-10-19 19:29:16
-[INFO]-[Thread: qtp1684792003-27]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
-
-2018-10-19 19:30:00
-[INFO]-[Thread: qtp1684792003-27]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
-
-2018-10-19 19:30:32
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
-
-2018-10-19 19:30:33
-[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-
-2018-10-19 19:30:33
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
-
-2018-10-19 19:30:33
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
-
-2018-10-19 19:30:33
-[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
-
-2018-10-19 19:30:37
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.Server.doStart()]: jetty-8.1.8.v20121106
-
-2018-10-19 19:30:37
-[INFO]-[Thread: main]-[org.eclipse.jetty.webapp.StandardDescriptorProcessor.visitServlet()]: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-
-2018-10-19 19:30:37
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
-
-2018-10-19 19:30:37
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized()]: started o.e.j.w.WebAppContext{/,file:/E:/GIT/fault/src/main/webapp/}
-
-2018-10-19 19:30:38
-[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
-
-2018-10-19 19:30:46
-[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-2} inited
-
-2018-10-19 19:30:46
-[INFO]-[Thread: main]-[org.eclipse.jetty.server.AbstractConnector.doStart()]: Started SelectChannelConnector@0.0.0.0:8082
-
-2018-10-19 19:30:55
-[INFO]-[Thread: qtp1684792003-32]-[com.jfinal.kit.LogKit.info()]: (127.0.0.1)/manage/findTaker -- 返回数据:{"msg":"发布成功！","code":200,"data":{"ADDRESS":"陕西省宝鸡市金台区金台大道7号院4号楼1单元10号","BIRTHDAY":"1992-08-07","CREATETIME":"2018-10-16 17:52:43","DEPARTID":null,"DINGUSERID":null,"EMAIL":null,"EMP_STATUS":"1","ENTRY_DATE":"2015-12-09","ID":"7e4c7d428b4d43219f363ef494fee905","ID_CARD":"610302199208070037","IS_MARRIED":"1","NATION":"汉","NATIVE_PLACE":"江西","PASSWORD":"e10adc3949ba59abbe56e057f20f883e","PHONE":"15353340087","PHOTO":null,"POLITICS":"团员","REALNAME":"赵辰","ROLE":"5","SEX":"1","SOURCE":"0","STAFF_DEPT":"101","STAFF_DEPTNAME":"软件组","STAFF_ID":"15306738644447","STAFF_NO":"000579","STAFF_POST":"58","STAFF_POSTNAME":"初级运维工程师","STATUS":1,"USERNAME":"15353340087","WORK_UNIT":null,"WORKING_DATE":"2015-12-09"}}
-
-2018-10-19 19:31:24
-[INFO]-[Thread: qtp1684792003-27]-[com.jfinal.kit.LogKit.info()]: (127.0.0.1)/manage/findTaker -- 返回数据:{"msg":"发布成功！","code":200,"data":{"ADDRESS":"陕西省宝鸡市金台区金台大道7号院4号楼1单元10号","BIRTHDAY":"1992-08-07","CREATETIME":"2018-10-16 17:52:43","DEPARTID":null,"DINGUSERID":null,"EMAIL":null,"EMP_STATUS":"1","ENTRY_DATE":"2015-12-09","ID":"7e4c7d428b4d43219f363ef494fee905","ID_CARD":"610302199208070037","IS_MARRIED":"1","NATION":"汉","NATIVE_PLACE":"江西","PASSWORD":"e10adc3949ba59abbe56e057f20f883e","PHONE":"15353340087","PHOTO":null,"POLITICS":"团员","REALNAME":"赵辰","ROLE":"5","SEX":"1","SOURCE":"0","STAFF_DEPT":"101","STAFF_DEPTNAME":"软件组","STAFF_ID":"15306738644447","STAFF_NO":"000579","STAFF_POST":"58","STAFF_POSTNAME":"初级运维工程师","STATUS":1,"USERNAME":"15353340087","WORK_UNIT":null,"WORKING_DATE":"2015-12-09"}}
-
-2018-10-19 19:31:38
-[INFO]-[Thread: qtp1684792003-30]-[com.jfinal.kit.LogKit.info()]: (127.0.0.1)/manage/findTaker -- 返回数据:{"msg":"该工号不存在！","code":1000,"data":{}}
-
-2018-10-19 19:32:08
-[INFO]-[Thread: qtp1684792003-29]-[com.jfinal.kit.LogKit.info()]: (127.0.0.1)/manage/findTaker -- 返回数据:{"msg":"该工号不存在！","code":1000,"data":{}}
-
-2018-10-19 19:32:38
-[INFO]-[Thread: qtp1684792003-30]-[com.jfinal.kit.LogKit.info()]: (127.0.0.1)/manage/findTaker -- 返回数据:{"msg":"该员工不隶属负责部门！","code":30006,"data":{}}
+2018-10-23 10:01:59
+[INFO]-[Thread: qtp1684792003-28]-[com.jfinal.kit.LogKit.info()]: (0:0:0:0:0:0:0:1)/manage/findTaker -- 返回数据:{"msg":"发布成功！","code":200,"data":{"ADDRESS":"陕西省宝鸡市金台区金台大道7号院4号楼1单元10号","BIRTHDAY":"1992-08-07","CREATETIME":"2018-10-22 09:24:12","DEPARTID":null,"DINGUSERID":null,"EMAIL":null,"EMP_STATUS":"1","ENTRY_DATE":"2015-12-09","ID":"7e4c7d428b4d43219f363ef494fee905","ID_CARD":"610302199208070037","IS_MARRIED":"1","NATION":"汉","NATIVE_PLACE":"江西","PASSWORD":"e10adc3949ba59abbe56e057f20f883e","PHONE":"15353340087","PHOTO":null,"POLITICS":"团员","REALNAME":"赵辰","ROLE":"5","SEX":"1","SOURCE":"0","STAFF_DEPT":"101","STAFF_DEPTNAME":"软件组","STAFF_ID":"15306738644447","STAFF_NO":"000579","STAFF_POST":"58","STAFF_POSTNAME":"初级运维工程师","STATUS":1,"USERNAME":"15353340087","WORK_UNIT":null,"WORKING_DATE":"2015-12-09"}}
