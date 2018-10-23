@@ -200,4 +200,19 @@ public class ManageService {
 		return json;
 	}
 
+	public JSONObject findAllStaff(String deptId) {
+		JSONObject json=new JSONObject();
+		//某部门下所有员工
+		List<Record> staffList = Db.use("oracle").find("SELECT * FROM t_s_base_user WHERE STAFF_DEPT IN " +
+				"( select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID ) or STAFF_DEPT = ?", deptId, deptId);	
+		
+		if(null != staffList) {
+			json.put("code", ResponseCode.HT_IM_SUCCESS);
+			json.put("result", staffList);
+		}else {
+			json.put("code", ResponseCode.HT_IM_ERROR);
+		}
+		return json;
+	}
+
 }

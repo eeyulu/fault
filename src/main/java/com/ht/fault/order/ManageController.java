@@ -428,7 +428,7 @@ public class ManageController extends BaseController {
 	
 	
 	/**
-	 * 添加接单人
+	 * 添加接单人---暂遗弃
 	 */
 	public void findTaker() {
 		try {
@@ -450,4 +450,22 @@ public class ManageController extends BaseController {
 		}
 	}
 	
+	/**
+	 * 查询部门下所有员工
+	 */
+	public void findAllStaff() {
+		try {
+			String respDeptId = getPara("respDeptId");
+
+			JSONObject jsonObject = service.findAllStaff(respDeptId);
+			if(jsonObject.getInteger("code") == ResponseCode.HT_IM_SUCCESS){
+				renderJson(jsonObject.get("result"), jsonObject.getInteger("code"), "请求成功！");
+			}else{
+				renderJson(null, ResponseCode.HT_IM_ERROR, "该部门暂无员工！");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			renderJson(null, ResponseCode.HT_IM_SERVER_ERROR,ResponseCode.HT_IM_SERVER_ERROR_MSG);
+		}
+	}
 }
