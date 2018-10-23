@@ -1,8 +1,5 @@
 package com.ht.fault.order;
 
-import io.rong.models.CodeSuccessResult;
-
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,11 +12,15 @@ import com.ht.fault.common.kit.StringKit;
 import com.ht.fault.common.kit.TimeKit;
 import com.ht.fault.order.code.OrderStatus;
 import com.ht.fault.order.model.FaultMessage;
+import com.jfinal.aop.Before;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.SqlPara;
+import com.jfinal.plugin.activerecord.tx.Tx;
+
+import io.rong.models.CodeSuccessResult;
 
 public class ManageService {
 	/**
@@ -151,10 +152,12 @@ public class ManageService {
 		return Db.queryInt("select status from ht_im_fault_form where id = ?", id);
 	}
 
-	public JSONObject updateOrderTake(Record record) {
+	@Before(Tx.class)
+	public JSONObject updateOrderTake(Record record, Record fault) {
 		JSONObject json = new JSONObject();
 		boolean b =Db.update("ht_im_order_take", record);
-		if (b) {
+		boolean b1 =Db.update("ht_im_fault_form", fault);
+		if (b&b1) {
 			json.put("code", ResponseCode.HT_IM_SUCCESS);
 		} else {
 			json.put("code", ResponseCode.HT_IM_ERROR);
@@ -181,7 +184,6 @@ public class ManageService {
 		if(null == taker) {
 			json.put("code", ResponseCode.HT_IM_ERROR);
 		}else {
-//			Integer takerDeptId = Integer.valueOf(taker.getStr("STAFF_DEPT"));
 			String takerDeptId = taker.getStr("STAFF_DEPT");
 			
 			//查询某部门所有父部门

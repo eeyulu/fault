@@ -147,7 +147,7 @@
 	                <td width="10%">接单人</td>
 	                <td width="40%"><input type="text" readonly="readonly" name="order_name"   value = "#(x.take.order_name??)" required lay-verify="reportName" placeholder="接单人姓名" autocomplete="off" class="layui-input" ></td>
 	                <td width="10%">工号</td>
-	                <td width="40%"><input type="text"  name="order_staffno"   value = "#(x.take.order_staffno??)" required lay-verify="staffno" placeholder="接单人工号" autocomplete="off" class="layui-input" ></td>
+	                <td width="40%"><input type="text"  name="order_staffno"  onBlur="isChange();" onFocus="whetherGo();" value = "#(x.take.order_staffno??)" required lay-verify="staffno" placeholder="接单人工号" autocomplete="off" class="layui-input" ></td>
 	              </tr>
 	              <tr>
 	                <td>电话</td>
@@ -164,7 +164,7 @@
 	      <div class="layui-form-item" >
 		    <div class="layui-input-block" style="text-align:center;">
 		      
-		      <button class="layui-btn" lay-submit="" lay-filter="demo1" >修改</button>
+		      <button id="sumbTake" class="layui-btn" lay-submit="" lay-filter="demo1" >修改</button>
 		      <button type="reset" class="layui-btn layui-btn-primary">恢复</button>
 		    </div>
 		  </div>
@@ -178,7 +178,23 @@
           
 <script src="../layui/layui.js" charset="utf-8"></script>
 <script>
-
+	var on=true;
+	var orderStaffno = $("input[name='order_staffno']").val();
+	function whetherGo(){
+//		var now = $("input[name='order_staffno']").val();
+//		if(now != orderStaffno){
+		  $("#sumbTake").attr("disabled","disabled");
+		  $("#sumbTake").addClass("layui-btn layui-btn-primary");
+//		}
+	}
+	function isChange(){
+		var now = $("input[name='order_staffno']").val();
+		if(now == orderStaffno){
+			$("#sumbTake").attr("disabled",false);
+ 		   $("#sumbTake").removeClass("layui-btn-primary");
+		}
+	}
+	
 	$(function() {
 	
 	    if($("#orderStatus").html() == 1){
@@ -248,14 +264,18 @@ layui.use('form', function(){
     $("#takeTable input").val("");
   });
   
+
+  
   //监听提交
   form.on('submit(demo1)', function(data){
-    layer.msg(JSON.stringify(data.field));
-    console.log(data.field); 
-/* 	 $.ajax({
+     var responsible_dep = $("select[name='responsible_depid']  option:selected").text();
+	 var param = data.field;
+	 param["responsible_dep"] = responsible_dep;
+	 layer.msg(JSON.stringify(param));
+ 	 /* $.ajax({
      type: "GET",
      url: "updateTake",
-     data: data.field,
+     data: param,
      dataType: "json",
      success: function(data){
     			 console.log(data);
@@ -302,9 +322,11 @@ $(document).ready(function(){
 		        		$("input[name='order_name']").val(taker.REALNAME);
 		        		$("input[name='order_tel']").val(taker.USERNAME);
 		        		$("input[name='order_dept']").val(taker.STAFF_DEPTNAME);
-		        		
 		        		$("input[name='order_deptid']").val(taker.STAFF_DEPT);
 		        		$("input[name='order_userid']").val(taker.ID);
+		        		
+	        		   $("#sumbTake").attr("disabled",false);
+	        		   $("#sumbTake").removeClass("layui-btn-primary");
 		        	}else{
 		        		layer.msg(data.msg,{icon: 5,time: 1000 },function(){
 		        			$staffNO.val("");

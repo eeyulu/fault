@@ -31,7 +31,9 @@ import com.xxl.sso.core.user.XxlUser;
 //@Clear(AuthInterceptor.class)
 public class ManageController extends BaseController {
 
-	private ManageService service = enhance(ManageService.class);
+//	private ManageService service = enhance(ManageService.class);
+	private ManageService service =  enhance(ManageService.class);
+
 
 	public void listHtml() {
 		String status = PropKit.get("fault_status");
@@ -241,14 +243,53 @@ public class ManageController extends BaseController {
 				renderJson(null, ResponseCode.FAULT_STATUS_UPDATE, ResponseCode.FAULT_STATUS_UPDATE_MSG);
 				return;
 			}
-			Integer id = getParaToInt("id");
-			String orderTel = getPara("order_tel");
-			Record record = new Record()
-			.set("id", id)
-			.set("order_tel", orderTel)
-			.set("update_time", new Date());
+			Date date = new Date();
+			//工单基本信息
+//			String type = getPara("type");
+//			String level = getPara("level");
+//			String responsible_depid = getPara("responsible_depid");
+//			String location = getPara("location");
+//			String describe = getPara("describe");
+//			String remark = getPara("remark");
+//			String report_name = getPara("report_name");
+//			String report_staffno = getPara("report_staffno");
+//			String report_tel = getPara("report_tel");
+//			String report_dep = getPara("report_dep");
 			
-			JSONObject jsonObject = service.updateOrderTake(record);
+			Record fault = new Record()
+					.set("id", faultId)
+					.set("type", getPara("type"))
+					.set("level", getPara("level"))
+					.set("responsible_depid", getPara("responsible_depid"))
+					.set("location", getPara("location"))
+					.set("describe", getPara("describe"))
+					.set("remark", getPara("remark"))
+					.set("report_name", getPara("report_name"))
+					.set("report_staffno", getPara("report_staffno"))
+					.set("report_tel", getPara("report_tel"))
+					.set("report_dep", getPara("report_dep"))
+					.set("update_time", date);
+			
+			//接单信息
+//			Integer id = getParaToInt("id");
+//			String orderTel = getPara("order_tel");
+//			String order_deptid = getPara("order_deptid");
+//			String order_dept = getPara("order_dept");
+//			String order_staffno = getPara("order_staffno");
+//			String order_name = getPara("order_name");
+//			String order_userid = getPara("order_userid");
+			
+			Record take = new Record()
+			.set("id", getParaToInt("id"))
+			.set("order_tel", getPara("order_tel"))
+			.set("update_time", date)
+			.set("order_deptid", getPara("order_deptid"))
+			.set("order_dept", getPara("order_dept"))
+			.set("order_staffno", getPara("order_staffno"))
+			.set("order_name", getPara("order_name"))
+			.set("order_userid", getPara("order_userid"));
+			
+			JSONObject jsonObject = service.updateOrderTake(take,fault);
 			if(jsonObject.getInteger("code") == ResponseCode.HT_IM_SUCCESS){
 				renderJson(jsonObject.get("result"), jsonObject.getInteger("code"), "发布成功！");
 			}else{
