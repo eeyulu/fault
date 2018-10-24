@@ -1,7 +1,10 @@
 package com.ht.fault.order;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -213,6 +216,45 @@ public class ManageService {
 			json.put("code", ResponseCode.HT_IM_ERROR);
 		}
 		return json;
+	}
+
+	
+	public Page<Record> findDepStaff(String userId, int pageNumber, int pageSize) {
+		//登录用户部门ID
+		Record user = findBaseUser(userId);
+		String deptId = user.getStr("STAFF_DEPT");
+		//某部门下所有员工
+		Page<Record> staffPage = Db.use("oracle").paginate(pageNumber, pageSize, "SELECT * ",
+				"FROM t_s_base_user WHERE STAFF_DEPT IN ( select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID ) or STAFF_DEPT = ?", deptId, deptId);	
+		
+		return staffPage;
+	}
+
+	public JSONObject average(String id) {
+		JSONObject json=new JSONObject();
+		
+		BigDecimal score = new BigDecimal(0);	//平均得分
+		Integer amount = 0;			//评价工单数量
+		List<Integer> scoreList = Db.query("select c.`level` from ht_im_order_take t "
+					+ "join ht_im_order_comment c on t.fault_id = c.fault_id where t.order_userid = ?", id);
+		if(scoreList != null && scoreList.size()>0) {
+			amount = scoreList.size();
+			Integer sum = 0;
+			for(Integer s : scoreList) {
+				sum += s;
+			}
+			score = new BigDecimal(sum).divide(new BigDecimal(amount), 2, RoundingMode.HALF_UP);
+		}
+		json.put("amount", amount);
+		json.put("score", score);
+		return json;
+	}
+
+	public Page<Record> commentRec(Kv cond, int pageNumber, int pageSize) {
+		// 封装查询参数并返回sql
+		SqlPara sqlPara = Db.getSqlPara("fault.findCommentList", Kv.by("cond", cond));
+		return Db.paginate(pageNumber, pageSize, sqlPara);
+
 	}
 
 }

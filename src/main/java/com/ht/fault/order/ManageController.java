@@ -1,5 +1,6 @@
 package com.ht.fault.order;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -27,8 +28,8 @@ import com.xxl.sso.core.user.XxlUser;
 /**
  * 
  */
- @Clear
-//@Clear(AuthInterceptor.class)
+// @Clear
+@Clear(AuthInterceptor.class)
 public class ManageController extends BaseController {
 
 //	private ManageService service = enhance(ManageService.class);
@@ -468,4 +469,91 @@ public class ManageController extends BaseController {
 			renderJson(null, ResponseCode.HT_IM_SERVER_ERROR,ResponseCode.HT_IM_SERVER_ERROR_MSG);
 		}
 	}
+	
+	/**
+	 * 人员评分
+	 */
+	public void scoreHtml() {
+
+		render("score.html");
+	}
+	
+	/**
+	 * 人员评分
+	 */
+	public void staffScore() {
+		int pageNumber = getParaToInt("page");
+		int pageSize = getParaToInt("limit");
+		
+		XxlUser xxlUser = (XxlUser) getAttr(Conf.SSO_USER);
+		String userId =  xxlUser.getUserid();
+		//隶属部门人员
+		Page<Record> page = service.findDepStaff(userId,pageNumber,pageSize);
+		
+		//获取人员评分
+		for(Record r : page.getList()) {
+			String id = r.get("id");
+			JSONObject json = service.average(id);
+			r.set("amount", json.getInteger("amount"));
+			r.set("score", json.getBigDecimal("score"));
+		}
+		
+		PagerList<Record> list = new PagerList<Record>();
+		list.setTotalRow(page.getTotalRow());
+		list.setList(page.getList());
+		renderJson(list);
+	}
+	
+	
+	/**
+	 * 维修评价记录
+	 */
+	public void record() {
+		String[] typeArr = PropKit.get("fault_type").split(",");
+		setAttr("typeArr", typeArr);
+		String userId = getPara("userId");
+		setAttr("userId", userId);
+		render("record.html");
+	}
+	
+	/**
+	 * 维修评价记录
+	 */
+	public void commentRec() {
+		// 设置查询参数
+		Kv cond = Kv.create();
+		
+		int pageNumber = getParaToInt("page");
+		int pageSize = getParaToInt("limit");
+		String userId = getPara("userId");
+		cond.set("t.order_userid", userId);
+		
+		String repairName = getPara("repairName");
+		String orderNo = getPara("orderNo");
+		String faultType = getPara("faultType");
+		String faultLevel = getPara("faultLevel");
+		
+		if (StrKit.notBlank(repairName)) {
+			cond.set("repair_name", repairName);
+		}
+		if (StrKit.notBlank(orderNo)) {
+			cond.set("order_no", orderNo);
+		}
+		if (StrKit.notBlank(faultType)) {
+			cond.set("type", faultType);
+		}
+		if (StrKit.notBlank(faultLevel)) {
+			cond.set("c.`level`", faultLevel);
+		}
+		
+		//维修评价记录
+		Page<Record> page = service.commentRec(cond,pageNumber,pageSize);
+		
+		PagerList<Record> list = new PagerList<Record>();
+		list.setTotalRow(page.getTotalRow());
+		list.setList(page.getList());
+		renderJson(list);
+	}
+	
+	
 }
