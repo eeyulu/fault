@@ -52,23 +52,26 @@
               <div class="layui-tab layui-tab-brief layadmin-latestData">
                 <ul class="layui-tab-title">
                   <li class="layui-this">人员评价</li>
-                  <li>维修记录</li>
+                  <!-- <li>维修记录</li> -->
                 </ul>
                 <div class="layui-tab-content">
                   <div class="layui-tab-item layui-show">
                     	<table class="layui-hide" id="LAY_table_user" lay-filter="user"></table> 
-<script type="text/html" id="barDemo">
+<script type="text/html" id="usernameTpl">
 #[[
-  {{# if(d.amount >0){ }}
-	<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">评价记录</a>
-  {{# }}}
+{{# if(d.amount >0){ }}
+  <a href="record?userId={{d.ID}}" class="layui-table-link" >{{ d.amount }}</a>
+{{# }else { }}
+   	{{ d.amount }}
+{{# }}}
 ]]#
-</script> 
+</script>
+
                   </div>
-                  <div class="layui-tab-item">
-                    <!-- <table id="LAY-index-topCard"></table> -->
+<!--                   <div class="layui-tab-item">
+                    <table id="LAY-index-topCard"></table>
                     xxxxxxxxxxxxx
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -91,11 +94,11 @@ layui.use(['table','rate','element'], function(){
     ,url: '/manage/staffScore'
     ,cols: [[
      // {checkbox: true, fixed: false}
-      {field:'REALNAME', title: '姓名', width:120, fixed: true, align:'center'}
-      ,{field:'STAFF_NO', title: '工号', width:180, align:'center'}
-      ,{field:'amount', title: '工单数量', width:100, sort:true, align:'center'}
-      ,{field:'score', title: '平均分', width:250, sort:true, align:'center'}
-      ,{fixed: 'right', align:'center', toolbar: '#barDemo'}
+      {field:'REALNAME', title: '姓名', width:200, fixed: true, align:'center'}
+      ,{field:'STAFF_NO', title: '工号', width:200, align:'center'}
+      ,{field:'STAFF_DEPTNAME', title: '科室', width:200, align:'center'}
+      ,{field:'amount', title: '工单数量', width:200, sort:true, align:'center',templet: '#usernameTpl'}
+      ,{field:'score', title: '平均分',  sort:true, align:'center'}
     ]]
     ,id: 'testReload'
     ,page: true
