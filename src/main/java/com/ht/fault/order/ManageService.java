@@ -2,9 +2,9 @@ package com.ht.fault.order;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -18,6 +18,7 @@ import com.ht.fault.order.code.OrderStatus;
 import com.ht.fault.order.model.FaultMessage;
 import com.jfinal.aop.Before;
 import com.jfinal.kit.Kv;
+import com.jfinal.kit.StrKit;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
@@ -262,12 +263,15 @@ public class ManageService {
 		//登录用户部门ID
 		Record user = findBaseUser(userId);
 		String deptId = user.getStr("STAFF_DEPT");
-		List<Integer > deptList = Db.use("oracle").query("select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID", deptId);
-		deptList.add(Integer.valueOf(deptId));
-		//故障分类
-		StringBuilder dept = new StringBuilder();
-		SqlKit.joinIds(deptList, dept);
-		List<Record> groupType = Db.find("select  count(*) value, f.`type` name from ht_im_order_take t JOIN ht_im_fault_form f ON t.fault_id = f.id where f.`status` != 5 and t.order_deptid in "+dept.toString()+" GROUP BY `type` ");
+		List<Record> groupType = new ArrayList<Record>();
+		if(StrKit.notBlank(deptId)) {
+			List<Integer> deptList = Db.use("oracle").query("select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID", deptId);
+			deptList.add(Integer.valueOf(deptId));
+			//故障分类
+			StringBuilder dept = new StringBuilder();
+			SqlKit.joinIds(deptList, dept);
+			groupType = Db.find("select  count(*) value, f.`type` name from ht_im_order_take t JOIN ht_im_fault_form f ON t.fault_id = f.id where f.`status` != 5 and t.order_deptid in "+dept.toString()+" GROUP BY `type` ");
+		}
 		return groupType;
 	}
 
@@ -275,9 +279,11 @@ public class ManageService {
 		//登录用户部门ID
 		Record user = findBaseUser(userId);
 		String deptId = user.getStr("STAFF_DEPT");
-		//某部门下所有员工
-		List<Record> userList = Db.use("oracle").find( "SELECT id,realname FROM t_s_base_user WHERE STAFF_DEPT IN ( select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID ) or STAFF_DEPT = ?", deptId, deptId);	
-		
+		List<Record> userList = new ArrayList<Record>();
+		if(StrKit.notBlank(deptId)) {
+			//某部门下所有员工
+			userList = Db.use("oracle").find( "SELECT id,realname FROM t_s_base_user WHERE STAFF_DEPT IN ( select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID ) or STAFF_DEPT = ?", deptId, deptId);	
+		}
 		return userList;
 	}
 

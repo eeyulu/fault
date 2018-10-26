@@ -1,6 +1,5 @@
 package com.ht.fault.order;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -452,7 +451,7 @@ public class ManageController extends BaseController {
 	}
 	
 	/**
-	 * 查询部门下所有员工
+	 * 查询部门下所有员工---修改工单接单人
 	 */
 	public void findAllStaff() {
 		try {
@@ -563,7 +562,7 @@ public class ManageController extends BaseController {
 	}
 	
 	/**
-	 * 故障类型分布
+	 * 故障类型分布(饼图)
 	 */
 	public void faultPie() {
 		XxlUser xxlUser = (XxlUser) getAttr(Conf.SSO_USER);
@@ -573,7 +572,7 @@ public class ManageController extends BaseController {
 	}
 	
 	/**
-	 * 人员工单数量
+	 * 人员工单数量(柱状图)
 	 */
 	public void faultColumnar() {
 		
