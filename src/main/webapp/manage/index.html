@@ -115,7 +115,7 @@ layui.use(['table','rate','element'], function(){
 			  //只读
 			  rate.render({
 			    elem: $(this)
-			    ,value:$(this).text()
+			    ,value:parseFloat($(this).text())
 			    ,half: true
 			    ,readonly: true
 			    ,text: true
