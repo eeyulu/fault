@@ -11,6 +11,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.ht.fault.common.kit.HtImDataResultKit;
 import com.ht.fault.common.kit.ResponseCode;
 import com.ht.fault.common.kit.RongCloudKit;
+import com.ht.fault.common.kit.SqlKit;
 import com.ht.fault.common.kit.StringKit;
 import com.ht.fault.common.kit.TimeKit;
 import com.ht.fault.order.code.OrderStatus;
@@ -255,6 +256,33 @@ public class ManageService {
 		SqlPara sqlPara = Db.getSqlPara("fault.findCommentList", Kv.by("cond", cond));
 		return Db.paginate(pageNumber, pageSize, sqlPara);
 
+	}
+
+	public List<Record> groupType(String userId) {
+		//登录用户部门ID
+		Record user = findBaseUser(userId);
+		String deptId = user.getStr("STAFF_DEPT");
+		List<Integer > deptList = Db.use("oracle").query("select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID", deptId);
+		deptList.add(Integer.valueOf(deptId));
+		//故障分类
+		StringBuilder dept = new StringBuilder();
+		SqlKit.joinIds(deptList, dept);
+		List<Record> groupType = Db.find("select  count(*) value, f.`type` name from ht_im_order_take t JOIN ht_im_fault_form f ON t.fault_id = f.id where f.`status` != 5 and t.order_deptid in "+dept.toString()+" GROUP BY `type` ");
+		return groupType;
+	}
+
+	public List<Record> findDepStaff(String userId) {
+		//登录用户部门ID
+		Record user = findBaseUser(userId);
+		String deptId = user.getStr("STAFF_DEPT");
+		//某部门下所有员工
+		List<Record> userList = Db.use("oracle").find( "SELECT id,realname FROM t_s_base_user WHERE STAFF_DEPT IN ( select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID ) or STAFF_DEPT = ?", deptId, deptId);	
+		
+		return userList;
+	}
+
+	public Integer faultSum(String id) {
+		return  Db.queryInt("select  count(*) from ht_im_order_take t JOIN ht_im_fault_form f ON t.fault_id = f.id where f.`status` != 5 and t.order_userid=?", id);
 	}
 
 }

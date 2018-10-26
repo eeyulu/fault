@@ -555,5 +555,38 @@ public class ManageController extends BaseController {
 		renderJson(list);
 	}
 	
+	/**
+	 * 用户首页
+	 */
+	public void userIndex() {
+		render("index.html");
+	}
 	
+	/**
+	 * 故障类型分布
+	 */
+	public void faultPie() {
+		XxlUser xxlUser = (XxlUser) getAttr(Conf.SSO_USER);
+		String userId =  xxlUser.getUserid();
+		List<Record> group = service.groupType(userId);
+		renderJson(group);
+	}
+	
+	/**
+	 * 人员工单数量
+	 */
+	public void faultColumnar() {
+		
+		XxlUser xxlUser = (XxlUser) getAttr(Conf.SSO_USER);
+		String userId =  xxlUser.getUserid();
+		//隶属部门人员
+		List<Record> userList = service.findDepStaff(userId);
+		for(Record user : userList) {
+			String id = user.getStr("id");
+			//总接单数
+			Integer sum = service.faultSum(id);
+			user.set("sum", sum);
+		}
+		renderJson(userList);
+	}
 }
