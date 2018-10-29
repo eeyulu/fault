@@ -96,6 +96,7 @@ public class ManageService {
 				"select * from t_s_base_user where id = ?", userid);
 	}
 
+	@Before(Tx.class)
 	public JSONObject releaseOrder(Record record, String userId, FaultMessage message) {
 		JSONObject json = new JSONObject();
 

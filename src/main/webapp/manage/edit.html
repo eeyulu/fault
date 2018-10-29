@@ -220,17 +220,16 @@ layui.use('form', function(){
      data: param,
      dataType: "json",
      success: function(data){
-    			 console.log(data);
     			 if(data.code ==200){
-    			 	layer.msg('修改成功！', {time: 2000 },function(){
-								location.href="listHtml";
-								});
+    			 	layer.msg('操作成功!', {icon: 1,time: 2000,shade : [0.5 , '#000' , true]},function(){
+						location.href="listHtml";
+					});
     			 }else if(data.code ==30005){
-    			 	layer.msg(data.msg, {time: 3000 },function(){
+    			 	layer.msg(data.msg, {icon:2,time: 3000,shade : [0.5 , '#000' , true]},function(){
 								location.href="listHtml";
 								});
     			 }else{
-    			 	layer.msg('修改失败！')
+    			 	layer.msg('操作失败！', {icon:2})
     			 }
               }
     }); 
