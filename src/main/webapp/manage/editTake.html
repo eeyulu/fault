@@ -10,10 +10,30 @@
   <script src="../js/jquery-1.4.4.min.js" charset="utf-8"></script>
   
   <style type="text/css">
-			div img:hover{
-				transform: scale(3.0);
-			}
-		</style>
+	div img:hover{
+		transform: scale(3.0);
+	}
+	
+	 #staffList {
+	    display: flex;
+	    display: -webkit-flex;
+	    /* 从左端开始沿水平轴防止flex item */
+	    flex-direction: row;
+	    /* 强制 flex item不换行，沿着同一行堆叠 */
+	    flex-wrap: wrap;
+	    /* flex item在主轴上的对齐方式，这里定义左对齐 */
+	    justify-content: flex-start;
+	    /* 定义交叉轴对其方式 */
+	    align-items: flex-start
+	  }
+	  
+	  .staffLoc{
+	    padding-left: 15px;
+	    padding-right: 15px;
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+	  }
+  </style>
   
 </head>
 <body style="background-color: #f2f2f2"> 
@@ -133,6 +153,7 @@
         <div class="layui-col-sm12">
 	      <div class="layui-card">
 	        <div class="layui-card-header">接单人信息</div>
+	        <div id="staffList" ></div>
 	        <div class="layui-card-body layui-text">
          	<input type="hidden" name="id"   value = "#(x.take.id??)"  class="layui-input" >
          	<input type="hidden" name="order_deptid"   value = "#(x.take.order_deptid??)"  class="layui-input" >
@@ -147,7 +168,8 @@
 	                <td width="10%">接单人</td>
 	                <td width="40%"><input type="text" readonly="readonly" name="order_name"   value = "#(x.take.order_name??)" required lay-verify="reportName" placeholder="接单人姓名" autocomplete="off" class="layui-input" ></td>
 	                <td width="10%">工号</td>
-	                <td width="40%"><input type="text"  name="order_staffno"  onBlur="isChange();" onFocus="whetherGo();" value = "#(x.take.order_staffno??)" required lay-verify="staffno" placeholder="接单人工号" autocomplete="off" class="layui-input" ></td>
+	                <td width="40%"><input type="text"  name="order_staffno" readonly="readonly" value = "#(x.take.order_staffno??)" required lay-verify="staffno" placeholder="接单人工号" autocomplete="off" class="layui-input" ></td>
+<!-- 	                <td width="40%"><input type="text"  name="order_staffno"  onBlur="isChange();" onFocus="whetherGo();" value = "#(x.take.order_staffno??)" required lay-verify="staffno" placeholder="接单人工号" autocomplete="off" class="layui-input" ></td> -->
 	              </tr>
 	              <tr>
 	                <td>电话</td>
@@ -165,7 +187,7 @@
 		    <div class="layui-input-block" style="text-align:center;">
 		      
 		      <button id="sumbTake" class="layui-btn" lay-submit="" lay-filter="demo1" >修改</button>
-		      <button type="reset" class="layui-btn layui-btn-primary">恢复</button>
+		      <button type="reset" onclick="recover();" class="layui-btn layui-btn-primary">恢复</button>
 		    </div>
 		  </div>
 	        </div>
@@ -178,21 +200,56 @@
           
 <script src="../layui/layui.js" charset="utf-8"></script>
 <script>
-	var on=true;
-	var orderStaffno = $("input[name='order_staffno']").val();
-	function whetherGo(){
-//		var now = $("input[name='order_staffno']").val();
-//		if(now != orderStaffno){
-		  $("#sumbTake").attr("disabled","disabled");
-		  $("#sumbTake").addClass("layui-btn layui-btn-primary");
-//		}
+	$(function(){
+		layui.use('layer', function(){
+			var layer = layui.layer;
+			getStaff();
+		}); 
+	})
+	function recover(){
+		$("#staffList").empty();
 	}
-	function isChange(){
-		var now = $("input[name='order_staffno']").val();
-		if(now == orderStaffno){
-			$("#sumbTake").attr("disabled",false);
- 		   $("#sumbTake").removeClass("layui-btn-primary");
-		}
+	function getStaff(){
+	    var respDeptId = $("select[name='responsible_depid']  option:selected").val();
+	    //	    var respDeptId = data.value;
+	    var index;
+	    $("#staffList").empty();
+	    $.ajax({
+		    type: "GET",
+		    url: "findAllStaff",
+		    data: {"respDeptId":respDeptId},
+		    dataType: "json",
+			beforeSend: function (request) {
+				index = layer.load();
+			},
+		    success: function(data){
+		    			layer.close(index);
+//			   			 console.log(data);
+			   			 if(data.code==200){
+			   				 var staff = data.data;
+			   				for(var i in staff){
+			   				　　var order_name = staff[i].REALNAME;
+			   				　　var order_tel = staff[i].USERNAME;
+			   				　　var order_dept = staff[i].STAFF_DEPTNAME;
+			   				　　var order_deptid = staff[i].STAFF_DEPT;
+			   				　　var order_userid = staff[i].ID;
+			   				　　var order_staffno = staff[i].STAFF_NO;
+			   				   var html ='<div class="staffLoc">'+
+			   					'<button type="button" class="layui-btn layui-btn-primary layui-btn-xs" onclick="fill(this);">'+order_name+'</button>'+
+			   					'<input type="hidden" value = "'+order_name+'" >'+
+			   					'<input type="hidden" value = "'+order_tel+'" >'+
+			   					'<input type="hidden" value = "'+order_dept+'" >'+
+			   					'<input type="hidden" value = "'+order_deptid+'" >'+
+			   					'<input type="hidden" value = "'+order_userid+'" >'+
+			   					'<input type="hidden" value = "'+order_staffno+'" >'+
+			   					'</div>';
+				   			    $("#staffList").append(html);
+			   				}
+			   			 }else{
+			   			 	layer.msg(data.msg);
+			   			 }
+		             }
+	   });
 	}
 	
 	$(function() {
@@ -226,6 +283,39 @@
 		
 	});
 	
+	function fill(e){
+		$(e).parent().find("input[type='hidden']").each(function (index,value,arr) {
+//			console.log(value);
+//			console.log(index);
+			var inputV = $(value).val();
+//			console.log(inputV);
+			switch(index)
+			{
+			case 0:
+				$("input[name='order_name']").val(inputV);
+			  break;
+			case 1:
+				$("input[name='order_tel']").val(inputV);
+			  break;
+			case 2:
+				$("input[name='order_dept']").val(inputV);
+			  break;
+			case 3:
+				$("input[name='order_deptid']").val(inputV);
+			  break;
+			case 4:
+				$("input[name='order_userid']").val(inputV);
+			  break;
+			case 5:
+				$("input[name='order_staffno']").val(inputV);
+			  break;
+			default:
+				$("input[name='order_staffno']").val("");
+				break;
+			}
+        });
+		return false;
+	}
 	
 layui.use('form', function(){
   var form = layui.form;
@@ -260,82 +350,39 @@ layui.use('form', function(){
 
   //监听select
   form.on('select(resp)', function(data){
-    console.log(data.value);
     $("#takeTable input").val("");
+    getStaff();
   });
-  
-
   
   //监听提交
   form.on('submit(demo1)', function(data){
      var responsible_dep = $("select[name='responsible_depid']  option:selected").text();
 	 var param = data.field;
 	 param["responsible_dep"] = responsible_dep;
-	 layer.msg(JSON.stringify(param));
- 	 /* $.ajax({
+//	 layer.msg(JSON.stringify(param));
+ 	 $.ajax({
      type: "GET",
      url: "updateTake",
      data: param,
      dataType: "json",
      success: function(data){
-    			 console.log(data);
     			 if(data.code ==200){
-    			 	layer.msg('修改成功！', {time: 2000 },function(){
+    			 	layer.msg('操作成功!', {icon: 1,time: 2000,shade : [0.5 , '#000' , true]},function(){
 								location.href="listHtml";
 								});
     			 }else if(data.code ==30005){
-    			 	layer.msg(data.msg, {time: 3000 },function(){
+    			 	layer.msg(data.msg, {icon:2,time: 3000,shade : [0.5 , '#000' , true]},function(){
 								location.href="listHtml";
 								});
     			 }else{
-    			 	layer.msg('修改失败！')
+    			 	layer.msg('操作失败！', {icon:2})
     			 }
               }
-    }); */
+    });
     return false;
   });
 });
 
-//监听接单人工号
-$(document).ready(function(){  
-　　$("input[name='order_staffno']").change(function(){  
-	var $staffNO = $(this);
-	var staffNO = $staffNO.val();
-	var reg = /^[\S]{6,6}$/;
-	if(!reg.test(staffNO)){
-		layer.msg('工号为6位数字', {icon: 5,time: 1000 },function(){
-			$staffNO.val("");
-			});
-		return;
-	}
-	var respDeptId= $("select[name='responsible_depid']  option:selected").val();
-	
-	$.ajax({
-        type: "GET",
-        url: "findTaker",
-        data: {"staffNO":staffNO,"respDeptId":respDeptId},
-        dataType: "json",
-        success: function(data){
-		        	console.log(data);
-		        	 if(data.code == 200){
-		        		var taker = data.data;
-		        		$("input[name='order_name']").val(taker.REALNAME);
-		        		$("input[name='order_tel']").val(taker.USERNAME);
-		        		$("input[name='order_dept']").val(taker.STAFF_DEPTNAME);
-		        		$("input[name='order_deptid']").val(taker.STAFF_DEPT);
-		        		$("input[name='order_userid']").val(taker.ID);
-		        		
-	        		   $("#sumbTake").attr("disabled",false);
-	        		   $("#sumbTake").removeClass("layui-btn-primary");
-		        	}else{
-		        		layer.msg(data.msg,{icon: 5,time: 1000 },function(){
-		        			$staffNO.val("");
-		    			});
-		        	}
-                 }
-    });
-　　})  
-});
 </script>	
 
 

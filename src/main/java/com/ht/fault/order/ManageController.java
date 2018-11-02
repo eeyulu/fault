@@ -428,7 +428,7 @@ public class ManageController extends BaseController {
 	
 	
 	/**
-	 * 添加接单人
+	 * 添加接单人---暂遗弃
 	 */
 	public void findTaker() {
 		try {
@@ -450,4 +450,142 @@ public class ManageController extends BaseController {
 		}
 	}
 	
+	/**
+	 * 查询部门下所有员工---修改工单接单人
+	 */
+	public void findAllStaff() {
+		try {
+			String respDeptId = getPara("respDeptId");
+
+			JSONObject jsonObject = service.findAllStaff(respDeptId);
+			if(jsonObject.getInteger("code") == ResponseCode.HT_IM_SUCCESS){
+				renderJson(jsonObject.get("result"), jsonObject.getInteger("code"), "请求成功！");
+			}else{
+				renderJson(null, ResponseCode.HT_IM_ERROR, "该部门暂无员工！");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			renderJson(null, ResponseCode.HT_IM_SERVER_ERROR,ResponseCode.HT_IM_SERVER_ERROR_MSG);
+		}
+	}
+	
+	/**
+	 * 人员评分
+	 */
+	public void scoreHtml() {
+
+		render("score.html");
+	}
+	
+	/**
+	 * 人员评分
+	 */
+	public void staffScore() {
+		int pageNumber = getParaToInt("page");
+		int pageSize = getParaToInt("limit");
+		
+		XxlUser xxlUser = (XxlUser) getAttr(Conf.SSO_USER);
+		String userId =  xxlUser.getUserid();
+		//隶属部门人员
+		Page<Record> page = service.findDepStaff(userId,pageNumber,pageSize);
+		
+		//获取人员评分
+		for(Record r : page.getList()) {
+			String id = r.get("id");
+			JSONObject json = service.average(id);
+			r.set("amount", json.getInteger("amount"));
+			r.set("score", json.getBigDecimal("score"));
+		}
+		
+		PagerList<Record> list = new PagerList<Record>();
+		list.setTotalRow(page.getTotalRow());
+		list.setList(page.getList());
+		renderJson(list);
+	}
+	
+	
+	/**
+	 * 维修评价记录
+	 */
+	public void record() {
+		String[] typeArr = PropKit.get("fault_type").split(",");
+		setAttr("typeArr", typeArr);
+		String userId = getPara("userId");
+		setAttr("userId", userId);
+		render("record.html");
+	}
+	
+	/**
+	 * 维修评价记录
+	 */
+	public void commentRec() {
+		// 设置查询参数
+		Kv cond = Kv.create();
+		
+		int pageNumber = getParaToInt("page");
+		int pageSize = getParaToInt("limit");
+		String userId = getPara("userId");
+		cond.set("t.order_userid", userId);
+		
+		String repairName = getPara("repairName");
+		String orderNo = getPara("orderNo");
+		String faultType = getPara("faultType");
+		String faultLevel = getPara("faultLevel");
+		
+		if (StrKit.notBlank(repairName)) {
+			cond.set("repair_name", repairName);
+		}
+		if (StrKit.notBlank(orderNo)) {
+			cond.set("order_no", orderNo);
+		}
+		if (StrKit.notBlank(faultType)) {
+			cond.set("type", faultType);
+		}
+		if (StrKit.notBlank(faultLevel)) {
+			cond.set("c.`level`", faultLevel);
+		}
+		
+		//维修评价记录
+		Page<Record> page = service.commentRec(cond,pageNumber,pageSize);
+		
+		PagerList<Record> list = new PagerList<Record>();
+		list.setTotalRow(page.getTotalRow());
+		list.setList(page.getList());
+		renderJson(list);
+	}
+	
+	/**
+	 * 用户首页
+	 */
+	public void userIndex() {
+		render("index.html");
+	}
+	
+	/**
+	 * 故障类型分布(饼图)
+	 */
+	public void faultPie() {
+		XxlUser xxlUser = (XxlUser) getAttr(Conf.SSO_USER);
+		String userId =  xxlUser.getUserid();
+		List<Record> group = service.groupType(userId);
+		renderJson(group);
+	}
+	
+	/**
+	 * 人员工单数量(柱状图)
+	 */
+	public void faultColumnar() {
+		
+		XxlUser xxlUser = (XxlUser) getAttr(Conf.SSO_USER);
+		String userId =  xxlUser.getUserid();
+		//隶属部门人员
+		List<Record> userList = service.findDepStaff(userId);
+		for(Record user : userList) {
+			String id = user.getStr("id");
+			//总接单数
+			Integer sum = service.faultSum(id);
+			user.set("sum", sum);
+		}
+		renderJson(userList);
+	}
 }

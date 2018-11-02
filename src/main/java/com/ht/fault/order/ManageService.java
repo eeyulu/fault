@@ -1,5 +1,8 @@
 package com.ht.fault.order;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -8,12 +11,14 @@ import com.alibaba.fastjson.JSONObject;
 import com.ht.fault.common.kit.HtImDataResultKit;
 import com.ht.fault.common.kit.ResponseCode;
 import com.ht.fault.common.kit.RongCloudKit;
+import com.ht.fault.common.kit.SqlKit;
 import com.ht.fault.common.kit.StringKit;
 import com.ht.fault.common.kit.TimeKit;
 import com.ht.fault.order.code.OrderStatus;
 import com.ht.fault.order.model.FaultMessage;
 import com.jfinal.aop.Before;
 import com.jfinal.kit.Kv;
+import com.jfinal.kit.StrKit;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
@@ -91,6 +96,7 @@ public class ManageService {
 				"select * from t_s_base_user where id = ?", userid);
 	}
 
+	@Before(Tx.class)
 	public JSONObject releaseOrder(Record record, String userId, FaultMessage message) {
 		JSONObject json = new JSONObject();
 
@@ -198,6 +204,92 @@ public class ManageService {
 			}
 		}
 		return json;
+	}
+
+	public JSONObject findAllStaff(String deptId) {
+		JSONObject json=new JSONObject();
+		//某部门下所有员工
+		List<Record> staffList = Db.use("oracle").find("SELECT * FROM t_s_base_user WHERE STAFF_DEPT IN " +
+				"( select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID ) or STAFF_DEPT = ?", deptId, deptId);	
+		
+		if(null != staffList) {
+			json.put("code", ResponseCode.HT_IM_SUCCESS);
+			json.put("result", staffList);
+		}else {
+			json.put("code", ResponseCode.HT_IM_ERROR);
+		}
+		return json;
+	}
+
+	
+	public Page<Record> findDepStaff(String userId, int pageNumber, int pageSize) {
+		//登录用户部门ID
+		Record user = findBaseUser(userId);
+		String deptId = user.getStr("STAFF_DEPT");
+		//某部门下所有员工
+		Page<Record> staffPage = Db.use("oracle").paginate(pageNumber, pageSize, "SELECT * ",
+				"FROM t_s_base_user WHERE STAFF_DEPT IN ( select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID ) or STAFF_DEPT = ?", deptId, deptId);	
+		
+		return staffPage;
+	}
+
+	public JSONObject average(String id) {
+		JSONObject json=new JSONObject();
+		
+		BigDecimal score = new BigDecimal(0);	//平均得分
+		Integer amount = 0;			//评价工单数量
+		List<Integer> scoreList = Db.query("select c.`level` from ht_im_order_take t "
+					+ "join ht_im_order_comment c on t.fault_id = c.fault_id where t.order_userid = ?", id);
+		if(scoreList != null && scoreList.size()>0) {
+			amount = scoreList.size();
+			Integer sum = 0;
+			for(Integer s : scoreList) {
+				sum += s;
+			}
+			score = new BigDecimal(sum).divide(new BigDecimal(amount), 2, RoundingMode.HALF_UP);
+		}
+		json.put("amount", amount);
+		json.put("score", score);
+		return json;
+	}
+
+	public Page<Record> commentRec(Kv cond, int pageNumber, int pageSize) {
+		// 封装查询参数并返回sql
+		SqlPara sqlPara = Db.getSqlPara("fault.findCommentList", Kv.by("cond", cond));
+		return Db.paginate(pageNumber, pageSize, sqlPara);
+
+	}
+
+	public List<Record> groupType(String userId) {
+		//登录用户部门ID
+		Record user = findBaseUser(userId);
+		String deptId = user.getStr("STAFF_DEPT");
+		List<Record> groupType = new ArrayList<Record>();
+		if(StrKit.notBlank(deptId)) {
+			List<Integer> deptList = Db.use("oracle").query("select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID", deptId);
+			deptList.add(Integer.valueOf(deptId));
+			//故障分类
+			StringBuilder dept = new StringBuilder();
+			SqlKit.joinIds(deptList, dept);
+			groupType = Db.find("select  count(*) value, f.`type` name from ht_im_order_take t JOIN ht_im_fault_form f ON t.fault_id = f.id where f.`status` != 5 and t.order_deptid in "+dept.toString()+" GROUP BY `type` ");
+		}
+		return groupType;
+	}
+
+	public List<Record> findDepStaff(String userId) {
+		//登录用户部门ID
+		Record user = findBaseUser(userId);
+		String deptId = user.getStr("STAFF_DEPT");
+		List<Record> userList = new ArrayList<Record>();
+		if(StrKit.notBlank(deptId)) {
+			//某部门下所有员工
+			userList = Db.use("oracle").find( "SELECT id,realname FROM t_s_base_user WHERE STAFF_DEPT IN ( select DEPTID from t_s_base_dept start with DEPTPID = ? connect by PRIOR DEPTID = DEPTPID ) or STAFF_DEPT = ?", deptId, deptId);	
+		}
+		return userList;
+	}
+
+	public Integer faultSum(String id) {
+		return  Db.queryInt("select  count(*) from ht_im_order_take t JOIN ht_im_fault_form f ON t.fault_id = f.id where f.`status` != 5 and t.order_userid=?", id);
 	}
 
 }
