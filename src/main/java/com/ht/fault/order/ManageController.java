@@ -103,6 +103,17 @@ public class ManageController extends BaseController {
 		setAttr("x", json);
 		render("detail.html");
 	}
+	
+	/**
+	 * 派单页面
+	 * 
+	 */
+	public void sendOrder() {
+		int id = getParaToInt("id");
+		JSONObject json = service.selOrderInfo(id);
+		setAttr("x", json);
+		render("sendOrder.html");
+	}
 
 	/**
 	 * 跳转编辑页面
@@ -230,6 +241,39 @@ public class ManageController extends BaseController {
 		}
 	}
 	
+	/**
+	 * 派单(保存接单人信息)
+	 */
+	public void saveTake() {
+		try {
+			Date date = new Date();
+			Record take = new Record()
+			.set("fault_id", getParaToInt("fault_id"))
+			.set("order_tel", getPara("order_tel"))
+			.set("update_time", date)
+			.set("order_time",date)
+			.set("order_deptid", getPara("order_deptid"))
+			.set("order_dept", getPara("order_dept"))
+			.set("order_staffno", getPara("order_staffno"))
+			.set("order_name", getPara("order_name"))
+			.set("order_userid", getPara("order_userid"));
+			
+			Record fault = new Record()
+			.set("id", getParaToInt("fault_id"))
+			.set("update_time", date)
+			.set("status", OrderStatus.TAKE);
+					
+			JSONObject jsonObject = service.saveOrderTake(take,fault);
+			if(jsonObject.getInteger("code") == ResponseCode.HT_IM_SUCCESS){
+				renderJson(jsonObject.get("result"), jsonObject.getInteger("code"), "发布成功！");
+			}else{
+				renderJson(null, ResponseCode.HT_IM_ERROR, "发布失败！");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			renderJson(null, ResponseCode.HT_IM_SERVER_ERROR,ResponseCode.HT_IM_SERVER_ERROR_MSG);
+		}
+	}
 	
 	/**
 	 * 修改接单信息

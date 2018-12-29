@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--   <meta charset="utf-8"> -->
+  <meta charset="utf-8" >
+  <title>故障工单派单</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+  <script src="../js/jquery-1.4.4.min.js" charset="utf-8"></script>
+  
+  <style type="text/css">
+	div img:hover{
+		transform: scale(3.0);
+	}
+	 #staffList {
+	    display: flex;
+	    display: -webkit-flex;
+	    /* 从左端开始沿水平轴防止flex item */
+	    flex-direction: row;
+	    /* 强制 flex item不换行，沿着同一行堆叠 */
+	    flex-wrap: wrap;
+	    /* flex item在主轴上的对齐方式，这里定义左对齐 */
+	    justify-content: flex-start;
+	    /* 定义交叉轴对其方式 */
+	    align-items: flex-start
+	  }
+	  
+	  .staffLoc{
+	    padding-left: 15px;
+	    padding-right: 15px;
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+	  }
+  </style>
+</head>  
+<body style="background-color: #f2f2f2"> 
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">   
+         
+    <div class="layui-col-sm12"  style="margin-top: 20px;">
+        <div class="layui-card">
+        <div class="layui-card-header">
+        	基本信息
+        	<div class="layui-btn-group layuiadmin-btn-group" style="position: absolute;right: 15px;">
+        	<!-- <a href="listHtml""> -->
+        	<a href="JavaScript:history.go(-1)">
+            <button class="layui-btn layui-btn-primary layui-btn-xs"  >返回</button>
+            </a>
+          	</div>
+        </div>
+        <div class="layui-card-body layui-text">
+          <table class="layui-table">
+            <colgroup>
+              <col width="100">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <td width="25%">工单号</td>
+                <td width="25%">#(x.fault.order_no)</td>
+                <td width="25%">故障单状态</td>
+                <td width="25%" id="orderStatus">#(x.fault.status)</td>
+              </tr>
+              <tr>
+                <td>故障类型</td>
+                <td>#(x.fault.type)</td>
+                <td>紧急程度</td>
+                <td>
+                #if(x.fault.level  =='紧急')
+                	<button class="layui-btn layui-btn-danger layui-btn-xs">紧急</button>
+                #elseif(x.fault.level =='一般')
+                 	<button class="layui-btn layui-btn-primary layui-btn-xs">一般</button>
+                #end
+                </td>
+              </tr>
+              <tr>
+                <td>负责科室</td>
+                <td>
+                #(x.fault.responsible_dep)
+                <input type="hidden" id="responsible_depid"   value = "#(x.fault.responsible_depid??)">
+                </td>
+                <td>报障时间</td>
+                <td>#date(x.fault.repair_time,"yyyy-MM-dd HH:mm:ss")</td>
+              </tr>
+              <tr>
+                <td>故障位置</td>
+                <td colspan="3">#(x.fault.location)</td>
+              </tr>
+              <tr>
+                <td>故障描述</td>
+                <td colspan="3">#(x.fault.describe)</td>
+              </tr>
+              <tr>
+                <td>描述图片</td>
+                <td colspan="3"  id="desPic">#(x.fault.des_picture)</td>
+              </tr>
+              <tr>
+                <td>备注</td>
+                <td colspan="3">#(x.fault.remark)</td>
+              </tr>
+              
+              <tr>
+                <td>录入人</td>
+                <td>#(x.fault.repair_name)</td>
+                <td>录入人工号</td>
+                <td>#(x.fault.repair_staffno)</td>
+              </tr>
+              <tr>
+                <td>录入人电话</td>
+                <td>#(x.fault.repair_tel)</td>
+                <td>录入人科室</td>
+                <td>#(x.fault.repair_dep)</td>
+              </tr>
+              <tr>
+                <td>报修人姓名</td>
+                <td>#(x.fault.report_name)</td>
+                <td>报修人工号</td>
+                <td>#(x.fault.report_staffno)</td>
+              </tr>
+              <tr>
+                <td>报修人电话</td>
+                <td>#(x.fault.report_tel)</td>
+                <td>报修人科室</td>
+                <td>#(x.fault.report_dep)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  
+    </div>
+
+	<form  class="layui-form " action="" lay-filter="example">   
+       <div class="layui-col-sm12">
+	      <div class="layui-card">
+	        <div class="layui-card-header">接单人信息</div>
+	        <div id="staffList" ></div>
+	        <div class="layui-card-body layui-text">
+	        <input type="hidden" name="fault_id"   value = "#(x.fault.id??)">
+         	<input type="hidden" name="order_deptid"   value = ""  class="layui-input" >
+         	<input type="hidden" name="order_userid"   value = ""  class="layui-input" >
+	          <table class="layui-table">
+	            <colgroup>
+	              <col width="100">
+	              <col>
+	            </colgroup>
+	            <tbody id="takeTable">
+	              <tr>
+	                <td width="10%">接单人</td>
+	                <td width="40%"><input type="text" readonly="readonly" name="order_name"   value = "" required lay-verify="reportName" placeholder="接单人姓名" autocomplete="off" class="layui-input" ></td>
+	                <td width="10%">工号</td>
+	                <td width="40%"><input type="text"  name="order_staffno" readonly="readonly" value = "" required lay-verify="staffno" placeholder="接单人工号" autocomplete="off" class="layui-input" ></td>
+<!-- 	                <td width="40%"><input type="text"  name="order_staffno"  onBlur="isChange();" onFocus="whetherGo();" value = "#(x.take.order_staffno??)" required lay-verify="staffno" placeholder="接单人工号" autocomplete="off" class="layui-input" ></td> -->
+	              </tr>
+	              <tr>
+	                <td>电话</td>
+	                <td><input type="text" name="order_tel"   value = "" required lay-verify="phone" placeholder="接单人电话" autocomplete="off" class="layui-input" ></td>
+	                <td>科室</td>
+	                <td><input type="text" name="order_dept" readonly="readonly" value = "" required lay-verify="reportDep" placeholder="接单人科室" autocomplete="off" class="layui-input" ></td>
+	              </tr>
+	            </tbody>
+	          </table>
+	      <div class="layui-form-item" >
+		    <div class="layui-input-block" style="text-align:center;">
+		      
+		      <button id="sumbTake" class="layui-btn" lay-submit="" lay-filter="demo1" >保存</button>
+		      <button type="reset"  class="layui-btn layui-btn-primary">重置</button>
+		    </div>
+		  </div>
+	        </div>
+	      </div>
+        </div>
+      </form> 
+        
+  </div>
+</div>
+          
+<script src="../layui/layui.js" charset="utf-8"></script>
+<script>
+	$(function(){
+		console.log("xxx");
+		layui.use('layer', function(){
+			console.log("xxx");
+			var layer = layui.layer;
+			console.log("oo");
+			getStaff();
+		}); 
+	});
+	
+	function getStaff(){
+//		var respDeptId = $("select[name='responsible_depid']  option:selected").val();
+//	    var respDeptId = data.value;
+	    var respDeptId = $("#responsible_depid").val();
+	    console.log("负责科室ID:"+respDeptId);
+	    var index;
+	    $("#staffList").empty();
+	    $.ajax({
+		    type: "GET",
+		    url: "findAllStaff",
+		    data: {"respDeptId":respDeptId},
+		    dataType: "json",
+			beforeSend: function (request) {
+				index = layer.load();
+			},
+		    success: function(data){
+		    			layer.close(index);
+//			   			 console.log(data);
+			   			 if(data.code==200){
+			   				 var staff = data.data;
+			   				for(var i in staff){
+			   				　　var order_name = staff[i].REALNAME;
+			   				　　var order_tel = staff[i].USERNAME;
+			   				　　var order_dept = staff[i].STAFF_DEPTNAME;
+			   				　　var order_deptid = staff[i].STAFF_DEPT;
+			   				　　var order_userid = staff[i].ID;
+			   				　　var order_staffno = staff[i].STAFF_NO;
+			   				   var html ='<div class="staffLoc">'+
+			   					'<button type="button" class="layui-btn layui-btn-primary layui-btn-xs" onclick="fill(this);">'+order_name+'</button>'+
+			   					'<input type="hidden" value = "'+order_name+'" >'+
+			   					'<input type="hidden" value = "'+order_tel+'" >'+
+			   					'<input type="hidden" value = "'+order_dept+'" >'+
+			   					'<input type="hidden" value = "'+order_deptid+'" >'+
+			   					'<input type="hidden" value = "'+order_userid+'" >'+
+			   					'<input type="hidden" value = "'+order_staffno+'" >'+
+			   					'</div>';
+				   			    $("#staffList").append(html);
+			   				}
+			   			 }else{
+			   			 	layer.msg(data.msg);
+			   			 }
+		             }
+	   });
+	}
+	
+	function recover(){
+		$("#staffList").empty();
+	}
+	
+	function fill(e){
+		$(e).parent().find("input[type='hidden']").each(function (index,value,arr) {
+//			console.log(value);
+//			console.log(index);
+			var inputV = $(value).val();
+//			console.log(inputV);
+			switch(index)
+			{
+			case 0:
+				$("input[name='order_name']").val(inputV);
+			  break;
+			case 1:
+				$("input[name='order_tel']").val(inputV);
+			  break;
+			case 2:
+				$("input[name='order_dept']").val(inputV);
+			  break;
+			case 3:
+				$("input[name='order_deptid']").val(inputV);
+			  break;
+			case 4:
+				$("input[name='order_userid']").val(inputV);
+			  break;
+			case 5:
+				$("input[name='order_staffno']").val(inputV);
+			  break;
+			default:
+				$("input[name='order_staffno']").val("");
+				break;
+			}
+        });
+		return false;
+	}
+	
+	$(function() {
+		
+	    if($("#orderStatus").html() == 1){
+            $("#orderStatus").html('<button class="layui-btn layui-btn-danger layui-btn-xs">未受理</button>');
+        }else if($("#orderStatus").html() == 2){
+             $("#orderStatus").html('<button class="layui-btn layui-btn-warm layui-btn-xs">已受理</button>');
+        }else if($("#orderStatus").html() == 3){
+             $("#orderStatus").html('<button class="layui-btn layui-btn-primary layui-btn-xs">已搁置</button>');
+        }else if($("#orderStatus").html() == 4){
+             $("#orderStatus").html('<button class="layui-btn layui-btn-normal layui-btn-xs">已完成</button>');
+        }else if($("#orderStatus").html() == 5){
+             $("#orderStatus").html('<button class="layui-btn layui-btn-xs">已评价</button>');
+        }else if($("#orderStatus").html() == 6){
+             $("#orderStatus").html('<button class="layui-btn layui-btn-primary layui-btn-xs">已撤销</button>');
+        }
+        var data = $("#desPic").html();
+       // console.log(JSON.parse(data));
+        if(data == "null" || data == ""){
+        	$("#desPic").html("");
+        	return;
+        }
+        var obj = eval(data);
+        var src='';
+        for (var i = 0; i < obj.length; i++) {
+			 src  += '<img style="margin-right: 50px;" src="'+obj[i]+'">';
+		}
+		
+		 $("#desPic").html(src);
+		
+	});
+	
+	
+	layui.use('form', function(){
+		  var form = layui.form;
+
+		  form.verify({
+		      reportName: function(value){
+			      if(value.length > 10){
+			        return '姓名不能超过10个字符';
+			      }
+		   	  },
+		   	  reportDep: function(value){
+			      if(value.length > 20){
+			        return '部门不能超过20个字符';
+			      }
+		   	  },
+			  //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
+			  staffno: [
+			    /^[\S]{6,6}$/
+			    ,'报修人工号必须6数字'
+			  ] 
+		  });
+
+		  //监听提交
+		  form.on('submit(demo1)', function(data){
+//		     var responsible_dep = $("select[name='responsible_depid']  option:selected").text();
+			 var param = data.field;
+//			 param["responsible_dep"] = responsible_dep;
+//			 layer.msg(JSON.stringify(param));
+//			 return false;
+		 	 $.ajax({
+		     type: "GET",
+		     url: "saveTake",
+		     data: param,
+		     dataType: "json",
+		     success: function(data){
+		    			 if(data.code ==200){
+		    			 	layer.msg('操作成功!', {icon: 1,time: 2000,shade : [0.5 , '#000' , true]},function(){
+										location.href="listHtml";
+										});
+		    			 }else if(data.code ==30005){
+		    			 	layer.msg(data.msg, {icon:2,time: 3000,shade : [0.5 , '#000' , true]},function(){
+										location.href="listHtml";
+										});
+		    			 }else{
+		    			 	layer.msg('操作失败！', {icon:2})
+		    			 }
+		              }
+		    });
+		    return false;
+		  });
+	});
+</script>	
+
+</body>
+</html>

@@ -101,6 +101,7 @@
    	<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
    	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="repeal">撤销</a>
 	<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">详情</a>
+	<a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="send">派单</a>
   {{# }else { }}
    	<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
 	<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">详情</a>
@@ -276,7 +277,9 @@ layui.use('table', function(){
  		
  		window.location.href="detail?id="+ data.id; 
       
-    } else if(obj.event === 'edit'){
+    } else if(obj.event === 'send'){
+        window.location.href="sendOrder?id="+ data.id; 
+    }  else if(obj.event === 'edit'){
 /*       layer.confirm('真的删除该应用', function(index){
         //obj.del();
         

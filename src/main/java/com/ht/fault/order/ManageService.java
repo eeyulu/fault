@@ -292,4 +292,17 @@ public class ManageService {
 		return  Db.queryInt("select  count(*) from ht_im_order_take t JOIN ht_im_fault_form f ON t.fault_id = f.id where f.`status` != 5 and t.order_userid=?", id);
 	}
 
+	@Before(Tx.class)
+	public JSONObject saveOrderTake(Record take, Record fault) {
+		JSONObject json = new JSONObject();
+		boolean b =Db.save("ht_im_order_take", take);
+		boolean b1 =Db.update("ht_im_fault_form", fault);
+		if (b&b1) {
+			json.put("code", ResponseCode.HT_IM_SUCCESS);
+		} else {
+			json.put("code", ResponseCode.HT_IM_ERROR);
+		}
+		return json;
+	}
+
 }
