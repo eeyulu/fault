@@ -246,6 +246,13 @@ public class ManageController extends BaseController {
 	 */
 	public void saveTake() {
 		try {
+			Integer faultId = getParaToInt("fault_id");
+			Integer status = service.orderStatus(faultId);
+			if(status != OrderStatus.RELEASE){
+				renderJson(null, ResponseCode.FAULT_STATUS_UPDATE, ResponseCode.FAULT_STATUS_UPDATE_MSG);
+				return;
+			}
+			
 			Date date = new Date();
 			Record take = new Record()
 			.set("fault_id", getParaToInt("fault_id"))
