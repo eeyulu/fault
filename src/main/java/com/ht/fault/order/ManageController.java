@@ -414,8 +414,8 @@ public class ManageController extends BaseController {
 			String remark = getPara("remark");			
 			String type = getPara("type");
 			
-			String responsibleDep = getPara("responsible_dep");
-			Integer responsibleDepId=getParaToInt("responsible_depid");	
+//			String responsibleDep = getPara("responsible_dep");
+//			Integer responsibleDepId=getParaToInt("responsible_depid");	
 //			String desPicture = getPara("desPicture");
 			//报修人信息
 			String reportName = getPara("report_name");
@@ -428,8 +428,8 @@ public class ManageController extends BaseController {
 			.set("location", location)
 			.set("type", type)
 			.set("level", level)
-			.set("responsible_dep", responsibleDep)
-			.set("responsible_depid", responsibleDepId)
+//			.set("responsible_dep", responsibleDep)
+//			.set("responsible_depid", responsibleDepId)
 			.set("describe", describe)
 //			.set("des_picture", desPicture)
 			.set("report_name", reportName)

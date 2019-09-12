@@ -94,7 +94,7 @@
                     <div class="layui-input-inline">
 		                <select name="responsible_depid" lay-verify="required" lay-search lay-filter="resp">          		
 		                #for(m:resp)
-				        	<option value="#(m.responsible_depid)" #if(x.fault.responsible_depid == m.responsible_depid) selected='selected' #end>#(m.responsible_dep)</option>
+				        	<option value="#(m.responsibleDepId)" #if(x.fault.responsible_depid == m.responsibleDepId) selected='selected' #end>#(m.responsibleDep)</option>
 				   		#end 
 				   		</select>
 			   		</div>
@@ -184,7 +184,7 @@
 	            </tbody>
 	          </table>
 	      <div class="layui-form-item" >
-		    <div class="layui-input-block" style="text-align:center;">
+		    <div class="layui-input-block" style="text-align:center;margin-left: 0px;margin-top: 20px;">
 		      
 		      <button id="sumbTake" class="layui-btn" lay-submit="" lay-filter="demo1" >修改</button>
 		      <button type="reset" onclick="recover();" class="layui-btn layui-btn-primary">恢复</button>

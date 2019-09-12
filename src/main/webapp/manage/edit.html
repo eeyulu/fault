@@ -69,15 +69,19 @@
                 </td>
               </tr>
               <tr>
-                <td>负责科室</td>
+<!--                 <td>负责科室</td>
                 <td>
                     <div class="layui-input-inline">
 		                <select name="responsible_depid" lay-verify="required" lay-search >          		
 		                #for(m:resp)
-				        	<option value="#(m.responsible_depid)" #if(x.fault.responsible_depid == m.responsible_depid) selected='selected' #end>#(m.responsible_dep)</option>
+				        	<option value="#(m.responsibleDepId)" #if(x.fault.responsible_depid == m.responsibleDepId) selected='selected' #end>#(m.responsibleDep)</option>
 				   		#end 
 				   		</select>
 			   		</div>
+                </td> -->
+                <td>负责科室</td>
+                <td>
+                    #(x.fault.responsible_dep)
                 </td>
                 <td>报障时间</td>
                 <td>#date(x.fault.repair_time,'yyyy-MM-dd HH:mm:ss')</td>
@@ -126,7 +130,7 @@
             </tbody>
           </table>
           <div class="layui-form-item" >
-		    <div class="layui-input-block" style="text-align:center;">
+		    <div class="layui-input-block" style="text-align:center;margin-left: 0px;margin-top: 20px;">
 		      
 		      <button class="layui-btn" lay-submit="" lay-filter="demo1" >修改</button>
 		      <button type="reset" class="layui-btn layui-btn-primary">恢复</button>
@@ -210,10 +214,10 @@ layui.use('form', function(){
   form.on('submit(demo1)', function(data){
 /*     layer.msg(JSON.stringify(data.field));
     console.log(data.field);  */
-   	  var responsible_dep = $("select[name='responsible_depid']  option:selected").text();
+//   	  var responsible_dep = $("select[name='responsible_depid']  option:selected").text();
 //  console.log(responsible_dep); 
 	  var param = data.field;
-	  param["responsible_dep"] = responsible_dep;
+//	  param["responsible_dep"] = responsible_dep;
  	$.ajax({
      type: "GET",
      url: "update",
