@@ -288,8 +288,8 @@ public class ManageController extends BaseController {
 		try {
 			
 			Integer faultId = getParaToInt("faultId");
-			Integer status = service.orderStatus(faultId);
-			if(status != OrderStatus.TAKE){
+			Record fault = service.findFault(faultId);;
+			if(fault.getInt("status") != OrderStatus.TAKE){
 				renderJson(null, ResponseCode.FAULT_STATUS_UPDATE, ResponseCode.FAULT_STATUS_UPDATE_MSG);
 				return;
 			}
@@ -305,20 +305,19 @@ public class ManageController extends BaseController {
 //			String report_staffno = getPara("report_staffno");
 //			String report_tel = getPara("report_tel");
 //			String report_dep = getPara("report_dep");
-			
-			Record fault = new Record()
-					.set("id", faultId)
-					.set("type", getPara("type"))
-					.set("level", getPara("level"))
-					.set("responsible_depid", getPara("responsible_depid"))
-					.set("location", getPara("location"))
-					.set("describe", getPara("describe"))
-					.set("remark", getPara("remark"))
-					.set("report_name", getPara("report_name"))
-					.set("report_staffno", getPara("report_staffno"))
-					.set("report_tel", getPara("report_tel"))
-					.set("report_dep", getPara("report_dep"))
-					.set("update_time", date);
+		
+			fault.set("type", getPara("type"))
+			.set("level", getPara("level"))
+			.set("responsible_depid", getPara("responsible_depid"))
+			.set("responsible_dep", getPara("responsible_dep"))
+			.set("location", getPara("location"))
+			.set("describe", getPara("describe"))
+			.set("remark", getPara("remark"))
+			.set("report_name", getPara("report_name"))
+			.set("report_staffno", getPara("report_staffno"))
+			.set("report_tel", getPara("report_tel"))
+			.set("report_dep", getPara("report_dep"))
+			.set("update_time", date);
 			
 			//接单信息
 //			Integer id = getParaToInt("id");
@@ -455,16 +454,14 @@ public class ManageController extends BaseController {
 	public void repeal(){
 		try {
 			Integer id = getParaToInt("id");
-			Integer status = service.orderStatus(id);
-			if(status != OrderStatus.RELEASE){
+			Record r = service.findFault(id);
+			if(r.getInt("status") != OrderStatus.RELEASE){
 				renderJson(null, ResponseCode.FAULT_STATUS_UPDATE, ResponseCode.FAULT_STATUS_UPDATE_MSG);
 				return;
 			}
-			Record record = new Record()
-			.set("id", id)
-			.set("status", OrderStatus.REPEAL)
+			r.set("status", OrderStatus.REPEAL)
 			.set("update_time", new Date());
-			JSONObject jsonObject = service.updateOrder(record);
+			JSONObject jsonObject = service.updateOrder(r);
 			if(jsonObject.getInteger("code") == ResponseCode.HT_IM_SUCCESS){
 				renderJson(jsonObject.get("result"), jsonObject.getInteger("code"), "发布成功！");
 			}else{

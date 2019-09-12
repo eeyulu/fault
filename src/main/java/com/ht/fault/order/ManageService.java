@@ -25,6 +25,7 @@ import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.SqlPara;
 import com.jfinal.plugin.activerecord.tx.Tx;
 
+import io.rong.messages.TxtMessage;
 import io.rong.models.CodeSuccessResult;
 
 public class ManageService {
@@ -147,6 +148,12 @@ public class ManageService {
 		record.set("update_time", date);
 		boolean b =Db.update("ht_im_fault_form", record);
 		if (b) {
+			if(StrKit.notBlank(record.getStr("status")) && record.getInt("status") == OrderStatus.REPEAL) {
+				String content="你发布的工单("+record.getStr("order_no")+")已被管理员撤销，如有疑问请联系管理员。";
+				System.out.println(content);
+				String[] toUserId = {record.getStr("repair_userid")};
+				pushTxtMessage(toUserId, content);
+			}
 			json.put("code", ResponseCode.HT_IM_SUCCESS);
 		} else {
 			json.put("code", ResponseCode.HT_IM_ERROR);
@@ -157,6 +164,10 @@ public class ManageService {
 	public Integer orderStatus(Integer id) {
 		return Db.queryInt("select status from ht_im_fault_form where id = ?", id);
 	}
+	
+	public Record findFault(Integer id) {
+		return Db.findById("ht_im_fault_form", id);
+	}
 
 	@Before(Tx.class)
 	public JSONObject updateOrderTake(Record record, Record fault) {
@@ -164,6 +175,11 @@ public class ManageService {
 		boolean b =Db.update("ht_im_order_take", record);
 		boolean b1 =Db.update("ht_im_fault_form", fault);
 		if (b&b1) {
+			
+			String[] toUserId = {record.getStr("order_userid")};
+			String content = "管理员已将工单("+fault.getStr("order_no")+")重新派发到你的列表中，请及时查看！";
+			pushTxtMessage(toUserId,content);
+			
 			json.put("code", ResponseCode.HT_IM_SUCCESS);
 		} else {
 			json.put("code", ResponseCode.HT_IM_ERROR);
@@ -297,12 +313,23 @@ public class ManageService {
 		JSONObject json = new JSONObject();
 		boolean b =Db.save("ht_im_order_take", take);
 		boolean b1 =Db.update("ht_im_fault_form", fault);
+		
 		if (b&b1) {
+			String[] toUserId = {take.getStr("order_userid")};
+			String content = "管理员已为你派发工单，请及时查看！";
+			pushTxtMessage(toUserId,content);
 			json.put("code", ResponseCode.HT_IM_SUCCESS);
 		} else {
 			json.put("code", ResponseCode.HT_IM_ERROR);
 		}
 		return json;
+	}
+	
+	private void pushTxtMessage(String[] toUserId, String content) {
+		String fromUserId = "4028814265a2a28a0165a2a3ef320000";	//故障工单推送-- alertFault
+		TxtMessage txtMessage = new TxtMessage(content, "");
+		//派发通知接单人
+		RongCloudKit.pushGroupMessage(fromUserId, toUserId, txtMessage,"故障工单");
 	}
 
 }
