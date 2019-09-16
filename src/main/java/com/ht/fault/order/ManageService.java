@@ -316,7 +316,7 @@ public class ManageService {
 		
 		if (b&b1) {
 			String[] toUserId = {take.getStr("order_userid")};
-			String content = "管理员已为你派发工单，请及时查看！";
+			String content = "管理员已为你派发工单("+fault.getStr("order_no")+")，请及时查看！";
 			pushTxtMessage(toUserId,content);
 			json.put("code", ResponseCode.HT_IM_SUCCESS);
 		} else {

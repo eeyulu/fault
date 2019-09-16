@@ -246,8 +246,8 @@ public class ManageController extends BaseController {
 	public void saveTake() {
 		try {
 			Integer faultId = getParaToInt("fault_id");
-			Integer status = service.orderStatus(faultId);
-			if(status != OrderStatus.RELEASE){
+			Record fault = service.findFault(faultId);
+			if(fault.getInt("status") != OrderStatus.RELEASE){
 				renderJson(null, ResponseCode.FAULT_STATUS_UPDATE, ResponseCode.FAULT_STATUS_UPDATE_MSG);
 				return;
 			}
@@ -264,10 +264,7 @@ public class ManageController extends BaseController {
 			.set("order_name", getPara("order_name"))
 			.set("order_userid", getPara("order_userid"));
 			
-			Record fault = new Record()
-			.set("id", getParaToInt("fault_id"))
-			.set("update_time", date)
-			.set("status", OrderStatus.TAKE);
+			fault.set("update_time", date).set("status", OrderStatus.TAKE);
 					
 			JSONObject jsonObject = service.saveOrderTake(take,fault);
 			if(jsonObject.getInteger("code") == ResponseCode.HT_IM_SUCCESS){
@@ -288,7 +285,7 @@ public class ManageController extends BaseController {
 		try {
 			
 			Integer faultId = getParaToInt("faultId");
-			Record fault = service.findFault(faultId);;
+			Record fault = service.findFault(faultId);
 			if(fault.getInt("status") != OrderStatus.TAKE){
 				renderJson(null, ResponseCode.FAULT_STATUS_UPDATE, ResponseCode.FAULT_STATUS_UPDATE_MSG);
 				return;
