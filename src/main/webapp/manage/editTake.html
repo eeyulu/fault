@@ -67,7 +67,7 @@
                 </td>
               </tr>
               <tr>
-                <td>故障类型</td>
+                <td><span style="color:red">*</span>故障类型</td>
                 <td> 
                 <div class="layui-input-inline">
                 <select name="type" lay-verify="required" lay-search>          		
@@ -77,7 +77,7 @@
 		   		</select>
 		   		</div>
 		   		</td>
-                <td>紧急程度</td>
+                <td><span style="color:red">*</span>紧急程度</td>
                 <td>
                  <div class="layui-input-inline">
                 <select name="level" lay-verify="required" lay-search> 
@@ -89,7 +89,7 @@
                 </td>
               </tr>
               <tr>
-                <td>负责科室</td>
+                <td><span style="color:red">*</span>负责科室</td>
                 <td>
                     <div class="layui-input-inline">
 		                <select name="responsible_depid" lay-verify="required" lay-search lay-filter="resp">          		
@@ -103,12 +103,12 @@
                 <td>#date(x.fault.repair_time,'yyyy-MM-dd HH:mm:ss')</td>
               </tr>
               <tr>
-                <td>故障位置</td>
+                <td><span style="color:red">*</span>故障位置</td>
                 <td colspan="3"><textarea name="location" placeholder="请输入内容" class="layui-textarea" required lay-verify="location|required">#(x.fault.location)</textarea></td>
               </tr>
               <tr>
-                <td>故障描述</td>
-                <td colspan="3"><textarea name="describe" placeholder="请输入内容" class="layui-textarea" lay-verify="area">#(x.fault.describe)</textarea></td>
+                <td><span style="color:red">*</span>故障描述</td>
+                <td colspan="3"><textarea name="describe" placeholder="请输入内容" class="layui-textarea" lay-verify="area|required">#(x.fault.describe)</textarea></td>
               </tr>
               <tr>
                 <td>描述图片</td>
@@ -132,15 +132,15 @@
                 <td>#(x.fault.repair_dep)</td>
               </tr>
               <tr>
-                <td>报修人姓名</td>
+                <td><span style="color:red">*</span>报修人姓名</td>
                 <td><input type="text" name="report_name"   value = "#(x.fault.report_name??)" lay-verify="reportName|required" placeholder="报修人姓名" autocomplete="off" class="layui-input" ></td>
-                <td>报修人工号</td>
+                <td><span style="color:red">*</span>报修人工号</td>
                 <td><input type="text" name="report_staffno"   value = "#(x.fault.report_staffno??)" required lay-verify="staffno" placeholder="报修人工号" autocomplete="off" class="layui-input" ></td>
               </tr>
               <tr>
-                <td>报修人电话</td>
+                <td><span style="color:red">*</span>报修人电话</td>
                 <td><input type="text" name="report_tel"   value = "#(x.fault.report_tel??)" required lay-verify="phone" placeholder="报修人电话" autocomplete="off" class="layui-input" ></td>
-                <td>报修人科室</td>
+                <td><span style="color:red">*</span>报修人科室</td>
                 <td><input type="text" name="report_dep"   value = "#(x.fault.report_dep??)" required lay-verify="reportDep|required" placeholder="报修人科室" autocomplete="off" class="layui-input" ></td>
               </tr>
             </tbody>
@@ -165,16 +165,16 @@
 	            </colgroup>
 	            <tbody id="takeTable">
 	              <tr>
-	                <td width="10%">接单人</td>
+	                <td width="10%"><span style="color:red">*</span>接单人</td>
 	                <td width="40%"><input type="text" readonly="readonly" name="order_name"   value = "#(x.take.order_name??)" required lay-verify="reportName" placeholder="接单人姓名" autocomplete="off" class="layui-input" ></td>
-	                <td width="10%">工号</td>
+	                <td width="10%"><span style="color:red">*</span>工号</td>
 	                <td width="40%"><input type="text"  name="order_staffno" readonly="readonly" value = "#(x.take.order_staffno??)" required lay-verify="staffno" placeholder="接单人工号" autocomplete="off" class="layui-input" ></td>
 <!-- 	                <td width="40%"><input type="text"  name="order_staffno"  onBlur="isChange();" onFocus="whetherGo();" value = "#(x.take.order_staffno??)" required lay-verify="staffno" placeholder="接单人工号" autocomplete="off" class="layui-input" ></td> -->
 	              </tr>
 	              <tr>
-	                <td>电话</td>
+	                <td><span style="color:red">*</span>电话</td>
 	                <td><input type="text" name="order_tel"   value = "#(x.take.order_tel??)" required lay-verify="phone" placeholder="接单人电话" autocomplete="off" class="layui-input" ></td>
-	                <td>科室</td>
+	                <td><span style="color:red">*</span>科室</td>
 	                <td><input type="text" name="order_dept" readonly="readonly" value = "#(x.take.order_dept??)" required lay-verify="reportDep" placeholder="接单人科室" autocomplete="off" class="layui-input" ></td>
 	              </tr>
 <!-- 	              <tr>

@@ -103,7 +103,7 @@ public class ManageService {
 
 		Record user = findBaseUser(userId);
 		Date date = new Date();
-		String orderNo = "0000" + StringKit.getFixLenthString(6);
+		String orderNo = TimeKit.getUserDate("yyyyMMddHHmmss") + StringKit.getFixLenthString(5);
 
 		record.set("repair_staffno", user.getStr("STAFF_NO"))
 				.set("repair_name", user.getStr("REALNAME"))
