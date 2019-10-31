@@ -28,8 +28,8 @@ fault_responsible_dep = [{"responsibleDep":"信息科","responsibleDepId":23},{"
 
 #图片上传
 tokenUrl=http://upload.ht-healthcare.com/token/get
-appId=ht25083298211
-appSecret=5c2771bb17c95d24af6b05859cdc255c
+uploadId=ht25083298211
+uploadSecret=5c2771bb17c95d24af6b05859cdc255c
 
 #获取推送人
 #im_data_url = http://192.168.20.91:9090/ht_data_service

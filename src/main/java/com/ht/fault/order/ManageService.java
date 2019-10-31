@@ -75,11 +75,13 @@ public class ManageService {
 			List<Record> solver = Db.find(
 					"select * from ht_im_solver_info WHERE fault_id = ?",
 					faultId);
+			
+			List<Record> attach = Db.find("select * from ht_im_order_attachment WHERE fault_id = ?", faultId);
 			// Record input =
 			// Db.findFirst("select * from ht_im_order_solve WHERE fault_id = ?",
 			// faultId);
 			// json.fluentPut("input", input).fluentPut("solver", solver);
-			json.fluentPut("solver", solver);
+			json.fluentPut("solver", solver).fluentPut("attach", attach);
 		}
 		if (fault.getInt("status") >= OrderStatus.RECEIVE) {
 			// 评价信息
@@ -187,7 +189,8 @@ public class ManageService {
 		return json;
 	}
 
-	public JSONObject updateSolver(List<Record> solverList, Integer faultId) {
+	@Before(Tx.class)
+	public JSONObject updateSolver(List<Record> solverList, List<Record> attachList,Integer faultId) {
 		JSONObject json=new JSONObject();
 		
 		Db.update("delete from ht_im_solver_info where fault_id = ?", faultId);
@@ -195,6 +198,13 @@ public class ManageService {
 			//保存解决人信息
 			Db.batchSave("ht_im_solver_info", solverList, solverList.size());	
 		}
+		
+		Db.update("delete from ht_im_order_attachment where fault_id = ?", faultId);
+		if(attachList.size()>0) {
+			//保存附件信息
+			Db.batchSave("ht_im_order_attachment", attachList, attachList.size());	
+		}
+		
 		json.put("code", ResponseCode.HT_IM_SUCCESS);
 		return json;
 	}

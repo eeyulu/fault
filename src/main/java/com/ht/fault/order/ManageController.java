@@ -167,8 +167,8 @@ public class ManageController extends BaseController {
 	 */
 	public void getToken(){
 		String tokenUrl = PropKit.get("tokenUrl");
-		String appId = PropKit.get("appId");
-		String appSecret = PropKit.get("appSecret");
+		String appId = PropKit.get("uploadId");
+		String appSecret = PropKit.get("uploadSecret");
 		
 		Map<String, String> paras = new HashMap<String, String>();
 		paras.put("appId", appId);
@@ -362,6 +362,7 @@ public class ManageController extends BaseController {
 				return;
 			}
 			JSONArray solverArr =Json.getJSONArray("solver");
+			JSONArray attachArr = Json.getJSONArray("attach");			//附件信息
 			
 			Date date = new Date();
 			List<Record> solverList = new ArrayList<Record>();
@@ -380,7 +381,26 @@ public class ManageController extends BaseController {
 				}
 			}
 			
-			JSONObject jsonObject = service.updateSolver(solverList,faultId);
+			List<Record> attachList = new ArrayList<Record>();
+			
+			if(null != attachArr) {
+				for(int i=0; i<attachArr.size(); i++) {
+					JSONObject json = attachArr.getJSONObject(i);
+					
+					Record solver =new Record().set("fault_id",faultId)
+							.set("name", json.getString("name"))
+							.set("model", json.getString("model"))
+							.set("price", json.getBigDecimal("price"))
+							.set("amount", json.getInteger("amount"))
+							.set("unit", json.getString("unit"))
+							.set("total", json.getBigDecimal("total"))
+							.set("createTime", date)
+							.set("updateTime",date);
+					attachList.add(solver);
+				}
+			}
+			
+			JSONObject jsonObject = service.updateSolver(solverList,attachList,faultId);
 			if(jsonObject.getInteger("code") == ResponseCode.HT_IM_SUCCESS){
 				renderJson(jsonObject.get("result"), jsonObject.getInteger("code"), "发布成功！");
 			}else{

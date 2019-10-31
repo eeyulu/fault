@@ -144,7 +144,7 @@ $(document).ready(function(){
     			 accessToken = res.data.accessToken;
     			 console.log(accessToken);
     			 
-    			 layui.use('upload', function(){
+    			 layui.use(['upload','layer'], function(){
 				  var $ = layui.jquery
 				  ,upload = layui.upload;
 				  
@@ -157,19 +157,26 @@ $(document).ready(function(){
 				    ,number:3
 				    ,multiple: true
 				    ,before: function(obj){
-				      //预读本地文件示例，不支持ie8
-				      obj.preview(function(index, file, result){
-				        $('#demo2').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img">')
-				      });
+				        obj.preview(function(index, file, result){
+					        $('#demo2').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img">')
+					    });
+				    	layer.load();
 				    }
 				    ,done: function(res){
 				      //上传完毕
 				    	console.log(res);
+				    	layer.closeAll('loading');
 				    	if(res.code==200){
 				    		arr.push(res.url);
 				    		console.log(JSON.stringify(arr));
 				    		$("#desPicture").val(JSON.stringify(arr));
+				    	}else{
+				    		layer.msg("上传失败，请重试！");
 				    	}
+				    }
+				    ,error: function(index, upload){
+				        layer.closeAll('loading'); 
+				        layer.msg("上传失败，请重试！");
 				    }
 				  });
 				})

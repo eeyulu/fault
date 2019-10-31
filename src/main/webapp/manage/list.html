@@ -124,7 +124,7 @@ layui.use('table', function(){
     ,url: '/manage/list'
     ,cols: [[
      // {checkbox: true, fixed: false}
-      {field:'order_no', title: '工单号', width:120, fixed: true, align:'center'}
+      {field:'order_no', title: '工单号',  fixed: true, align:'center'}
       ,{field:'location', title: '故障位置', width:180, align:'center'}
       ,{field:'type', title: '故障类型', width:100, align:'center'}
       ,{field:'level', title: '紧急程度', width:120, align:'center'}
@@ -135,7 +135,7 @@ layui.use('table', function(){
       ,{field:'report_name', title: '报修人', width:120, align:'center'}
       ,{field:'status', title: '故障状态', width:100, align:'center'}
       ,{field:'repair_time', title: '报障时间', width:180, align:'center'}
-      ,{fixed: 'right', align:'center', toolbar: '#barDemo'}
+      ,{fixed: 'right', title: '操作',  width:250, align:'center', toolbar: '#barDemo'}
     ]]
     ,id: 'testReload'
     ,page: true

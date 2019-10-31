@@ -169,11 +169,11 @@
         </div>
        #end
         
+        <form  class="layui-form " action="" lay-filter="example">
         <div class="layui-col-sm12">
           <div class="layui-card">
             <div class="layui-card-header">解决人信息</div>
             <div class="layui-card-body">
-            <form  class="layui-form " action="" lay-filter="example">
             	<input type="hidden" id="faultId"   value = "#(x.fault.id??)"  class="layui-input" >
                   <table id="solverList" class="layui-table layuiadmin-page-table" lay-skin="line">
                       <thead>
@@ -182,7 +182,7 @@
                           <th>科室</th>
                           <th>电话</th>
                           <th>解决问题</th>
-                          <th style="text-align:right;"><button onclick="addTr()" class="layui-btn layui-btn-normal layui-btn-xs">增加解决人</button></th>
+                          <th style="text-align:right;"><button type="button" onclick="addTr()" class="layui-btn layui-btn-normal layui-btn-xs">增加解决人</button></th>
                         </tr> 
                       </thead>
                       <tbody>
@@ -191,7 +191,50 @@
                           <td><input type="text" name="solver"   value = "#(m.solver??)" lay-verify="reportName|required" placeholder="解决人姓名" autocomplete="off" class="layui-input" ></td>
                           <td><input type="text" name="solverDep"   value = "#(m.solver_dep??)" required lay-verify="reportDep|required" placeholder="解决人科室" autocomplete="off" class="layui-input" ></td>
                           <td><input type="text" name="solverTel"   value = "#(m.solver_tel??)" required lay-verify="phone" placeholder="解决人电话" autocomplete="off" class="layui-input" ></td>
-                          <td><input type="text" name="solveProblem"   value = "#(m.solve_problem??)" required lay-verify="area" placeholder="解决问题" autocomplete="off" class="layui-input" ></td>
+                          <td><input type="text" name="solveProblem"   value = "#(m.solve_problem??)" required lay-verify="area|required" placeholder="解决问题" autocomplete="off" class="layui-input" ></td>
+                          <td><button onclick="delTr(this)" class="layui-btn layui-btn-primary layui-btn-xs">删除</button></td>
+                        </tr>
+  					  #end 
+                      </tbody>
+                    </table>
+<!--           <div class="layui-form-item" >
+		    <div class="layui-input-block" style="text-align:center;margin-left: 0px;margin-top: 20px;">
+		      
+		      <button class="layui-btn" lay-submit="" lay-filter="demo1" >修改</button>
+		      <button type="reset" class="layui-btn layui-btn-primary">恢复</button>
+		    </div>
+		  </div>
+
+      </form>  -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="layui-col-sm12">
+          <div class="layui-card">
+            <div class="layui-card-header">附件信息</div>
+            <div class="layui-card-body">
+                  <table id="attachList" class="layui-table layuiadmin-page-table" lay-skin="line">
+                      <thead>
+                        <tr>
+                          <th>名称</th>
+                          <th>型号</th>
+                          <th>单价(元)</th>
+                          <th>数量</th>
+                          <th>单位</th>
+                          <th>总价(元)</th>
+                          <th style="text-align:right;"><button type="button" onclick="addAttach()" class="layui-btn layui-btn-normal layui-btn-xs">增加附件</button></th>
+                        </tr> 
+                      </thead>
+                      <tbody>
+                      #for(m:x.attach)
+                        <tr>
+                          <td><input type="text" name="name"   value = "#(m.name??)" lay-verify="required" placeholder="名称" autocomplete="off" class="layui-input" ></td>
+                          <td><input type="text" name="model"   value = "#(m.model??)" placeholder="型号" autocomplete="off" class="layui-input" ></td>
+                          <td><input type="text" name="price"   value = "#(m.price??)" lay-verify="money" placeholder="单价" autocomplete="off" class="layui-input" ></td>
+                          <td><input type="text" name="amount"   value = "#(m.amount??)"  lay-verify="amount" placeholder="数量" autocomplete="off" class="layui-input" ></td>
+                          <td><input type="text" name="unit"   value = "#(m.unit??)"  lay-verify="" placeholder="单位" autocomplete="off" class="layui-input" ></td>
+                          <td><input type="text" name="total"   value = "#(m.total??)"  lay-verify="money" placeholder="总价" autocomplete="off" class="layui-input" ></td>
                           <td><button onclick="delTr(this)" class="layui-btn layui-btn-primary layui-btn-xs">删除</button></td>
                         </tr>
   					  #end 
@@ -205,10 +248,10 @@
 		    </div>
 		  </div>
 
-      </form> 
             </div>
           </div>
         </div>
+      </form> 
         
   </div>
 </div>
@@ -225,10 +268,23 @@
                    +'<td><input type="text" name="solver"   value = "" lay-verify="reportName|required" placeholder="解决人姓名" autocomplete="off" class="layui-input" ></td>'
                    +'<td><input type="text" name="solverDep"   value = "" required lay-verify="reportDep|required" placeholder="解决人科室" autocomplete="off" class="layui-input" ></td>'
                    +'<td><input type="text" name="solverTel"   value = "" required lay-verify="phone" placeholder="解决人电话" autocomplete="off" class="layui-input" ></td>'
-                   +'<td><input type="text" name="solveProblem"   value = "" required lay-verify="area" placeholder="解决问题" autocomplete="off" class="layui-input" ></td>'
+                   +'<td><input type="text" name="solveProblem"   value = "" required lay-verify="area|required" placeholder="解决问题" autocomplete="off" class="layui-input" ></td>'
                    +'<td><button onclick="delTr(this)" class="layui-btn layui-btn-primary layui-btn-xs">删除</button></td>'
                  +'</tr>';
 		 $("#solverList tbody").append(tr);
+	}
+	
+	function addAttach(){
+		var tr = '<tr>'
+                   +'<td><input type="text" name="name"   value = "" lay-verify="required" placeholder="名称" autocomplete="off" class="layui-input" ></td>'
+                   +'<td><input type="text" name="model"   value = "" placeholder="型号" autocomplete="off" class="layui-input" ></td>'
+                   +'<td><input type="text" name="price"   value = "" lay-verify="money" placeholder="单价" autocomplete="off" class="layui-input" ></td>'
+                   +'<td><input type="text" name="amount"   value = ""  lay-verify="amount" placeholder="数量" autocomplete="off" class="layui-input" ></td>'
+                   +'<td><input type="text" name="unit"   value = ""  lay-verify="" placeholder="单位" autocomplete="off" class="layui-input" ></td>'
+                   +'<td><input type="text" name="total"   value = ""  lay-verify="money" placeholder="总价" autocomplete="off" class="layui-input" ></td>'
+                   +'<td><button onclick="delTr(this)" class="layui-btn layui-btn-primary layui-btn-xs">删除</button></td>'
+                 +'</tr>';
+		 $("#attachList tbody").append(tr);
 	}
 
 	$(function() {
@@ -282,7 +338,17 @@ layui.use('form', function(){
 	      if(value.length > 300){
 	        return '内容不能超过300个字符';
 	      }
-   	  }
+   	  },
+   	  money: function(val, item) {
+		  if(!/(^$)|^\d+(\.\d{0,2})?$/.test(val)){
+			return '请输入正确的金额'
+		  }
+	  },
+   	  amount: function(val, item) {
+		  if(!/(^$)|^\d+$/.test(val)){
+			return '请输入正确的数量'
+		  }
+	  }
   });
 
   //监听提交
@@ -306,6 +372,24 @@ layui.use('form', function(){
     	});
     	arr.push(row);
     });
+    
+    var att = new Array();
+    $("#attachList tbody tr").each(function (i, e) {
+   		var row={};
+    	$(e).find("input").each(function (ii, ee) {
+    		//console.log(ee);
+    		var inputs = $(ee);
+    		//console.log(inputs);
+    		// inpputs.val 每一行的数据
+			obj = inputs.val();
+			// 取每一行的属性name名字
+			var name = inputs.attr("name")
+    		//console.log(name +":"+obj);
+    		
+    		row[name] = obj;
+    	});
+    	att.push(row);
+    });
 /*     if(arr.length == 0){
     	layer.msg('报修人不能为空！')
     	return false;
@@ -313,7 +397,9 @@ layui.use('form', function(){
     var json={};
     json.faultId = $("#faultId").val();
     json.solver = arr;
+    json.attach = att;
     console.log(json);
+    //return false;
   	$.ajax({
      type: "GET",
      url: "updateSolver",

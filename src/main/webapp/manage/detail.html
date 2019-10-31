@@ -184,7 +184,7 @@
                           <th>科室</th>
                           <th>电话</th>
                           <th>解决问题</th>
-                          <th>解决时间</th>
+                          <!-- <th>解决时间</th> -->
                         </tr> 
                       </thead>
                       <tbody>
@@ -194,7 +194,7 @@
                           <td>#(m.solver_dep)</td>
                           <td>#(m.solver_tel)</td>
                           <td>#(m.solve_problem)</td>
-                          <td>#date(m.solve_time,"yyyy-MM-dd HH:mm:ss")</td>
+                          <!-- <td>#date(m.solve_time,"yyyy-MM-dd HH:mm:ss")</td> -->
                         </tr>
   					  #end 
                       </tbody>
@@ -203,7 +203,40 @@
           </div>
         </div>
        #end
-        
+       
+       #if(x.attach!=null && x.attach!=[])
+        <div class="layui-col-sm12">
+          <div class="layui-card">
+            <div class="layui-card-header">附件信息</div>
+            <div class="layui-card-body">
+                  <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                      <thead>
+                        <tr>
+                        <tr>
+                          <th>名称</th>
+                          <th>型号</th>
+                          <th>单价(元)</th>
+                          <th>数量</th>
+                          <th>总价(元)</th>
+                        </tr> 
+                        </tr> 
+                      </thead>
+                      <tbody>
+                      #for(m:x.attach)
+                        <tr>
+                          <td>#(m.name)</td>
+                          <td>#(m.model)</td>
+                          <td>#(m.price)</td>
+                          <td>#(m.amount) #(m.unit)</td>
+                          <td>#(m.total)</td>
+                        </tr>
+  					  #end 
+                      </tbody>
+                    </table>
+            </div>
+          </div>
+        </div>
+       #end 
 
 	 #if(x.comment!=null)
 
